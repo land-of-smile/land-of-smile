@@ -1,43 +1,105 @@
-const topbar = document.getElementById("topbar");
-const menuBtn = document.getElementById("menuBtn");
-const mainNav = document.getElementById("mainNav");
-const toTop = document.getElementById("toTop");
+const menuBtn =
+  document.getElementById("menuBtn");
 
-menuBtn.addEventListener("click", () => {
-  mainNav.classList.toggle("open");
-});
+const nav =
+  document.getElementById("mainNav");
 
-mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => mainNav.classList.remove("open"));
-});
+const toTop =
+  document.getElementById("toTop");
 
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  topbar.classList.toggle("scrolled", y > 40);
-  toTop.classList.toggle("show", y > 650);
-});
+menuBtn.addEventListener(
+  "click",
+  () => {
 
-toTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+    nav.classList.toggle(
+      "open"
+    );
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+  }
+);
+
+nav
+  .querySelectorAll("a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        nav.classList.remove(
+          "open"
+        );
+
+      }
+    );
+
+  });
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    if (
+      window.scrollY >
+      600
+    ) {
+
+      toTop.style.display =
+        "block";
+
+    } else {
+
+      toTop.style.display =
+        "none";
+
     }
-  });
-}, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  }
+);
 
-// เปิดได้ทีละหมวด เพื่อให้อ่านกฎง่ายขึ้น
-document.querySelectorAll(".rule-card").forEach(card => {
-  card.addEventListener("toggle", () => {
-    if (!card.open) return;
-    document.querySelectorAll(".rule-card").forEach(other => {
-      if (other !== card) other.open = false;
+toTop.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
     });
+
+  }
+);
+
+document
+  .querySelectorAll(
+    ".rules details"
+  )
+  .forEach(item => {
+
+    item.addEventListener(
+      "toggle",
+      () => {
+
+        if (!item.open)
+          return;
+
+        document
+          .querySelectorAll(
+            ".rules details"
+          )
+          .forEach(other => {
+
+            if (
+              other !== item
+            ) {
+
+              other.open =
+                false;
+
+            }
+
+          });
+
+      }
+    );
+
   });
-});
