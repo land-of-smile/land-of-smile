@@ -25,8 +25,13 @@
     --line:rgba(212,174,102,.24);
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     margin:0;
@@ -46,7 +51,9 @@ body.supernatural-mode{
         linear-gradient(#190504,#080403);
 }
 
-/* LOADING */
+/* =========================
+   LOADING SCREEN
+========================= */
 
 #loader{
     position:fixed;
@@ -107,14 +114,20 @@ body.supernatural-mode{
 }
 
 @keyframes pulse{
-    50%{transform:scale(1.04)}
+    50%{
+        transform:scale(1.04);
+    }
 }
 
 @keyframes rotate{
-    to{transform:rotate(360deg)}
+    to{
+        transform:rotate(360deg);
+    }
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:fixed;
@@ -188,7 +201,9 @@ nav a:hover{
     border-radius:7px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
@@ -289,48 +304,88 @@ nav a:hover{
         0 14px 32px rgba(0,0,0,.45);
 }
 
-/* FOG */
+/* =========================
+   STRONGER MOVING FOG
+========================= */
+
+.fog-layer{
+    position:absolute;
+    inset:0;
+    z-index:5;
+    overflow:hidden;
+    pointer-events:none;
+}
 
 .fog{
     position:absolute;
-    z-index:4;
-    pointer-events:none;
-    width:160%;
-    height:280px;
-    left:-30%;
-    filter:blur(35px);
-    background:radial-gradient(ellipse,rgba(220,215,200,.9),transparent 60%);
+    width:180%;
+    height:320px;
+    left:-40%;
+    filter:blur(28px);
+    mix-blend-mode:screen;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(235,230,220,.95) 0%,
+            rgba(220,215,205,.62) 25%,
+            rgba(200,195,185,.32) 45%,
+            rgba(180,175,165,.12) 60%,
+            transparent 74%
+        );
+    will-change:transform;
 }
 
 .fog1{
-    bottom:5%;
-    opacity:.13;
-    animation:fog1 25s linear infinite;
+    bottom:-30px;
+    opacity:.30;
+    animation:fogMoveA 24s linear infinite;
 }
 
 .fog2{
-    bottom:25%;
-    opacity:.07;
-    animation:fog2 36s linear infinite;
+    bottom:18%;
+    opacity:.20;
+    animation:fogMoveB 34s linear infinite;
 }
 
 .fog3{
-    top:25%;
-    opacity:.04;
-    animation:fog1 44s linear infinite reverse;
+    top:23%;
+    opacity:.12;
+    animation:fogMoveA 44s linear infinite reverse;
 }
 
-@keyframes fog1{
-    0%,100%{transform:translateX(-12%)}
-    50%{transform:translateX(13%)}
+.fog4{
+    top:45%;
+    opacity:.10;
+    animation:fogMoveB 50s linear infinite reverse;
 }
 
-@keyframes fog2{
-    0%,100%{transform:translateX(14%)}
-    50%{transform:translateX(-14%)}
+@keyframes fogMoveA{
+    0%{
+        transform:translateX(-18%) scale(1);
+    }
+    50%{
+        transform:translateX(16%) scale(1.08);
+    }
+    100%{
+        transform:translateX(-18%) scale(1);
+    }
 }
 
-/* YANTRA */
+@keyframes fogMoveB{
+    0%{
+        transform:translateX(18%) scale(1.04);
+    }
+    50%{
+        transform:translateX(-16%) scale(.98);
+    }
+    100%{
+        transform:translateX(18%) scale(1.04);
+    }
+}
+
+/* =========================
+   YANTRA
+========================= */
 
 .yantra{
     position:absolute;
@@ -342,8 +397,17 @@ nav a:hover{
     animation:yantraFade 10s ease-in-out infinite;
 }
 
-.yantra.a{left:-90px;top:15%}
-.yantra.b{right:-70px;bottom:-30px;animation-delay:3s}
+.yantra.a{
+    left:-90px;
+    top:15%;
+}
+
+.yantra.b{
+    right:-70px;
+    bottom:-30px;
+    animation-delay:3s;
+}
+
 .yantra.c{
     left:50%;
     top:50%;
@@ -353,11 +417,17 @@ nav a:hover{
 }
 
 @keyframes yantraFade{
-    0%,100%{opacity:0}
-    45%,55%{opacity:.045}
+    0%,100%{
+        opacity:0;
+    }
+    45%,55%{
+        opacity:.055;
+    }
 }
 
-/* DIVIDER */
+/* =========================
+   THAI DIVIDER
+========================= */
 
 .thai-divider{
     width:min(900px,82%);
@@ -382,7 +452,9 @@ nav a:hover{
     text-shadow:0 0 14px rgba(212,174,102,.5);
 }
 
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
 
 .section{
     padding:100px 7vw;
@@ -410,7 +482,9 @@ nav a:hover{
     color:var(--muted);
 }
 
-/* STORY */
+/* =========================
+   STORY
+========================= */
 
 .feature-grid{
     max-width:1200px;
@@ -448,7 +522,9 @@ nav a:hover{
     font-size:14px;
 }
 
-/* RULES */
+/* =========================
+   RULES
+========================= */
 
 .rules-section{
     background:linear-gradient(#120c09,#090605);
@@ -517,7 +593,9 @@ body.supernatural-mode .rules-section{
     overflow:hidden;
 }
 
-.rule.hidden{display:none}
+.rule.hidden{
+    display:none;
+}
 
 .rule summary{
     cursor:pointer;
@@ -531,7 +609,9 @@ body.supernatural-mode .rules-section{
     gap:14px;
 }
 
-.rule summary::-webkit-details-marker{display:none}
+.rule summary::-webkit-details-marker{
+    display:none;
+}
 
 .num{
     width:42px;
@@ -581,7 +661,9 @@ body.supernatural-mode .rules-section{
     border-color:rgba(174,65,50,.75);
 }
 
-/* CITY */
+/* =========================
+   CITY
+========================= */
 
 .city-grid{
     max-width:1180px;
@@ -602,8 +684,13 @@ body.supernatural-mode .rules-section{
     transform:rotate(-.35deg);
 }
 
-.city:nth-child(2){transform:rotate(.4deg)}
-.city:nth-child(3){transform:rotate(-.2deg)}
+.city:nth-child(2){
+    transform:rotate(.4deg);
+}
+
+.city:nth-child(3){
+    transform:rotate(-.2deg);
+}
 
 .city::before{
     content:"";
@@ -652,7 +739,9 @@ body.supernatural-mode .rules-section{
     font-size:12px;
 }
 
-/* WHITELIST */
+/* =========================
+   WHITELIST
+========================= */
 
 .whitelist{
     background:linear-gradient(#100b08,#080604);
@@ -759,7 +848,9 @@ body.supernatural-mode .rules-section{
     text-align:right;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     padding:55px 20px;
@@ -785,7 +876,9 @@ footer p{
     margin:0;
 }
 
-/* TOP */
+/* =========================
+   TOP BUTTON
+========================= */
 
 #toTop{
     position:fixed;
@@ -814,7 +907,9 @@ footer p{
     transform:translateY(-2px);
 }
 
-/* REVEAL */
+/* =========================
+   REVEAL
+========================= */
 
 .reveal{
     opacity:0;
@@ -827,11 +922,20 @@ footer p{
     transform:none;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:1000px){
-    .feature-grid{grid-template-columns:repeat(2,1fr)}
-    .city-grid{grid-template-columns:1fr}
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .city-grid{
+        grid-template-columns:1fr;
+    }
+
 }
 
 @media(max-width:760px){
@@ -846,9 +950,13 @@ footer p{
         height:42px;
     }
 
-    .brand span{font-size:13px}
+    .brand span{
+        font-size:13px;
+    }
 
-    .menu{display:block}
+    .menu{
+        display:block;
+    }
 
     nav{
         display:none;
@@ -864,17 +972,42 @@ footer p{
         border-bottom:1px solid var(--line);
     }
 
-    nav.open{display:flex}
+    nav.open{
+        display:flex;
+    }
 
-    nav a{padding:11px}
+    nav a{
+        padding:11px;
+    }
 
-    .hero-logo{width:250px}
+    .hero-logo{
+        width:250px;
+    }
 
-    .hero h1{letter-spacing:2px}
+    .hero h1{
+        letter-spacing:2px;
+    }
 
-    .section{padding:75px 18px}
+    .fog1{
+        opacity:.24;
+    }
 
-    .feature-grid{grid-template-columns:1fr}
+    .fog2{
+        opacity:.16;
+    }
+
+    .fog3,
+    .fog4{
+        opacity:.08;
+    }
+
+    .section{
+        padding:75px 18px;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
 
     .rule summary{
         font-size:15px;
@@ -896,69 +1029,143 @@ footer p{
     .city{
         transform:none!important;
     }
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- Loading -->
+<!-- LOADING -->
 <div id="loader">
-    <div class="loader-symbol">✦</div>
-    <img src="logo.png" class="loader-logo" alt="Land of Smile">
+
+    <div class="loader-symbol">
+        ✦
+    </div>
+
+    <img
+        src="logo.png"
+        class="loader-logo"
+        alt="Land of Smile"
+    >
+
     <h1>LAND OF SMILE</h1>
-    <p>พุทธศักราช ๒๔๗๕</p>
+
+    <p>
+        พุทธศักราช ๒๔๗๕
+    </p>
+
     <div class="loader-line"></div>
-    <span class="loader-small">กำลังเปิดประตูสู่ดินแดน...</span>
+
+    <span class="loader-small">
+        กำลังเปิดประตูสู่ดินแดน...
+    </span>
+
 </div>
 
-<!-- Header -->
+
+<!-- HEADER -->
 <header id="header">
 
     <a href="#home" class="brand">
-        <img src="logo.png" alt="Land of Smile">
-        <span>LAND OF SMILE</span>
+
+        <img
+            src="logo.png"
+            alt="Land of Smile"
+        >
+
+        <span>
+            LAND OF SMILE
+        </span>
+
     </a>
 
-    <button id="menu" class="menu">☰</button>
+    <button
+        id="menu"
+        class="menu"
+    >
+        ☰
+    </button>
 
     <nav id="nav">
-        <a href="#home">หน้าแรก</a>
-        <a href="#story">เรื่องราว</a>
-        <a href="#rules">กฎประเทศ</a>
-        <a href="#city">กฎเมือง</a>
-        <a href="#whitelist">Whitelist</a>
-        <a href="https://discord.gg/8nySZ5vfRv"
-           target="_blank"
-           class="discord-nav">
-           Discord
+
+        <a href="#home">
+            หน้าแรก
         </a>
+
+        <a href="#story">
+            เรื่องราว
+        </a>
+
+        <a href="#rules">
+            กฎประเทศ
+        </a>
+
+        <a href="#city">
+            กฎเมือง
+        </a>
+
+        <a href="#whitelist">
+            Whitelist
+        </a>
+
+        <a
+            href="https://discord.gg/8nySZ5vfRv"
+            target="_blank"
+            class="discord-nav"
+        >
+            Discord
+        </a>
+
     </nav>
 
 </header>
 
+
 <!-- HERO -->
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-dark"></div>
 
-    <div class="yantra a">✦</div>
-    <div class="yantra b">✧</div>
-    <div class="yantra c">☼</div>
+    <div class="yantra a">
+        ✦
+    </div>
 
-    <div class="fog fog1"></div>
-    <div class="fog fog2"></div>
-    <div class="fog fog3"></div>
+    <div class="yantra b">
+        ✧
+    </div>
+
+    <div class="yantra c">
+        ☼
+    </div>
+
+    <div class="fog-layer">
+
+        <div class="fog fog1"></div>
+        <div class="fog fog2"></div>
+        <div class="fog fog3"></div>
+        <div class="fog fog4"></div>
+
+    </div>
 
     <div class="hero-content reveal">
 
-        <img src="logo.png" class="hero-logo" alt="Land of Smile">
+        <img
+            src="logo.png"
+            class="hero-logo"
+            alt="Land of Smile"
+        >
 
         <p class="eyebrow">
             REDM ROLEPLAY • พ.ศ. 2475
         </p>
 
-        <h1>LAND OF SMILE</h1>
+        <h1>
+            LAND OF SMILE
+        </h1>
 
         <h2>
             ดินแดนแห่งศรัทธา มนตรา
@@ -966,27 +1173,38 @@ footer p{
         </h2>
 
         <p class="hero-desc">
+
             พ.ศ. 2475 ชาวสยามอพยพสู่ดินแดนตะวันตก
             เพื่อเริ่มต้นชีวิตใหม่ในโลกที่เต็มไปด้วยโอกาส
             ความเชื่อ และสิ่งเร้นลับ
+
             จำลองการใช้ชีวิตเสมือนจริง
             ผสานอาคม ความเชื่อพื้นบ้าน
             และปรากฏการณ์เหนือธรรมชาติ
+
         </p>
 
         <div class="actions">
 
-            <a href="#whitelist" class="btn btn-gold">
+            <a
+                href="#whitelist"
+                class="btn btn-gold"
+            >
                 เข้าสู่เมือง
             </a>
 
-            <a href="#rules" class="btn btn-outline">
+            <a
+                href="#rules"
+                class="btn btn-outline"
+            >
                 อ่านกฎประเทศ
             </a>
 
-            <a href="https://discord.gg/8nySZ5vfRv"
-               target="_blank"
-               class="btn btn-outline">
+            <a
+                href="https://discord.gg/8nySZ5vfRv"
+                target="_blank"
+                class="btn btn-outline"
+            >
                 เข้า Discord
             </a>
 
@@ -996,27 +1214,38 @@ footer p{
 
 </section>
 
-<div class="thai-divider"><span>❖</span></div>
+
+<div class="thai-divider">
+    <span>❖</span>
+</div>
+
 
 <!-- STORY -->
-
-<section class="section" id="story">
+<section
+    class="section"
+    id="story"
+>
 
     <div class="section-title reveal">
 
-        <small>ตำนานแห่งแผ่นดิน</small>
+        <small>
+            ตำนานแห่งแผ่นดิน
+        </small>
 
         <h2>
             เรื่องราวของ Land of Smile
         </h2>
 
         <p>
+
             เมื่อชาวสยามเดินทางข้ามสู่ดินแดนตะวันตก
             ชีวิตใหม่ไม่ได้มีเพียงการค้าขาย
             การเอาตัวรอด และการสร้างครอบครัว
+
             แต่ยังมีความเชื่อที่ติดตามผู้คนมาจากบ้านเกิด
             ทั้งยันต์ ของขลัง วิชาอาคม
             และสิ่งที่มนุษย์ไม่อาจอธิบายได้
+
         </p>
 
     </div>
@@ -1024,58 +1253,100 @@ footer p{
     <div class="feature-grid">
 
         <div class="feature reveal">
-            <div class="icon">๒๔๗๕</div>
-            <h3>สยาม พ.ศ. 2475</h3>
+
+            <div class="icon">
+                ๒๔๗๕
+            </div>
+
+            <h3>
+                สยาม พ.ศ. 2475
+            </h3>
+
             <p>
                 บรรยากาศไทยยุคเก่าผสมโลกตะวันตก
                 ถ่ายทอดผ่านการใช้ชีวิตและ Roleplay
             </p>
+
         </div>
 
         <div class="feature reveal">
-            <div class="icon">☾</div>
-            <h3>สิ่งเหนือธรรมชาติ</h3>
+
+            <div class="icon">
+                ☾
+            </div>
+
+            <h3>
+                สิ่งเหนือธรรมชาติ
+            </h3>
+
             <p>
                 เรื่องราวลึกลับ ความเชื่อ
                 การหลอกหลอน และเหตุการณ์
                 ที่อาจเปลี่ยนชีวิตของตัวละคร
             </p>
+
         </div>
 
         <div class="feature reveal">
-            <div class="icon">✦</div>
-            <h3>อาคมและเครื่องราง</h3>
+
+            <div class="icon">
+                ✦
+            </div>
+
+            <h3>
+                อาคมและเครื่องราง
+            </h3>
+
             <p>
                 พ่อหมอ แม่หมอ พระ ผู้มีวิชา
                 ผ้ายันต์ เครื่องราง และอาวุธอาคม
             </p>
+
         </div>
 
         <div class="feature reveal">
-            <div class="icon">⚖</div>
-            <h3>Roleplay เสมือนจริง</h3>
+
+            <div class="icon">
+                ⚖
+            </div>
+
+            <h3>
+                Roleplay เสมือนจริง
+            </h3>
+
             <p>
                 ทุกการตัดสินใจส่งผลต่อชื่อเสียง
                 ความสัมพันธ์ อนาคต
                 และชีวิตของตัวละคร
             </p>
+
         </div>
 
     </div>
 
 </section>
 
-<div class="thai-divider"><span>✦</span></div>
+
+<div class="thai-divider">
+    <span>✦</span>
+</div>
+
 
 <!-- RULES -->
-
-<section class="section rules-section" id="rules">
+<section
+    class="section rules-section"
+    id="rules"
+>
 
     <div class="section-title reveal">
 
-        <small>กฎแห่งประเทศ</small>
+        <small>
+            กฎแห่งประเทศ
+        </small>
 
-        <h2>กฎ Land of Smile</h2>
+        <h2>
+            กฎ Land of Smile
+        </h2>
 
         <p>
             สามารถค้นหากฎที่ต้องการได้ทันที
@@ -1085,7 +1356,9 @@ footer p{
 
     <div class="rule-search reveal">
 
-        <span>🔎</span>
+        <span>
+            🔎
+        </span>
 
         <input
             id="search"
@@ -1099,20 +1372,30 @@ footer p{
 
     </div>
 
-    <p id="searchStatus" class="search-status"></p>
+    <p
+        id="searchStatus"
+        class="search-status"
+    ></p>
 
     <div class="rules">
+
 
         <details class="rule reveal">
 
             <summary>
-                <span class="num">01</span>
+
+                <span class="num">
+                    01
+                </span>
+
                 กฎ Roleplay
+
             </summary>
 
             <div class="rule-content">
 
                 <h3>Death Match</h3>
+
                 <p>
                     ไม่อนุญาตให้ทำร้าย ยิง หรือใช้อาวุธกับผู้เล่นอื่น
                     โดยไม่มี Story รองรับ ก่อนเริ่มปะทะต้องสื่อสาร
@@ -1120,24 +1403,28 @@ footer p{
                 </p>
 
                 <h3>Spawn Kill</h3>
+
                 <p>
                     ห้ามดักทำร้ายบริเวณจุดเกิด
                     และห้ามฟื้นผู้เล่นเพื่อทำร้ายให้หมดสติซ้ำ
                 </p>
 
                 <h3>In Character / Out of Character</h3>
+
                 <p>
                     ผู้เล่นต้องแยกเรื่องราว IC และ OOC
                     ออกจากกันอย่างชัดเจน
                 </p>
 
                 <h3>Breaking Roleplay</h3>
+
                 <p>
                     ห้ามรบกวน Roleplay ของผู้อื่น
                     และห้ามออกจากเซิร์ฟเวอร์ขณะดำเนิน Story
                 </p>
 
                 <h3>Value of Life</h3>
+
                 <p>
                     ให้ถือว่าตัวละครมีชีวิตจริง
                     ต้องคำนึงถึงความเสี่ยง
@@ -1145,6 +1432,7 @@ footer p{
                 </p>
 
                 <h3>Power Gaming</h3>
+
                 <p>
                     ห้ามกระทำสิ่งที่เกินธรรมชาติของมนุษย์
                     เช่น พูดขณะหมดสติ
@@ -1152,6 +1440,7 @@ footer p{
                 </p>
 
                 <h3>Meta Gaming</h3>
+
                 <p>
                     ห้ามนำข้อมูลจาก Discord, Live
                     หรือข้อมูลจากภายนอกเกม
@@ -1159,6 +1448,7 @@ footer p{
                 </p>
 
                 <h3>AFK</h3>
+
                 <p>
                     หากจำเป็นต้อง AFK
                     ควรหลบไปในพื้นที่เหมาะสม
@@ -1166,17 +1456,20 @@ footer p{
                 </p>
 
                 <h3>Offensive Roleplay</h3>
+
                 <p>
                     Story ที่มีเนื้อหารุนแรงหรือละเอียดอ่อน
                     ต้องได้รับความยินยอมจากผู้ร่วม Story ก่อน
                 </p>
 
                 <h3>Manners</h3>
+
                 <p>
                     ผู้เล่นต้องรักษามารยาททั้ง IC และ OOC
                 </p>
 
                 <h3>โปรแกรมหรือบั๊ก</h3>
+
                 <p>
                     ห้ามใช้โปรแกรมภายนอก
                     บั๊ก หรือช่องโหว่เพื่อสร้างผลประโยชน์
@@ -1190,38 +1483,58 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">02</span>
+
+                <span class="num">
+                    02
+                </span>
+
                 กฎการสร้างตัวละคร
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>ชื่อ-นามสกุล</h3>
+                <h3>
+                    ชื่อ-นามสกุล
+                </h3>
+
                 <p>
                     ต้องเหมาะสมกับยุค พ.ศ. 2475
                     และตรงตามเชื้อชาติของตัวละคร
                     ห้ามใช้ชื่อบุคคลจริงหรือตัวละครที่มีอยู่แล้วโดยตรง
                 </p>
 
-                <h3>บทบาทเด็ก</h3>
+                <h3>
+                    บทบาทเด็ก
+                </h3>
+
                 <p>
                     อายุ 10–15 ปี ต้องมีเสียงและบุคลิกตามวัย
                     และห้ามใช้อาวุธปืน
                 </p>
 
-                <h3>เชื้อชาติไทย</h3>
+                <h3>
+                    เชื้อชาติไทย
+                </h3>
+
                 <p>
                     ใช้ผมสีดำเท่านั้น
                     ผู้สูงอายุสามารถใช้ผมสีขาวได้
                 </p>
 
-                <h3>เชื้อชาติต่างชาติ</h3>
+                <h3>
+                    เชื้อชาติต่างชาติ
+                </h3>
+
                 <p>
                     ต้องมีสำเนียงและบุคลิก
                     ให้เหมาะสมกับเชื้อชาติ
                 </p>
 
-                <h3>การแต่งกาย</h3>
+                <h3>
+                    การแต่งกาย
+                </h3>
+
                 <p>
                     ตอนสร้างตัวละครอนุญาตให้เลือก
                     เสื้อ กางเกง รองเท้า และเข็มขัดปืน
@@ -1235,13 +1548,21 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">03</span>
+
+                <span class="num">
+                    03
+                </span>
+
                 กฎการหมดสติ
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>Life Point</h3>
+                <h3>
+                    Life Point
+                </h3>
+
                 <p>
                     ตัวละครมี 10 Life Point
                     ทุกครั้งที่หมดสติจะเสีย 1 แต้ม
@@ -1249,42 +1570,60 @@ footer p{
                     ไม่สามารถวิ่งได้และจะไอเป็นระยะ
                 </p>
 
-                <h3>การหมดสติ</h3>
+                <h3>
+                    การหมดสติ
+                </h3>
+
                 <p>
                     ไม่ได้ยินเสียงและไม่สามารถพูดได้
                     แต่ยังสามารถใช้ /me และ /do
                     เพื่อแสดงอาการได้
                 </p>
 
-                <h3>ความทรงจำ</h3>
+                <h3>
+                    ความทรงจำ
+                </h3>
+
                 <p>
                     จำเหตุการณ์ก่อนหมดสติได้
                     แต่ไม่สามารถจดจำเหตุการณ์
                     ระหว่างที่หมดสติได้
                 </p>
 
-                <h3>การฟื้นสติ</h3>
+                <h3>
+                    การฟื้นสติ
+                </h3>
+
                 <p>
                     สามารถรอแพทย์ ฟื้นในพื้นที่
                     หรือกลับเมืองใกล้เคียง
                     เมื่อพื้นที่มีอันตราย
                 </p>
 
-                <h3>หมดสติระหว่าง Story</h3>
+                <h3>
+                    หมดสติระหว่าง Story
+                </h3>
+
                 <p>
                     ห้ามกดฟื้นหาก Story ยังดำเนินอยู่
                     เว้นแต่ผู้ร่วม Story ออกพ้นสายตา
                     และผ่านไปอย่างน้อย 5 นาที
                 </p>
 
-                <h3>หลังฟื้นสติ</h3>
+                <h3>
+                    หลังฟื้นสติ
+                </h3>
+
                 <p>
                     ต้องแสดงอาการบาดเจ็บ
                     และห้ามกลับไปปะทะเป็นเวลา
                     1 ชั่วโมง OOC
                 </p>
 
-                <h3>เพิ่ม Life Point</h3>
+                <h3>
+                    เพิ่ม Life Point
+                </h3>
+
                 <p>
                     เพิ่มได้จากเข็มกระตุ้นสติ
                     หรือยาบำรุงสุขภาพจากบุคลากรทางการแพทย์
@@ -1298,50 +1637,76 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">04</span>
+
+                <span class="num">
+                    04
+                </span>
+
                 กฎการปะทะ
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>การทำร้าย NPC</h3>
+                <h3>
+                    การทำร้าย NPC
+                </h3>
+
                 <p>
                     ห้ามทำร้าย NPC
                     เว้นแต่มี Story รองรับ
                 </p>
 
-                <h3>การเริ่มปะทะ</h3>
+                <h3>
+                    การเริ่มปะทะ
+                </h3>
+
                 <p>
                     ต้องพูด ใช้ /me /do หรือยิงขู่
                     เพื่อให้อีกฝ่ายรับรู้ก่อน
                 </p>
 
-                <h3>Head Shot Kill</h3>
+                <h3>
+                    Head Shot Kill
+                </h3>
+
                 <p>
                     ห้ามเปิดการปะทะด้วยการยิงศีรษะ
                     จนอีกฝ่ายหมดสติทันที
                 </p>
 
-                <h3>การถูกมัด</h3>
+                <h3>
+                    การถูกมัด
+                </h3>
+
                 <p>
                     ผู้ถูกมัดห้ามดิ้นหลุดเอง
                     เว้นแต่ผู้มัดออกพ้นสายตา
                     และผ่านไปอย่างน้อย 5 นาที
                 </p>
 
-                <h3>ผู้หมดสติ</h3>
+                <h3>
+                    ผู้หมดสติ
+                </h3>
+
                 <p>
                     ห้ามด่าทอ เหยียดหยาม
                     หรือทำร้ายร่างกายซ้ำเกิน Story
                 </p>
 
-                <h3>เชือกระหว่างการยิง</h3>
+                <h3>
+                    เชือกระหว่างการยิง
+                </h3>
+
                 <p>
                     เมื่อการยิงเริ่มขึ้นแล้ว
                     ห้ามใช้เชือกมัดอีกฝ่าย
                 </p>
 
-                <h3>จำนวนกลุ่ม</h3>
+                <h3>
+                    จำนวนกลุ่ม
+                </h3>
+
                 <p>
                     1 กลุ่มไม่เกิน 10 คน
                     และ 1 Story ไม่เกิน 3 กลุ่ม
@@ -1355,26 +1720,40 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">05</span>
+
+                <span class="num">
+                    05
+                </span>
+
                 กฎการปลอมตัว
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>การปกปิดตัวตน</h3>
+                <h3>
+                    การปกปิดตัวตน
+                </h3>
+
                 <p>
                     สามารถเปลี่ยนเสื้อผ้า ทรงผม หนวด
                     ม้า อาวุธ และสิ่งที่มองเห็นได้
                     เพื่อปกปิดตัวตน
                 </p>
 
-                <h3>การดัดเสียง</h3>
+                <h3>
+                    การดัดเสียง
+                </h3>
+
                 <p>
                     สามารถดัดเสียง
                     หรือใช้โปรแกรมเปลี่ยนเสียงได้
                 </p>
 
-                <h3>หน้ากากและผ้าปิดปาก</h3>
+                <h3>
+                    หน้ากากและผ้าปิดปาก
+                </h3>
+
                 <p>
                     ถือว่าปกปิดเสียงแล้ว
                     ผู้เล่นอื่นไม่สามารถระบุตัวตน
@@ -1389,19 +1768,30 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">06</span>
+
+                <span class="num">
+                    06
+                </span>
+
                 กฎการปล้น
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>ช่วงเวลา</h3>
+                <h3>
+                    ช่วงเวลา
+                </h3>
+
                 <p>
                     อนุญาตให้ปล้นผู้เล่น
                     เวลา 18.00–00.00 น.
                 </p>
 
-                <h3>คนมีสติ</h3>
+                <h3>
+                    คนมีสติ
+                </h3>
+
                 <p>
                     ต้องทำให้เหยื่อถูกมัดก่อนค้นตัว
                     ปล้นเงินสดได้ไม่เกินครึ่งหนึ่ง
@@ -1409,20 +1799,29 @@ footer p{
                     Item สูงสุด 5 ชิ้น
                 </p>
 
-                <h3>คนหมดสติ</h3>
+                <h3>
+                    คนหมดสติ
+                </h3>
+
                 <p>
                     ปล้น Item ได้สูงสุด 3 ชิ้น
                     และต้องมี Story ร่วมกัน
                 </p>
 
-                <h3>กรณีขัดขืน</h3>
+                <h3>
+                    กรณีขัดขืน
+                </h3>
+
                 <p>
                     หากขัดขืนทั้งที่เสียเปรียบ
                     สามารถทำให้หมดสติ
                     และปล้น Item ได้สูงสุด 10 ชิ้น
                 </p>
 
-                <h3>Item ห้ามปล้น</h3>
+                <h3>
+                    Item ห้ามปล้น
+                </h3>
+
                 <p>
                     ทอง อาวุธ เสื้อผ้า
                     กระติกน้ำทองคำ
@@ -1430,14 +1829,20 @@ footer p{
                     และของ Donate เท่านั้น
                 </p>
 
-                <h3>ข้อจำกัดหลังการปล้น</h3>
+                <h3>
+                    ข้อจำกัดหลังการปล้น
+                </h3>
+
                 <p>
                     ผู้ก่อเหตุและผู้ร่วมก่อเหตุ
                     ห้ามเข้าร้านเสื้อผ้าและร้านตัดผม
                     เป็นเวลา 1 ชั่วโมง
                 </p>
 
-                <h3>จำนวนโจร</h3>
+                <h3>
+                    จำนวนโจร
+                </h3>
+
                 <p>
                     สูงสุดไม่เกิน 5 คน
                 </p>
@@ -1447,30 +1852,47 @@ footer p{
         </details>
 
 
-        <details class="rule supernatural reveal" id="supernatural">
+        <details
+            class="rule supernatural reveal"
+            id="supernatural"
+        >
 
             <summary>
-                <span class="num">07</span>
+
+                <span class="num">
+                    07
+                </span>
+
                 กฎสิ่งเหนือธรรมชาติ
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>ช่วงเวลา</h3>
+                <h3>
+                    ช่วงเวลา
+                </h3>
+
                 <p>
                     หลังพระอาทิตย์ตก
                     เป็นช่วงเวลาที่สิ่งลี้ลับ
                     และสิ่งเหนือธรรมชาติออกปรากฏตัว
                 </p>
 
-                <h3>ความเท่าเทียม</h3>
+                <h3>
+                    ความเท่าเทียม
+                </h3>
+
                 <p>
                     ทุกบทบาทเริ่มต้นภายใน Land of Smile
                     การเป็นสิ่งเหนือธรรมชาติหรือผู้มีวิชา
                     ต้องเกิดจาก Story ภายในประเทศ
                 </p>
 
-                <h3>เป้าหมาย</h3>
+                <h3>
+                    เป้าหมาย
+                </h3>
+
                 <p>
                     สิ่งเหนือธรรมชาติแต่ละตน
                     มีเป้าหมายแตกต่างกัน
@@ -1478,27 +1900,39 @@ footer p{
                     หรือความอาฆาตพยาบาท
                 </p>
 
-                <h3>การเผชิญหน้า</h3>
+                <h3>
+                    การเผชิญหน้า
+                </h3>
+
                 <p>
                     มนุษย์ทั่วไปควรแสดงความหวาดกลัว
                     และพยายามหนีเอาชีวิตรอด
                 </p>
 
-                <h3>สิ่งศักดิ์สิทธิ์</h3>
+                <h3>
+                    สิ่งศักดิ์สิทธิ์
+                </h3>
+
                 <p>
                     ผ้ายันต์ เครื่องราง ศาลเจ้า
                     และ Item จากผู้มีวิชา
                     สามารถใช้ป้องกันสิ่งลี้ลับตาม Story
                 </p>
 
-                <h3>การลบหลู่</h3>
+                <h3>
+                    การลบหลู่
+                </h3>
+
                 <p>
                     การท้าทายหรือลบหลู่สิ่งเหนือธรรมชาติ
                     อาจทำให้ตัวละครถูกหมายหัว
                     หรือ Story นำไปสู่ CK
                 </p>
 
-                <h3>อาวุธอาคม</h3>
+                <h3>
+                    อาวุธอาคม
+                </h3>
+
                 <p>
                     อาวุธหรือกระสุนลักษณะไฟ
                     เช่น กระสุนน้ำมนต์
@@ -1506,13 +1940,19 @@ footer p{
                     กับสิ่งเหนือธรรมชาติตาม Story
                 </p>
 
-                <h3>จำนวนการปะทะ</h3>
+                <h3>
+                    จำนวนการปะทะ
+                </h3>
+
                 <p>
                     ประชาชน 10 คน
                     ต่อสิ่งเหนือธรรมชาติ 1 คน
                 </p>
 
-                <h3>ความต่อเนื่องของบทบาท</h3>
+                <h3>
+                    ความต่อเนื่องของบทบาท
+                </h3>
+
                 <p>
                     ผู้เล่นบทเหนือธรรมชาติที่ไม่มีการเข้าเซิร์ฟเวอร์
                     หรือดำเนิน Role ติดต่อกัน 5 วัน
@@ -1528,33 +1968,50 @@ footer p{
         <details class="rule reveal">
 
             <summary>
-                <span class="num">08</span>
+
+                <span class="num">
+                    08
+                </span>
+
                 กฎการถือครองธุรกิจ
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>วัตถุประสงค์</h3>
+                <h3>
+                    วัตถุประสงค์
+                </h3>
+
                 <p>
                     ส่งเสริมระบบ Player to Player
                     ให้ประชาชนและเจ้าของธุรกิจ
                     มีการซื้อขายแลกเปลี่ยนกัน
                 </p>
 
-                <h3>ระยะเวลาถือครอง</h3>
+                <h3>
+                    ระยะเวลาถือครอง
+                </h3>
+
                 <p>
                     ธุรกิจจากการประมูล
                     โดยปกติถือครอง 1 เดือน
                 </p>
 
-                <h3>ผู้ถือครองธุรกิจ</h3>
+                <h3>
+                    ผู้ถือครองธุรกิจ
+                </h3>
+
                 <p>
                     ผู้เล่นหรือกลุ่มผู้เล่นที่เกี่ยวข้องกัน
                     สามารถถือครองได้เพียง
                     1 ธุรกิจในช่วงเวลาเดียวกัน
                 </p>
 
-                <h3>หน้าที่เจ้าของธุรกิจ</h3>
+                <h3>
+                    หน้าที่เจ้าของธุรกิจ
+                </h3>
+
                 <p>
                     ต้องมีสินค้าจำหน่าย
                     และรับซื้อวัตถุดิบอย่างต่อเนื่อง
@@ -1570,26 +2027,40 @@ footer p{
         <details class="rule punishment reveal">
 
             <summary>
-                <span class="num">!</span>
+
+                <span class="num">
+                    !
+                </span>
+
                 บทลงโทษ
+
             </summary>
 
             <div class="rule-content">
 
-                <h3>การตักเตือน</h3>
+                <h3>
+                    การตักเตือน
+                </h3>
+
                 <p>
                     ผู้ที่กระทำผิดกฎ
                     จะถูกเรียกพบเพื่อทำความเข้าใจ
                     และตักเตือน
                 </p>
 
-                <h3>ครบ 3 ครั้ง</h3>
+                <h3>
+                    ครบ 3 ครั้ง
+                </h3>
+
                 <p>
                     หากได้รับการตักเตือนครบ 3 ครั้ง
                     จะถูก Ban ถาวร
                 </p>
 
-                <h3>กรณีร้ายแรง</h3>
+                <h3>
+                    กรณีร้ายแรง
+                </h3>
+
                 <p>
                     หากมีพฤติกรรมร้ายแรง
                     ที่ส่งผลต่อผู้เล่นหรือเซิร์ฟเวอร์
@@ -1604,17 +2075,27 @@ footer p{
 
 </section>
 
-<div class="thai-divider"><span>❖</span></div>
+
+<div class="thai-divider">
+    <span>❖</span>
+</div>
+
 
 <!-- CITY -->
-
-<section class="section" id="city">
+<section
+    class="section"
+    id="city"
+>
 
     <div class="section-title reveal">
 
-        <small>กฎหมายประจำเมือง</small>
+        <small>
+            กฎหมายประจำเมือง
+        </small>
 
-        <h2>กฎเมือง</h2>
+        <h2>
+            กฎเมือง
+        </h2>
 
         <p>
             แต่ละเมืองมีข้อกำหนด
@@ -1631,7 +2112,9 @@ footer p{
                 ประกาศแห่งเมือง
             </p>
 
-            <h3>เมืองวนารัตน์</h3>
+            <h3>
+                เมืองวนารัตน์
+            </h3>
 
             <p>
                 กฎหมายแห่งเมือง
@@ -1640,7 +2123,8 @@ footer p{
 
             <a
                 href="https://omegab13.github.io/Wanarat/"
-                target="_blank">
+                target="_blank"
+            >
                 เปิดอ่านกฎหมายเมือง ↗
             </a>
 
@@ -1657,7 +2141,9 @@ footer p{
                 ประกาศแห่งเมือง
             </p>
 
-            <h3>เมืองกัณหาวารี</h3>
+            <h3>
+                เมืองกัณหาวารี
+            </h3>
 
             <p>
                 กฎหมายและข้อบังคับ
@@ -1666,7 +2152,8 @@ footer p{
 
             <a
                 href="https://nontnypp-dev.github.io/-/"
-                target="_blank">
+                target="_blank"
+            >
                 เปิดอ่านกฎหมายเมือง ↗
             </a>
 
@@ -1683,9 +2170,12 @@ footer p{
                 ประกาศแห่งเมือง
             </p>
 
-            <h3>เมืองโรจนบุรี</h3>
+            <h3>
+                เมืองโรจนบุรี
+            </h3>
 
             <ol>
+
                 <li>
                     ห้ามพกพาอาวุธเข้ามาในเมือง
                     ยกเว้นผู้ได้รับอนุญาต
@@ -1711,6 +2201,7 @@ footer p{
                     ให้ถือคำตัดสินของเจ้าเมือง
                     หรือผู้ช่วยเจ้าเมืองเป็นที่สุด
                 </li>
+
             </ol>
 
             <div class="stamp">
@@ -1723,11 +2214,17 @@ footer p{
 
 </section>
 
-<div class="thai-divider"><span>✦</span></div>
+
+<div class="thai-divider">
+    <span>✦</span>
+</div>
+
 
 <!-- WHITELIST -->
-
-<section class="section whitelist" id="whitelist">
+<section
+    class="section whitelist"
+    id="whitelist"
+>
 
     <div class="document reveal">
 
@@ -1735,7 +2232,10 @@ footer p{
 
             <div class="document-head">
 
-                <img src="logo.png" alt="Land of Smile">
+                <img
+                    src="logo.png"
+                    alt="Land of Smile"
+                >
 
                 <small>
                     ประกาศ LAND OF SMILE
@@ -1755,117 +2255,189 @@ footer p{
 
 
             <div class="whitelist-step">
+
                 <b>๑</b>
+
                 <div>
-                    <h3>กรอกแบบฟอร์มสมัคร</h3>
+
+                    <h3>
+                        กรอกแบบฟอร์มสมัคร
+                    </h3>
+
                     <p>
                         เข้าแบบฟอร์ม Whitelist
                         และกรอกข้อมูลให้ครบถ้วน
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๒</b>
+
                 <div>
-                    <h3>ตรวจสอบข้อมูล</h3>
+
+                    <h3>
+                        ตรวจสอบข้อมูล
+                    </h3>
+
                     <p>
                         หากข้อมูลไม่ครบ
                         หรือไม่ถูกต้องตามกฎ
                         อาจไม่ผ่านการพิจารณา
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๓</b>
+
                 <div>
-                    <h3>แจ้งส่งฟอร์ม</h3>
+
+                    <h3>
+                        แจ้งส่งฟอร์ม
+                    </h3>
+
                     <p>
                         ส่งชื่อ-นามสกุลตัวละคร (IC)
                         ในห้อง 「📘」ห้องส่งฟอร์ม
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๔</b>
+
                 <div>
-                    <h3>รอการตรวจสอบ</h3>
+
+                    <h3>
+                        รอการตรวจสอบ
+                    </h3>
+
                     <p>
                         เมื่อผ่านเบื้องต้น
                         จะได้รับ ✅
                         และยศ @ผ่านเบื้องต้น
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๕</b>
+
                 <div>
-                    <h3>ตรวจสอบเวลาสอบ</h3>
+
+                    <h3>
+                        ตรวจสอบเวลาสอบ
+                    </h3>
+
                     <p>
                         ทีมงานจะแจ้งเวลาสอบ
                         ในห้อง 「🕐」แจ้ง-whitelist
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๖</b>
+
                 <div>
-                    <h3>เข้ารอสอบ</h3>
+
+                    <h3>
+                        เข้ารอสอบ
+                    </h3>
+
                     <p>
                         เมื่อถึงเวลาที่กำหนด
                         ให้เข้าห้องรอสอบ
                         ทีมงานจะเรียกครั้งละไม่เกิน 5 คน
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๗</b>
+
                 <div>
-                    <h3>การสัมภาษณ์</h3>
+
+                    <h3>
+                        การสัมภาษณ์
+                    </h3>
+
                     <p>
                         คำถามจะมาจากกฎ Roleplay,
                         การสร้างตัวละคร,
                         การหมดสติ,
                         การปะทะ และการปล้น
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๘</b>
+
                 <div>
-                    <h3>กรณีไม่ผ่าน</h3>
+
+                    <h3>
+                        กรณีไม่ผ่าน
+                    </h3>
+
                     <p>
                         สามารถรอเข้าสอบ
                         ในรอบถัดไปได้
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="whitelist-step">
+
                 <b>๙</b>
+
                 <div>
-                    <h3>เข้าสู่ประเทศ</h3>
+
+                    <h3>
+                        เข้าสู่ประเทศ
+                    </h3>
+
                     <p>
                         เมื่อได้รับยศ @ประชาชน
                         ให้เข้าห้อง 「🚩」ip_server
                         คัดลอก IP แล้วกด F8
                         เพื่อเข้าเซิร์ฟเวอร์
                     </p>
+
                 </div>
+
             </div>
 
 
@@ -1874,14 +2446,16 @@ footer p{
                 <a
                     href="https://forms.gle/C6Gc4CsH8MaW95xV8"
                     target="_blank"
-                    class="btn doc-btn">
+                    class="btn doc-btn"
+                >
                     สมัคร Whitelist
                 </a>
 
                 <a
                     href="https://discord.gg/8nySZ5vfRv"
                     target="_blank"
-                    class="btn doc-outline">
+                    class="btn doc-outline"
+                >
                     เข้า Discord
                 </a>
 
@@ -1889,8 +2463,15 @@ footer p{
 
 
             <div class="signature">
-                ประกาศ ณ ดินแดน Land of Smile<br>
-                <strong>พุทธศักราช ๒๔๗๕</strong>
+
+                ประกาศ ณ ดินแดน Land of Smile
+
+                <br>
+
+                <strong>
+                    พุทธศักราช ๒๔๗๕
+                </strong>
+
             </div>
 
         </div>
@@ -1902,15 +2483,21 @@ footer p{
 
 <footer>
 
-    <img src="logo.png" alt="Land of Smile">
+    <img
+        src="logo.png"
+        alt="Land of Smile"
+    >
 
-    <h3>LAND OF SMILE</h3>
+    <h3>
+        LAND OF SMILE
+    </h3>
 
     <p>
         REDM ROLEPLAY • พ.ศ. 2475
     </p>
 
 </footer>
+
 
 <button id="toTop">
     ↑
@@ -1919,22 +2506,32 @@ footer p{
 
 <script>
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
-window.addEventListener("load", () => {
+window.addEventListener(
+    "load",
+    () => {
 
-    setTimeout(() => {
+        setTimeout(
+            () => {
 
-        document
-        .getElementById("loader")
-        .classList.add("hide");
+                document
+                .getElementById("loader")
+                .classList.add("hide");
 
-    },1500);
+            },
+            1500
+        );
 
-});
+    }
+);
 
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 const menu =
 document.getElementById("menu");
@@ -1942,25 +2539,36 @@ document.getElementById("menu");
 const nav =
 document.getElementById("nav");
 
-menu.addEventListener("click",()=>{
+menu.addEventListener(
+    "click",
+    () => {
 
-    nav.classList.toggle("open");
+        nav.classList.toggle("open");
 
-});
+    }
+);
 
-nav.querySelectorAll("a")
-.forEach(link=>{
+nav
+.querySelectorAll("a")
+.forEach(
+    link => {
 
-    link.addEventListener("click",()=>{
+        link.addEventListener(
+            "click",
+            () => {
 
-        nav.classList.remove("open");
+                nav.classList.remove("open");
 
-    });
+            }
+        );
 
-});
+    }
+);
 
 
-/* HEADER */
+/* =========================
+   HEADER + TOP
+========================= */
 
 const header =
 document.getElementById("header");
@@ -1968,99 +2576,136 @@ document.getElementById("header");
 const toTop =
 document.getElementById("toTop");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener(
+    "scroll",
+    () => {
 
-    header.classList.toggle(
-        "scrolled",
-        window.scrollY > 40
-    );
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 40
+        );
 
-    toTop.classList.toggle(
-        "show",
-        window.scrollY > 600
-    );
+        toTop.classList.toggle(
+            "show",
+            window.scrollY > 600
+        );
 
-});
+    }
+);
 
-toTop.addEventListener("click",()=>{
+toTop.addEventListener(
+    "click",
+    () => {
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-});
+    }
+);
 
 
-/* REVEAL */
+/* =========================
+   REVEAL
+========================= */
 
 const observer =
-new IntersectionObserver(entries=>{
+new IntersectionObserver(
+    entries => {
 
-    entries.forEach(entry=>{
+        entries.forEach(
+            entry => {
 
-        if(entry.isIntersecting){
+                if(
+                    entry.isIntersecting
+                ){
 
-            entry.target
-            .classList.add("visible");
+                    entry.target
+                    .classList.add("visible");
 
-            observer.unobserve(
-                entry.target
-            );
+                    observer.unobserve(
+                        entry.target
+                    );
 
-        }
+                }
 
-    });
+            }
+        );
 
-},{
-    threshold:.1
-});
+    },
+    {
+        threshold:.1
+    }
+);
 
 document
 .querySelectorAll(".reveal")
-.forEach(el=>observer.observe(el));
+.forEach(
+    el => observer.observe(el)
+);
 
 
-/* ACCORDION */
+/* =========================
+   ACCORDION
+========================= */
 
 const ruleCards =
 document.querySelectorAll(".rule");
 
-ruleCards.forEach(card=>{
+ruleCards.forEach(
+    card => {
 
-    card.addEventListener("toggle",()=>{
+        card.addEventListener(
+            "toggle",
+            () => {
 
-        if(!card.open)return;
+                if(!card.open){
+                    return;
+                }
 
-        ruleCards.forEach(other=>{
+                ruleCards.forEach(
+                    other => {
 
-            if(other !== card){
-                other.open=false;
+                        if(other !== card){
+                            other.open=false;
+                        }
+
+                    }
+                );
+
             }
+        );
 
-        });
-
-    });
-
-});
+    }
+);
 
 
-/* SUPERNATURAL EFFECT */
+/* =========================
+   SUPERNATURAL MODE
+========================= */
 
 const supernatural =
-document.getElementById("supernatural");
+document.getElementById(
+    "supernatural"
+);
 
-supernatural.addEventListener("toggle",()=>{
+supernatural.addEventListener(
+    "toggle",
+    () => {
 
-    document.body.classList.toggle(
-        "supernatural-mode",
-        supernatural.open
-    );
+        document.body.classList.toggle(
+            "supernatural-mode",
+            supernatural.open
+        );
 
-});
+    }
+);
 
 
-/* SEARCH RULE */
+/* =========================
+   SEARCH RULES
+========================= */
 
 const search =
 document.getElementById("search");
@@ -2069,7 +2714,9 @@ const clear =
 document.getElementById("clear");
 
 const searchStatus =
-document.getElementById("searchStatus");
+document.getElementById(
+    "searchStatus"
+);
 
 function searchRules(){
 
@@ -2080,34 +2727,48 @@ function searchRules(){
 
     let count=0;
 
-    ruleCards.forEach(card=>{
+    ruleCards.forEach(
+        card => {
 
-        const text =
-        card.innerText.toLowerCase();
+            const text =
+            card.innerText
+            .toLowerCase();
 
-        if(keyword===""){
+            if(keyword===""){
 
-            card.classList.remove("hidden");
-            card.open=false;
+                card.classList.remove(
+                    "hidden"
+                );
 
-            return;
+                card.open=false;
+
+                return;
+            }
+
+            if(
+                text.includes(keyword)
+            ){
+
+                card.classList.remove(
+                    "hidden"
+                );
+
+                card.open=true;
+
+                count++;
+
+            }else{
+
+                card.classList.add(
+                    "hidden"
+                );
+
+                card.open=false;
+
+            }
 
         }
-
-        if(text.includes(keyword)){
-
-            card.classList.remove("hidden");
-            card.open=true;
-            count++;
-
-        }else{
-
-            card.classList.add("hidden");
-            card.open=false;
-
-        }
-
-    });
+    );
 
     if(keyword===""){
 
@@ -2132,13 +2793,18 @@ search.addEventListener(
     searchRules
 );
 
-clear.addEventListener("click",()=>{
+clear.addEventListener(
+    "click",
+    () => {
 
-    search.value="";
-    searchRules();
-    search.focus();
+        search.value="";
 
-});
+        searchRules();
+
+        search.focus();
+
+    }
+);
 
 </script>
 
