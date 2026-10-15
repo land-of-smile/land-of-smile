@@ -2,695 +2,1794 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Land of Smile</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <meta
+    name="description"
+    content="Land of Smile RedM Roleplay พ.ศ. 2475 ดินแดนสยาม อาคม ความเชื่อ และสิ่งเหนือธรรมชาติ"
+  >
+
+  <title>
+    Land of Smile | RedM Roleplay
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 
 <body>
 
-<header class="topbar">
-  <a href="#home" class="brand">
-    <img src="logo.png" alt="Land of Smile">
-    <span>LAND OF SMILE</span>
+<!-- =========================
+     LOADING SCREEN
+========================= -->
+
+<div id="loadingScreen" class="loading-screen">
+
+  <div class="loading-symbol yantra-symbol">
+    ✦
+  </div>
+
+  <img
+    src="logo.png"
+    alt="Land of Smile"
+    class="loading-logo"
+  >
+
+  <h1>
+    LAND OF SMILE
+  </h1>
+
+  <p>
+    พุทธศักราช ๒๔๗๕
+  </p>
+
+  <div class="loading-line"></div>
+
+  <span>
+    กำลังเปิดประตูสู่ดินแดน...
+  </span>
+
+</div>
+
+
+<!-- =========================
+     AUDIO
+========================= -->
+
+<audio
+  id="ambientAudio"
+  loop
+  preload="none"
+>
+  <source
+    src="ambient.mp3"
+    type="audio/mpeg"
+  >
+</audio>
+
+<button
+  id="soundButton"
+  class="sound-button"
+  aria-label="เปิดหรือปิดเสียงบรรยากาศ"
+>
+  🔇
+</button>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="topbar" id="topbar">
+
+  <a
+    href="#home"
+    class="brand"
+  >
+
+    <img
+      src="logo.png"
+      alt="Land of Smile"
+    >
+
+    <span>
+      LAND OF SMILE
+    </span>
+
   </a>
 
-  <button class="menu-btn" id="menuBtn">☰</button>
+  <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="เปิดเมนู"
+  >
+    ☰
+  </button>
 
   <nav id="mainNav">
-    <a href="#home">หน้าแรก</a>
-    <a href="#story">เรื่องราว</a>
-    <a href="#rules">กฎประเทศ</a>
-    <a href="#city-rules">กฎเมือง</a>
-    <a href="#whitelist">Whitelist</a>
-    <a class="discord-btn"
-       href="https://discord.gg/8nySZ5vfRv"
-       target="_blank">
-       Discord
+
+    <a href="#home">
+      หน้าแรก
     </a>
+
+    <a href="#story">
+      เรื่องราว
+    </a>
+
+    <a href="#rules">
+      กฎประเทศ
+    </a>
+
+    <a href="#city-rules">
+      กฎเมือง
+    </a>
+
+    <a href="#whitelist">
+      Whitelist
+    </a>
+
+    <a
+      class="discord-nav"
+      href="https://discord.gg/8nySZ5vfRv"
+      target="_blank"
+      rel="noopener"
+    >
+      Discord
+    </a>
+
   </nav>
+
 </header>
+
 
 <main>
 
-<section class="hero" id="home">
 
-  <div class="overlay"></div>
+<!-- =========================
+     HERO
+========================= -->
 
-  <div class="hero-content">
+<section
+  class="hero"
+  id="home"
+>
 
-    <img src="logo.png" class="hero-logo" alt="Land of Smile">
+  <div class="hero-darkness"></div>
 
-    <p class="small-title">
+  <div class="yantra yantra-left">
+    ✦
+  </div>
+
+  <div class="yantra yantra-right">
+    ✧
+  </div>
+
+  <div class="yantra yantra-center">
+    ☼
+  </div>
+
+
+  <!-- หมอก -->
+
+  <div class="fog fog-one"></div>
+  <div class="fog fog-two"></div>
+  <div class="fog fog-three"></div>
+
+
+  <div class="hero-content reveal">
+
+    <img
+      src="logo.png"
+      alt="Land of Smile Logo"
+      class="hero-logo"
+    >
+
+    <p class="eyebrow">
       REDM ROLEPLAY • พ.ศ. 2475
     </p>
 
-    <h1>LAND OF SMILE</h1>
+    <h1>
+      LAND OF SMILE
+    </h1>
 
     <h2>
-      ดินแดนแห่งศรัทธา มนตรา และอำนาจที่ซ่อนอยู่ใต้รอยยิ้ม
+      ดินแดนแห่งศรัทธา มนตรา
+      และอำนาจที่ซ่อนอยู่ใต้รอยยิ้ม
     </h2>
 
-    <p class="intro">
+    <p class="hero-description">
+
       พ.ศ. 2475 ชาวสยามอพยพสู่ดินแดนตะวันตก
-      เพื่อเริ่มต้นชีวิตใหม่ในโลกที่เต็มไปด้วยโอกาส ความเชื่อ และสิ่งเร้นลับ
-      จำลองการใช้ชีวิตเสมือนจริง ผสานอาคม ความเชื่อพื้นบ้าน
+      เพื่อเริ่มต้นชีวิตใหม่ในโลกที่เต็มไปด้วยโอกาส
+      ความเชื่อ และสิ่งเร้นลับ
+
+      จำลองการใช้ชีวิตเสมือนจริง
+      ผสานอาคม ความเชื่อพื้นบ้าน
       และปรากฏการณ์เหนือธรรมชาติ
+
     </p>
 
-    <div class="buttons">
-      <a href="#whitelist" class="btn gold">เข้าสู่เมือง</a>
-      <a href="#rules" class="btn outline">อ่านกฎประเทศ</a>
-      <a href="https://discord.gg/8nySZ5vfRv"
-         target="_blank"
-         class="btn outline">
-         เข้า Discord
+
+    <div class="hero-buttons">
+
+      <a
+        href="#whitelist"
+        class="btn btn-gold"
+      >
+        เข้าสู่เมือง
       </a>
+
+      <a
+        href="#rules"
+        class="btn btn-outline"
+      >
+        อ่านกฎประเทศ
+      </a>
+
+      <a
+        href="https://discord.gg/8nySZ5vfRv"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-outline"
+      >
+        เข้า Discord
+      </a>
+
     </div>
 
   </div>
 
+
+  <a
+    href="#story"
+    class="scroll-down"
+    aria-label="เลื่อนลง"
+  >
+    ↓
+  </a>
+
 </section>
 
-<section class="section" id="story">
 
-  <div class="section-title">
-    <span>ตำนานแห่งแผ่นดิน</span>
-    <h2>เรื่องราวของ Land of Smile</h2>
+<!-- =========================
+     DIVIDER
+========================= -->
+
+<div class="thai-divider">
+
+  <span class="divider-line"></span>
+
+  <span class="divider-symbol">
+    ❖
+  </span>
+
+  <span class="divider-line"></span>
+
+</div>
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section
+  class="section story-section"
+  id="story"
+>
+
+  <div class="section-title reveal">
+
+    <span>
+      ตำนานแห่งแผ่นดิน
+    </span>
+
+    <h2>
+      เรื่องราวของ Land of Smile
+    </h2>
+
+    <p>
+
+      เมื่อชาวสยามเดินทางข้ามสู่ดินแดนตะวันตก
+      ชีวิตใหม่ไม่ได้มีเพียงการค้าขาย
+      การเอาตัวรอด และการสร้างครอบครัว
+
+      แต่ยังมีความเชื่อที่ติดตามผู้คนมาจากบ้านเกิด
+      ทั้งยันต์ ของขลัง วิชาอาคม
+      และสิ่งที่มนุษย์ไม่อาจอธิบายได้
+
+    </p>
+
   </div>
 
-  <p class="story-text">
-    เมื่อชาวสยามเดินทางข้ามสู่ดินแดนตะวันตก
-    ชีวิตใหม่ไม่ได้มีเพียงการค้าขาย การเอาตัวรอด
-    และการสร้างครอบครัว แต่ยังมีความเชื่อที่ติดตามผู้คนมาจากบ้านเกิด
-    ทั้งยันต์ ของขลัง วิชาอาคม และสิ่งที่มนุษย์ไม่อาจอธิบายได้
-  </p>
 
   <div class="feature-grid">
 
-    <div class="feature">
-      <h3>สยาม พ.ศ. 2475</h3>
-      <p>
-        บรรยากาศไทยยุคเก่าผสมโลกตะวันตก
-        ถ่ายทอดผ่านการใช้ชีวิตและ Roleplay
-      </p>
-    </div>
+    <article class="feature-card reveal">
 
-    <div class="feature">
-      <h3>สิ่งเหนือธรรมชาติ</h3>
-      <p>
-        เรื่องราวลึกลับ ความเชื่อ การหลอกหลอน
-        และเหตุการณ์ที่อาจเปลี่ยนชีวิตตัวละคร
-      </p>
-    </div>
+      <div class="feature-icon">
+        ๒๔๗๕
+      </div>
 
-    <div class="feature">
-      <h3>อาคมและเครื่องราง</h3>
-      <p>
-        พ่อหมอ แม่หมอ พระ ผู้มีวิชา
-        ผ้ายันต์ เครื่องราง และอาวุธอาคม
-      </p>
-    </div>
+      <h3>
+        สยาม พ.ศ. 2475
+      </h3>
 
-    <div class="feature">
-      <h3>Roleplay เสมือนจริง</h3>
       <p>
-        ทุกการตัดสินใจสามารถส่งผลต่อชื่อเสียง
-        ความสัมพันธ์ อนาคต และชีวิตของตัวละคร
+        บรรยากาศไทยยุคเก่า
+        ผสมโลกตะวันตก
+        ถ่ายทอดผ่านการใช้ชีวิต
+        และ Roleplay
       </p>
-    </div>
+
+    </article>
+
+
+    <article class="feature-card reveal">
+
+      <div class="feature-icon">
+        ☾
+      </div>
+
+      <h3>
+        สิ่งเหนือธรรมชาติ
+      </h3>
+
+      <p>
+        เรื่องราวลึกลับ
+        ความเชื่อ การหลอกหลอน
+        และเหตุการณ์ที่อาจเปลี่ยน
+        ชีวิตของตัวละคร
+      </p>
+
+    </article>
+
+
+    <article class="feature-card reveal">
+
+      <div class="feature-icon">
+        ✦
+      </div>
+
+      <h3>
+        อาคมและเครื่องราง
+      </h3>
+
+      <p>
+        พ่อหมอ แม่หมอ พระ
+        ผู้มีวิชา ผ้ายันต์
+        เครื่องราง และอาวุธอาคม
+      </p>
+
+    </article>
+
+
+    <article class="feature-card reveal">
+
+      <div class="feature-icon">
+        ⚖
+      </div>
+
+      <h3>
+        Roleplay เสมือนจริง
+      </h3>
+
+      <p>
+        ทุกการตัดสินใจ
+        ส่งผลต่อชื่อเสียง
+        ความสัมพันธ์ อนาคต
+        และชีวิตของตัวละคร
+      </p>
+
+    </article>
 
   </div>
 
 </section>
 
-<section class="section dark-section" id="rules">
 
-  <div class="section-title">
-    <span>กฎแห่งประเทศ</span>
-    <h2>กฎ Land of Smile</h2>
-    <p>กดแต่ละหมวดเพื่อเปิดอ่าน</p>
+<div class="thai-divider">
+
+  <span class="divider-line"></span>
+
+  <span class="divider-symbol">
+    ✦
+  </span>
+
+  <span class="divider-line"></span>
+
+</div>
+
+
+<!-- =========================
+     RULES
+========================= -->
+
+<section
+  class="section rules-section"
+  id="rules"
+>
+
+  <div class="section-title reveal">
+
+    <span>
+      กฎแห่งประเทศ
+    </span>
+
+    <h2>
+      กฎ Land of Smile
+    </h2>
+
+    <p>
+      ศึกษากฎให้เข้าใจก่อนเข้าสู่ดินแดน
+    </p>
+
   </div>
 
-  <div class="rules">
 
-    <details>
-      <summary>01 — กฎ Roleplay</summary>
+  <!-- SEARCH -->
+
+  <div class="rule-search-box reveal">
+
+    <span>
+      🔎
+    </span>
+
+    <input
+      type="text"
+      id="ruleSearch"
+      placeholder="ค้นหากฎ เช่น Meta, ปล้น, หมดสติ, อาคม..."
+    >
+
+    <button
+      id="clearSearch"
+      type="button"
+    >
+      ล้าง
+    </button>
+
+  </div>
+
+
+  <p
+    id="searchResultText"
+    class="search-result"
+  ></p>
+
+
+  <div class="rules" id="rulesContainer">
+
+
+    <!-- ROLEPLAY -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+        <span>01</span>
+        กฎ Roleplay
+      </summary>
+
       <div class="rule-content">
 
-        <h3>Death Match</h3>
+        <h3>
+          Death Match
+        </h3>
+
         <p>
-          ห้ามทำร้าย ยิง หรือใช้อาวุธกับผู้เล่นอื่นโดยไม่มี Story รองรับ
-          ก่อนเริ่มปะทะต้องสื่อสารหรือแสดงเจตนาให้อีกฝ่ายรับรู้ก่อน
+          ไม่อนุญาตให้ทำร้าย ยิง
+          หรือใช้อาวุธกับผู้เล่นอื่น
+          โดยไม่มี Story รองรับ
+          ก่อนเริ่มปะทะต้องสื่อสาร
+          หรือแสดงเจตนาให้อีกฝ่ายรับรู้ก่อน
         </p>
 
-        <h3>Spawn Kill</h3>
+
+        <h3>
+          Spawn Kill
+        </h3>
+
         <p>
           ห้ามดักทำร้ายบริเวณจุดเกิด
-          และห้ามฟื้นผู้เล่นเพื่อทำร้ายให้หมดสติซ้ำ
+          และห้ามฟื้นผู้เล่นขึ้นมา
+          เพื่อทำร้ายให้หมดสติซ้ำ
         </p>
 
-        <h3>In Character / Out of Character</h3>
+
+        <h3>
+          In Character / Out of Character
+        </h3>
+
         <p>
-          ผู้เล่นต้องแยกเรื่องราว IC และ OOC ออกจากกันอย่างชัดเจน
+          ผู้เล่นต้องแยกเรื่องราว
+          IC และ OOC
+          ออกจากกันอย่างชัดเจน
         </p>
 
-        <h3>Breaking Roleplay</h3>
+
+        <h3>
+          Breaking Roleplay
+        </h3>
+
         <p>
           ห้ามรบกวน Roleplay ของผู้อื่น
-          และห้ามออกจากเซิร์ฟเวอร์ขณะดำเนิน Story
+          และห้ามออกจากเซิร์ฟเวอร์
+          ขณะดำเนิน Story
         </p>
 
-        <h3>Value of Life</h3>
+
+        <h3>
+          Value of Life
+        </h3>
+
         <p>
           ให้ถือว่าตัวละครมีชีวิตจริง
-          ต้องคำนึงถึงความเสี่ยงและแสดงความหวาดกลัวเมื่ออยู่ในสถานการณ์เสียเปรียบ
+          ต้องคำนึงถึงความเสี่ยง
+          และแสดงความหวาดกลัว
+          เมื่ออยู่ในสถานการณ์เสียเปรียบ
         </p>
 
-        <h3>Power Gaming</h3>
+
+        <h3>
+          Power Gaming
+        </h3>
+
         <p>
-          ห้ามกระทำสิ่งที่เกินธรรมชาติของมนุษย์
-          เช่น พูดขณะหมดสติ หรือกระโดดจากที่สูงโดยไม่แสดงอาการบาดเจ็บ
+          ห้ามกระทำสิ่งที่เกินธรรมชาติ
+          ของมนุษย์ เช่น พูดขณะหมดสติ
+          หรือกระโดดจากที่สูง
+          โดยไม่แสดงอาการบาดเจ็บ
         </p>
 
-        <h3>Meta Gaming</h3>
+
+        <h3>
+          Meta Gaming
+        </h3>
+
         <p>
-          ห้ามนำข้อมูลจาก Discord, Live หรือข้อมูลภายนอกเกม
+          ห้ามนำข้อมูลจาก Discord,
+          Live หรือข้อมูลภายนอกเกม
           มาใช้เป็นความรู้ของตัวละคร
         </p>
 
-        <h3>AFK</h3>
+
+        <h3>
+          AFK
+        </h3>
+
         <p>
-          หากจำเป็นต้อง AFK ควรหลบไปในพื้นที่เหมาะสม
-          และยอมรับความเสี่ยงที่อาจเกิดขึ้น
+          หากจำเป็นต้อง AFK
+          ควรหลบไปในพื้นที่เหมาะสม
+          และยอมรับความเสี่ยง
+          ที่อาจเกิดขึ้น
         </p>
 
-        <h3>Offensive Roleplay</h3>
+
+        <h3>
+          Offensive Roleplay
+        </h3>
+
         <p>
-          Story ที่มีความรุนแรงหรือละเอียดอ่อน
-          ต้องได้รับความยินยอมจากผู้ร่วม Story ก่อน
+          Story ที่มีความรุนแรง
+          หรือละเอียดอ่อน
+          ต้องได้รับความยินยอม
+          จากผู้ร่วม Story ก่อน
         </p>
 
-        <h3>Manners</h3>
+
+        <h3>
+          Manners
+        </h3>
+
         <p>
-          ผู้เล่นต้องรักษามารยาททั้ง IC และ OOC
+          ผู้เล่นต้องรักษามารยาท
+          ทั้ง IC และ OOC
         </p>
 
-        <h3>โปรแกรมหรือบั๊ก</h3>
+
+        <h3>
+          โปรแกรมหรือบั๊ก
+        </h3>
+
         <p>
-          ห้ามใช้โปรแกรมภายนอกหรือช่องโหว่ของระบบเพื่อสร้างผลประโยชน์
+          ห้ามใช้โปรแกรมภายนอก
+          หรือช่องโหว่ของระบบ
+          เพื่อสร้างผลประโยชน์
         </p>
 
       </div>
+
     </details>
 
-    <details>
-      <summary>02 — กฎการสร้างตัวละคร</summary>
+
+    <!-- CHARACTER -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>02</span>
+
+        กฎการสร้างตัวละคร
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>ชื่อ-นามสกุล</h3>
+        <h3>
+          ชื่อ-นามสกุล
+        </h3>
+
         <p>
-          ต้องเหมาะกับยุค พ.ศ. 2475 และเชื้อชาติของตัวละคร
+          ต้องเหมาะกับยุค พ.ศ. 2475
+          และเชื้อชาติของตัวละคร
+          ห้ามใช้ชื่อบุคคลจริง
+          หรือตัวละครที่มีอยู่แล้วโดยตรง
         </p>
 
-        <h3>บทบาทเด็ก</h3>
+
+        <h3>
+          บทบาทเด็ก
+        </h3>
+
         <p>
-          อายุ 10–15 ปี ต้องมีบุคลิกตามวัย
+          อายุ 10–15 ปี
+          ต้องมีบุคลิกตามวัย
           และห้ามใช้อาวุธปืน
         </p>
 
-        <h3>เชื้อชาติไทย</h3>
+
+        <h3>
+          เชื้อชาติไทย
+        </h3>
+
         <p>
           ใช้ผมสีดำเท่านั้น
           ผู้สูงอายุสามารถใช้ผมสีขาวได้
         </p>
 
-        <h3>เชื้อชาติต่างชาติ</h3>
+
+        <h3>
+          เชื้อชาติต่างชาติ
+        </h3>
+
         <p>
-          ต้องมีสำเนียงและบุคลิกให้เหมาะสมกับเชื้อชาติ
+          ต้องมีสำเนียง
+          และบุคลิกให้เหมาะสม
+          กับเชื้อชาติของตัวละคร
         </p>
 
-        <h3>การแต่งกาย</h3>
+
+        <h3>
+          การแต่งกาย
+        </h3>
+
         <p>
-          ตอนสร้างตัวละครอนุญาตให้เลือก
-          เสื้อ กางเกง รองเท้า และเข็มขัดปืน
+          ตอนสร้างตัวละคร
+          อนุญาตให้เลือก
+          เสื้อ กางเกง รองเท้า
+          และเข็มขัดปืน
         </p>
 
       </div>
+
     </details>
 
-    <details>
-      <summary>03 — กฎการหมดสติ</summary>
+
+    <!-- UNCONSCIOUS -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>03</span>
+
+        กฎการหมดสติ
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>Life Point</h3>
+        <h3>
+          Life Point
+        </h3>
+
         <p>
           ตัวละครมี 10 Life Point
           ทุกครั้งที่หมดสติจะเสีย 1 แต้ม
+          เมื่อ Life Point เหลือ 0
+          ตัวละครจะอ่อนแอ
+          ไม่สามารถวิ่งได้
+          และมีอาการไอเป็นระยะ
         </p>
 
-        <h3>การหมดสติ</h3>
+
+        <h3>
+          การหมดสติ
+        </h3>
+
         <p>
-          ไม่ได้ยินและไม่สามารถพูดได้
-          แต่ใช้ /me และ /do ได้
+          ไม่ได้ยินเสียง
+          และไม่สามารถพูดได้
+          แต่ใช้ /me และ /do
+          แสดงอาการได้
         </p>
 
-        <h3>ความทรงจำ</h3>
+
+        <h3>
+          ความทรงจำ
+        </h3>
+
         <p>
           จำเหตุการณ์ก่อนหมดสติได้
-          แต่จำสิ่งที่เกิดขึ้นระหว่างหมดสติไม่ได้
+          แต่จำสิ่งที่เกิดขึ้น
+          ระหว่างหมดสติไม่ได้
         </p>
 
-        <h3>การฟื้นสติ</h3>
+
+        <h3>
+          การฟื้นสติ
+        </h3>
+
         <p>
-          สามารถรอแพทย์ ฟื้นในพื้นที่
-          หรือกลับเมืองใกล้เคียงกรณีมีอันตราย
+          สามารถรอแพทย์
+          ฟื้นในพื้นที่
+          หรือกลับเมืองใกล้เคียง
+          กรณีพื้นที่มีอันตราย
         </p>
 
-        <h3>หมดสติระหว่าง Story</h3>
+
+        <h3>
+          หมดสติระหว่าง Story
+        </h3>
+
         <p>
-          ห้ามฟื้นหาก Story ยังดำเนินอยู่
-          เว้นแต่ผู้ร่วม Story ออกพ้นสายตาเกิน 5 นาที
+          ห้ามฟื้นหาก Story
+          ยังคงดำเนินอยู่
+          เว้นแต่ผู้ร่วม Story
+          ออกพ้นสายตา
+          และผ่านไปอย่างน้อย 5 นาที
         </p>
 
-        <h3>หลังฟื้นสติ</h3>
+
+        <h3>
+          หลังฟื้นสติ
+        </h3>
+
         <p>
           ต้องแสดงอาการบาดเจ็บ
-          และห้ามกลับไปปะทะเป็นเวลา 1 ชั่วโมง OOC
+          และห้ามกลับไปปะทะ
+          เป็นเวลา 1 ชั่วโมง OOC
         </p>
 
       </div>
+
     </details>
 
-    <details>
-      <summary>04 — กฎการปะทะ</summary>
+
+    <!-- COMBAT -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>04</span>
+
+        กฎการปะทะ
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>NPC</h3>
+        <h3>
+          NPC
+        </h3>
+
         <p>
           ห้ามทำร้าย NPC
           เว้นแต่มี Story รองรับ
         </p>
 
-        <h3>เริ่มการปะทะ</h3>
+
+        <h3>
+          การเริ่มปะทะ
+        </h3>
+
         <p>
-          ต้องพูด ใช้ /me /do หรือยิงขู่
+          ต้องพูด ใช้ /me /do
+          หรือยิงขู่
           เพื่อให้อีกฝ่ายรับรู้ก่อน
         </p>
 
-        <h3>Head Shot</h3>
+
+        <h3>
+          Head Shot
+        </h3>
+
         <p>
-          ห้ามเปิดการปะทะด้วยการยิงศีรษะ
+          ห้ามเปิดการปะทะ
+          ด้วยการยิงศีรษะ
           จนอีกฝ่ายหมดสติทันที
         </p>
 
-        <h3>การมัด</h3>
+
+        <h3>
+          การมัด
+        </h3>
+
         <p>
           ผู้ถูกมัดห้ามดิ้นหลุดเอง
-          เว้นแต่ถูกทิ้งพ้นสายตาเกิน 5 นาที
+          เว้นแต่ถูกทิ้งพ้นสายตา
+          เกิน 5 นาที
         </p>
 
-        <h3>ผู้หมดสติ</h3>
+
+        <h3>
+          ผู้หมดสติ
+        </h3>
+
         <p>
           ห้ามด่าทอ เหยียดหยาม
-          หรือทำร้ายร่างกายซ้ำเกิน Story
+          หรือทำร้ายซ้ำเกิน Story
         </p>
 
-        <h3>จำนวนกลุ่ม</h3>
+
+        <h3>
+          การใช้เชือกระหว่างการยิง
+        </h3>
+
+        <p>
+          เมื่อการปะทะด้วยอาวุธปืน
+          เริ่มขึ้นแล้ว
+          ห้ามใช้เชือกมัดอีกฝ่าย
+        </p>
+
+
+        <h3>
+          จำนวนกลุ่ม
+        </h3>
+
         <p>
           1 กลุ่มไม่เกิน 10 คน
-          และ 1 Story ไม่เกิน 3 กลุ่ม
+          และ 1 Story
+          ไม่เกิน 3 กลุ่ม
         </p>
 
       </div>
+
     </details>
 
-    <details>
-      <summary>05 — กฎการปลอมตัว</summary>
+
+    <!-- DISGUISE -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>05</span>
+
+        กฎการปลอมตัว
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>การปลอมตัว</h3>
+        <h3>
+          การปลอมตัว
+        </h3>
+
         <p>
-          สามารถเปลี่ยนเสื้อผ้า ทรงผม หนวด ม้า อาวุธ
-          และสิ่งที่มองเห็นได้เพื่อปกปิดตัวตน
+          สามารถเปลี่ยนเสื้อผ้า
+          ทรงผม หนวด ม้า อาวุธ
+          และสิ่งที่มองเห็นได้
+          เพื่อปกปิดตัวตน
         </p>
 
-        <h3>การดัดเสียง</h3>
+
+        <h3>
+          การดัดเสียง
+        </h3>
+
         <p>
-          สามารถดัดเสียงหรือใช้โปรแกรมเปลี่ยนเสียงได้
+          สามารถดัดเสียง
+          หรือใช้โปรแกรมเปลี่ยนเสียงได้
         </p>
 
-        <h3>หน้ากาก</h3>
+
+        <h3>
+          หน้ากาก
+        </h3>
+
         <p>
           ผู้สวมหน้ากากหรือผ้าปิดปาก
           ถือว่าปกปิดเสียงแล้ว
-          ไม่สามารถระบุตัวตนจากเสียงเพียงอย่างเดียว
+          ไม่สามารถระบุตัวตน
+          จากเสียงเพียงอย่างเดียว
         </p>
 
       </div>
+
     </details>
 
-    <details>
-      <summary>06 — กฎการปล้น</summary>
+
+    <!-- ROBBERY -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>06</span>
+
+        กฎการปล้น
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>ช่วงเวลา</h3>
-        <p>อนุญาตให้ปล้นเวลา 18.00–00.00 น.</p>
+        <h3>
+          ช่วงเวลา
+        </h3>
 
-        <h3>คนมีสติ</h3>
+        <p>
+          อนุญาตให้ปล้น
+          เวลา 18.00–00.00 น.
+        </p>
+
+
+        <h3>
+          คนมีสติ
+        </h3>
+
         <p>
           ต้องมัดก่อนค้นตัว
-          ปล้นเงินได้ไม่เกินครึ่งหนึ่งและไม่เกิน 1,000
+          ปล้นเงินได้ไม่เกินครึ่งหนึ่ง
+          และไม่เกิน 1,000
           Item สูงสุด 5 ชิ้น
         </p>
 
-        <h3>คนหมดสติ</h3>
+
+        <h3>
+          คนหมดสติ
+        </h3>
+
         <p>
-          ปล้น Item ได้สูงสุด 3 ชิ้น
+          ปล้น Item ได้สูงสุด
+          3 ชิ้น
           และต้องมี Story ร่วมกัน
         </p>
 
-        <h3>ขัดขืน</h3>
+
+        <h3>
+          ขัดขืน
+        </h3>
+
         <p>
           หากขัดขืนทั้งที่เสียเปรียบ
           สามารถทำให้หมดสติ
-          และปล้น Item ได้สูงสุด 10 ชิ้น
+          และปล้น Item
+          ได้สูงสุด 10 ชิ้น
         </p>
 
-        <h3>ห้ามปล้น</h3>
+
+        <h3>
+          ห้ามปล้น
+        </h3>
+
         <p>
-          ทอง อาวุธ เสื้อผ้า กระติกน้ำทองคำ
+          ทอง อาวุธ เสื้อผ้า
+          กระติกน้ำทองคำ
           ของที่ซื้อด้วยทองเท่านั้น
           และของ Donate เท่านั้น
         </p>
 
-        <h3>จำนวนโจร</h3>
-        <p>สูงสุด 5 คน</p>
 
-      </div>
-    </details>
+        <h3>
+          หลังการปล้น
+        </h3>
 
-    <details class="supernatural">
-      <summary>07 — กฎสิ่งเหนือธรรมชาติ</summary>
-      <div class="rule-content">
-
-        <h3>ช่วงเวลา</h3>
         <p>
-          หลังพระอาทิตย์ตก
-          เป็นช่วงเวลาที่สิ่งลี้ลับสามารถออกปรากฏตัว
+          ผู้ก่อเหตุและผู้ร่วมก่อเหตุ
+          ห้ามเข้าร้านเสื้อผ้า
+          และร้านตัดผม
+          เป็นเวลา 1 ชั่วโมง
         </p>
 
-        <h3>การพัฒนาบทบาท</h3>
+
+        <h3>
+          จำนวนโจร
+        </h3>
+
         <p>
-          ผู้เล่นทุกคนเริ่มต้นภายใน Land of Smile
-          การเป็นสิ่งเหนือธรรมชาติหรือผู้มีวิชา
+          สูงสุด 5 คน
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- SUPERNATURAL -->
+
+    <details
+      class="rule-card supernatural-rule reveal"
+      id="supernaturalRule"
+    >
+
+      <summary>
+
+        <span>07</span>
+
+        กฎสิ่งเหนือธรรมชาติ
+
+      </summary>
+
+      <div class="rule-content">
+
+        <h3>
+          ช่วงเวลา
+        </h3>
+
+        <p>
+          หลังพระอาทิตย์ตก
+          เป็นช่วงเวลาที่สิ่งลี้ลับ
+          สามารถออกปรากฏตัว
+        </p>
+
+
+        <h3>
+          การพัฒนาบทบาท
+        </h3>
+
+        <p>
+          ผู้เล่นทุกคนเริ่มต้น
+          ภายใน Land of Smile
+
+          การเป็นสิ่งเหนือธรรมชาติ
+          หรือผู้มีวิชา
           ต้องเกิดจาก Story ภายในเมือง
         </p>
 
-        <h3>การเผชิญหน้า</h3>
+
+        <h3>
+          เป้าหมาย
+        </h3>
+
         <p>
-          มนุษย์ทั่วไปควรแสดงความหวาดกลัว
+          สิ่งเหนือธรรมชาติแต่ละตน
+          มีเป้าหมายแตกต่างกัน
+          เช่น ขอส่วนบุญ หาเหยื่อ
+          หรือความอาฆาตพยาบาท
+        </p>
+
+
+        <h3>
+          การเผชิญหน้า
+        </h3>
+
+        <p>
+          มนุษย์ทั่วไปควรแสดง
+          ความหวาดกลัว
           และพยายามหนีเอาชีวิตรอด
         </p>
 
-        <h3>สิ่งศักดิ์สิทธิ์</h3>
+
+        <h3>
+          สิ่งศักดิ์สิทธิ์
+        </h3>
+
         <p>
-          ผ้ายันต์ เครื่องราง ศาลเจ้า
-          และ Item จากผู้มีวิชา
-          สามารถใช้ป้องกันสิ่งลี้ลับตาม Story
+          ผ้ายันต์ เครื่องราง
+          ศาลเจ้า และ Item
+          จากผู้มีวิชา
+          สามารถใช้ป้องกัน
+          สิ่งลี้ลับตาม Story
         </p>
 
-        <h3>การลบหลู่</h3>
+
+        <h3>
+          การลบหลู่
+        </h3>
+
         <p>
           การท้าทายหรือลบหลู่
-          อาจทำให้ตัวละครถูกหมายหัว
+          อาจทำให้ตัวละคร
+          ถูกหมายหัว
           หรือ Story นำไปสู่ CK
         </p>
 
-        <h3>จำนวนการปะทะ</h3>
+
+        <h3>
+          อาวุธอาคม
+        </h3>
+
+        <p>
+          อาวุธหรือกระสุนลักษณะไฟ
+          เช่น กระสุนน้ำมนต์
+          ใช้สำหรับมนุษย์
+          ต่อกรกับสิ่งเหนือธรรมชาติ
+          ตาม Story
+        </p>
+
+
+        <h3>
+          จำนวนการปะทะ
+        </h3>
+
         <p>
           ประชาชน 10 คน
           ต่อสิ่งเหนือธรรมชาติ 1 คน
         </p>
 
+
+        <h3>
+          ความต่อเนื่องของบทบาท
+        </h3>
+
+        <p>
+          ผู้สวมบทบาทเหนือธรรมชาติ
+          ที่ไม่มีการเข้าเซิร์ฟเวอร์
+          หรือดำเนิน Role
+          ติดต่อกัน 5 วัน
+
+          ทีมงานสามารถปรับบทบาท
+          กลับเป็นมนุษย์ปกติได้
+          เว้นแต่แจ้งเหตุจำเป็น
+        </p>
+
       </div>
+
     </details>
 
-    <details>
-      <summary>08 — กฎการถือครองธุรกิจ</summary>
+
+    <!-- BUSINESS -->
+
+    <details class="rule-card reveal">
+
+      <summary>
+
+        <span>08</span>
+
+        กฎการถือครองธุรกิจ
+
+      </summary>
+
       <div class="rule-content">
 
-        <h3>ระบบธุรกิจ</h3>
+        <h3>
+          ระบบธุรกิจ
+        </h3>
+
         <p>
           ส่งเสริม Player to Player
-          การซื้อขายวัตถุดิบและสินค้า
+          การซื้อขายวัตถุดิบ
+          และสินค้า
         </p>
 
-        <h3>ระยะเวลาถือครอง</h3>
+
+        <h3>
+          ระยะเวลาถือครอง
+        </h3>
+
         <p>
-          ธุรกิจจากการประมูลโดยปกติถือครอง 1 เดือน
+          ธุรกิจจากการประมูล
+          โดยปกติถือครอง 1 เดือน
         </p>
 
-        <h3>จำนวนธุรกิจ</h3>
+
+        <h3>
+          จำนวนธุรกิจ
+        </h3>
+
         <p>
-          หนึ่งกลุ่มสามารถถือครองได้ 1 ธุรกิจ
+          หนึ่งกลุ่มสามารถถือครอง
+          ได้ 1 ธุรกิจ
           ในช่วงเวลาเดียวกัน
         </p>
 
-        <h3>หน้าที่เจ้าของธุรกิจ</h3>
+
+        <h3>
+          หน้าที่เจ้าของธุรกิจ
+        </h3>
+
         <p>
-          หากไม่มีสินค้าขายติดต่อกัน 3 วัน OOC
+          หากไม่มีสินค้าขาย
+          ติดต่อกัน 3 วัน OOC
           โดยไม่แจ้งทีมงาน
           อาจถือว่าสละสิทธิ์
         </p>
 
       </div>
+
     </details>
 
-    <details class="punishment">
-      <summary>⚠ บทลงโทษ</summary>
+
+    <!-- PUNISHMENT -->
+
+    <details class="rule-card punishment reveal">
+
+      <summary>
+
+        <span>!</span>
+
+        บทลงโทษ
+
+      </summary>
+
       <div class="rule-content">
 
-        <p>
-          การกระทำผิดกฎจะถูกเรียกพบ
-          เพื่อทำความเข้าใจและตักเตือน
-        </p>
+        <h3>
+          การตักเตือน
+        </h3>
 
         <p>
-          หากได้รับการตักเตือนครบ 3 ครั้ง
+          การกระทำผิดกฎ
+          จะถูกเรียกพบ
+          เพื่อทำความเข้าใจ
+          และตักเตือน
+        </p>
+
+
+        <h3>
+          ครบ 3 ครั้ง
+        </h3>
+
+        <p>
+          หากได้รับการตักเตือน
+          ครบ 3 ครั้ง
           จะถูก Ban ถาวร
         </p>
 
+
+        <h3>
+          กรณีร้ายแรง
+        </h3>
+
         <p>
-          กรณีร้ายแรงที่ส่งผลต่อผู้เล่นหรือเซิร์ฟเวอร์
-          ทีมงานสามารถ Ban ถาวรได้ทันที
+          หากการกระทำส่งผลร้ายแรง
+          ต่อผู้เล่นหรือเซิร์ฟเวอร์
+          ทีมงานสามารถ Ban ถาวร
+          ได้ทันที
         </p>
 
       </div>
+
     </details>
+
 
   </div>
 
 </section>
 
-<section class="section" id="city-rules">
 
-  <div class="section-title">
-    <span>กฎหมายประจำเมือง</span>
-    <h2>กฎเมือง</h2>
+<div class="thai-divider">
+
+  <span class="divider-line"></span>
+
+  <span class="divider-symbol">
+    ❖
+  </span>
+
+  <span class="divider-line"></span>
+
+</div>
+
+
+<!-- =========================
+     CITY RULES
+========================= -->
+
+<section
+  class="section city-section"
+  id="city-rules"
+>
+
+  <div class="section-title reveal">
+
+    <span>
+      กฎหมายประจำเมือง
+    </span>
+
+    <h2>
+      กฎเมือง
+    </h2>
+
+    <p>
+      แต่ละเมืองมีข้อกำหนด
+      และอำนาจการปกครอง
+      เป็นของตนเอง
+    </p>
+
   </div>
+
 
   <div class="city-grid">
 
-    <div class="city">
-      <h3>วนารัตน์</h3>
+
+    <article class="city-card reveal">
+
+      <div class="city-stamp">
+        วนารัตน์
+      </div>
+
+      <p class="official-title">
+        ประกาศแห่งเมือง
+      </p>
+
+      <h3>
+        เมืองวนารัตน์
+      </h3>
+
       <p>
-        ประกาศใช้กฎหมายแห่งเมือง
+        กฎหมายแห่งเมือง
         พุทธศักราช ๒๕๗๕
       </p>
 
-      <a href="https://omegab13.github.io/Wanarat/"
-         target="_blank">
-         อ่านกฎหมายเมือง
+      <a
+        href="https://omegab13.github.io/Wanarat/"
+        target="_blank"
+        rel="noopener"
+      >
+        เปิดอ่านกฎหมาย
       </a>
-    </div>
 
-    <div class="city">
-      <h3>กัณหาวารี</h3>
-      <p>
-        ประกาศใช้กฎหมายเมืองกัณหาวารี
+    </article>
+
+
+    <article class="city-card reveal">
+
+      <div class="city-stamp">
+        กัณหาวารี
+      </div>
+
+      <p class="official-title">
+        ประกาศแห่งเมือง
       </p>
 
-      <a href="https://nontnypp-dev.github.io/-/"
-         target="_blank">
-         อ่านกฎหมายเมือง
+      <h3>
+        เมืองกัณหาวารี
+      </h3>
+
+      <p>
+        กฎหมายและข้อบังคับ
+        ประจำเขตเมือง
+      </p>
+
+      <a
+        href="https://nontnypp-dev.github.io/-/"
+        target="_blank"
+        rel="noopener"
+      >
+        เปิดอ่านกฎหมาย
       </a>
-    </div>
 
-    <div class="city">
+    </article>
 
-      <h3>โรจนบุรี</h3>
+
+    <article class="city-card reveal">
+
+      <div class="city-stamp">
+        โรจนบุรี
+      </div>
+
+      <p class="official-title">
+        ประกาศแห่งเมือง
+      </p>
+
+      <h3>
+        เมืองโรจนบุรี
+      </h3>
 
       <ol>
+
         <li>
           ห้ามพกพาอาวุธเข้ามาในเมือง
           ยกเว้นผู้ได้รับอนุญาต
         </li>
 
         <li>
-          เจ้าหน้าที่รัฐในเครื่องแบบห้ามเข้าเมือง
+          เจ้าหน้าที่รัฐในเครื่องแบบ
+          ห้ามเข้ามาในเมือง
           ยกเว้นหมอ
           ตำรวจนอกเครื่องแบบสามารถเข้าได้
         </li>
 
         <li>
-          ผู้กระทำความผิดสามารถหลบหนีเข้ามาได้
+          ผู้กระทำความผิด
+          สามารถหลบหนีเข้ามาได้
           แต่ต้องเจรจาจ่ายค่าคุ้มครอง
         </li>
 
         <li>
-          ห้ามยิงปืนหรือใช้อาวุธทำร้ายผู้คนในเมือง
+          ห้ามยิงปืน
+          หรือใช้อาวุธทำร้าย
+          ผู้คนภายในเมือง
         </li>
 
         <li>
           หากตกลงกันไม่ได้
-          ให้ถือคำตัดสินเจ้าเมืองหรือผู้ช่วยเจ้าเมืองเป็นที่สุด
+          ให้ถือคำตัดสิน
+          ของเจ้าเมือง
+          หรือผู้ช่วยเจ้าเมือง
+          เป็นที่สุด
         </li>
 
       </ol>
 
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<div class="thai-divider">
+
+  <span class="divider-line"></span>
+
+  <span class="divider-symbol">
+    ✦
+  </span>
+
+  <span class="divider-line"></span>
+
+</div>
+
+
+<!-- =========================
+     WHITELIST
+========================= -->
+
+<section
+  class="section whitelist-section"
+  id="whitelist"
+>
+
+  <div class="official-document reveal">
+
+
+    <div class="document-border">
+
+
+      <div class="document-header">
+
+        <img
+          src="logo.png"
+          alt="Land of Smile"
+        >
+
+        <span>
+          ประกาศ LAND OF SMILE
+        </span>
+
+        <h2>
+          เรื่อง การขอรับสิทธิ์ Whitelist
+        </h2>
+
+        <p>
+          พุทธศักราช ๒๔๗๕
+        </p>
+
+      </div>
+
+
+      <div class="document-rule"></div>
+
+
+      <div class="whitelist-steps">
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๑
+          </b>
+
+          <div>
+
+            <h3>
+              กรอกแบบฟอร์มสมัคร
+            </h3>
+
+            <p>
+              เข้าแบบฟอร์ม Whitelist
+              และกรอกข้อมูลให้ครบถ้วน
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๒
+          </b>
+
+          <div>
+
+            <h3>
+              ตรวจสอบข้อมูล
+            </h3>
+
+            <p>
+              หากข้อมูลไม่ครบ
+              หรือไม่ถูกต้องตามกฎ
+              อาจไม่ผ่านการพิจารณา
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๓
+          </b>
+
+          <div>
+
+            <h3>
+              แจ้งส่งฟอร์ม
+            </h3>
+
+            <p>
+              ส่งชื่อ-นามสกุลตัวละคร (IC)
+              ในห้อง 「📘」ห้องส่งฟอร์ม
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๔
+          </b>
+
+          <div>
+
+            <h3>
+              รอการตรวจสอบ
+            </h3>
+
+            <p>
+              เมื่อผ่านเบื้องต้น
+              จะได้รับ ✅
+              และยศ @ผ่านเบื้องต้น
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๕
+          </b>
+
+          <div>
+
+            <h3>
+              ตรวจสอบเวลาสอบ
+            </h3>
+
+            <p>
+              ทีมงานจะแจ้งเวลาสอบ
+              ในห้อง 「🕐」แจ้ง-whitelist
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๖
+          </b>
+
+          <div>
+
+            <h3>
+              เข้ารอสอบ
+            </h3>
+
+            <p>
+              เมื่อถึงเวลาที่กำหนด
+              ให้เข้าห้องรอสอบ
+              โดยเรียกครั้งละไม่เกิน 5 คน
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๗
+          </b>
+
+          <div>
+
+            <h3>
+              การสัมภาษณ์
+            </h3>
+
+            <p>
+              คำถามจะมาจากกฎ Roleplay,
+              การสร้างตัวละคร,
+              การหมดสติ,
+              การปะทะ และการปล้น
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๘
+          </b>
+
+          <div>
+
+            <h3>
+              กรณีไม่ผ่าน
+            </h3>
+
+            <p>
+              สามารถรอเข้าสอบ
+              ในรอบถัดไปได้
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="whitelist-step">
+
+          <b>
+            ๙
+          </b>
+
+          <div>
+
+            <h3>
+              เข้าสู่ประเทศ
+            </h3>
+
+            <p>
+              เมื่อได้รับยศ @ประชาชน
+              ให้เข้าห้อง
+              「🚩」ip_server
+              คัดลอก IP
+              แล้วกด F8
+              เพื่อเข้าเซิร์ฟเวอร์
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="document-buttons">
+
+        <a
+          href="https://forms.gle/C6Gc4CsH8MaW95xV8"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-document"
+        >
+          สมัคร Whitelist
+        </a>
+
+        <a
+          href="https://discord.gg/8nySZ5vfRv"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-document-outline"
+        >
+          เข้า Discord
+        </a>
+
+      </div>
+
+
+      <div class="document-signature">
+
+        <span>
+          ประกาศ ณ ดินแดน Land of Smile
+        </span>
+
+        <strong>
+          พุทธศักราช ๒๔๗๕
+        </strong>
+
+      </div>
+
+
     </div>
 
   </div>
 
 </section>
 
-<section class="section whitelist" id="whitelist">
-
-  <div class="section-title">
-    <span>เข้าสู่ดินแดน</span>
-    <h2>วิธีสอบขอ Whitelist</h2>
-  </div>
-
-  <div class="steps">
-
-    <div class="step">
-      <b>1</b>
-      <p>กรอกแบบฟอร์มสมัคร Whitelist</p>
-    </div>
-
-    <div class="step">
-      <b>2</b>
-      <p>
-        กรอกข้อมูลให้ครบถ้วนและถูกต้องตามกฎ
-      </p>
-    </div>
-
-    <div class="step">
-      <b>3</b>
-      <p>
-        ส่งชื่อ-นามสกุล IC
-        ในห้อง 「📘」ห้องส่งฟอร์ม
-      </p>
-    </div>
-
-    <div class="step">
-      <b>4</b>
-      <p>
-        รอแอดมินตรวจ
-        เมื่อผ่านจะได้รับยศ @ผ่านเบื้องต้น
-      </p>
-    </div>
-
-    <div class="step">
-      <b>5</b>
-      <p>
-        ตรวจสอบเวลาสอบในห้อง
-        「🕐」แจ้ง-whitelist
-      </p>
-    </div>
-
-    <div class="step">
-      <b>6</b>
-      <p>
-        เข้ารอสอบตามเวลาที่กำหนด
-        ครั้งละไม่เกิน 5 คน
-      </p>
-    </div>
-
-    <div class="step">
-      <b>7</b>
-      <p>
-        สัมภาษณ์จากกฎ Roleplay,
-        การสร้างตัวละคร,
-        การหมดสติ,
-        การปะทะ และการปล้น
-      </p>
-    </div>
-
-    <div class="step">
-      <b>8</b>
-      <p>
-        หากไม่ผ่าน
-        สามารถรอสอบในรอบถัดไป
-      </p>
-    </div>
-
-    <div class="step">
-      <b>9</b>
-      <p>
-        เมื่อได้รับยศ @ประชาชน
-        เข้า 「🚩」ip_server
-        แล้ว Copy IP กด F8 เข้าเซิร์ฟเวอร์
-      </p>
-    </div>
-
-  </div>
-
-  <div class="join-box">
-
-    <h2>พร้อมเข้าสู่ Land of Smile?</h2>
-
-    <div class="buttons">
-
-      <a href="https://forms.gle/C6Gc4CsH8MaW95xV8"
-         target="_blank"
-         class="btn gold">
-         สมัคร Whitelist
-      </a>
-
-      <a href="https://discord.gg/8nySZ5vfRv"
-         target="_blank"
-         class="btn outline">
-         เข้า Discord
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-  <img src="logo.png">
+  <img
+    src="logo.png"
+    alt="Land of Smile"
+  >
 
-  <h3>LAND OF SMILE</h3>
+  <h3>
+    LAND OF SMILE
+  </h3>
 
   <p>
     REDM ROLEPLAY • พ.ศ. 2475
   </p>
 
+  <span>
+    ทุกการตัดสินใจ
+    กลายเป็นเรื่องเล่า
+  </span>
+
 </footer>
 
-<button id="toTop">↑</button>
+
+<button
+  id="toTop"
+  class="to-top"
+  aria-label="กลับด้านบน"
+>
+  ↑
+</button>
+
 
 <script src="script.js"></script>
 
