@@ -1,369 +1,4234 @@
-<!-- WHITELIST -->
-<section class="section whitelist" id="whitelist">
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Land of Smile - RedM Roleplay พ.ศ. 2475">
+<title>Land of Smile | RedM Roleplay</title>
 
-    <div class="document reveal">
-        <div class="document-inner">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-            <div class="document-head">
-                <img src="logo.png" alt="Land of Smile">
+<style>
+:root{
+  --bg:#0b0806;
+  --panel:#211711;
+  --gold:#d4ae66;
+  --gold-light:#f0d69a;
+  --cream:#f0dfbf;
+  --muted:#bca98c;
+  --paper:#d7bd8c;
+  --ink:#332117;
+  --line:rgba(212,174,102,.24);
+}
 
-                <small>
-                    ประกาศ LAND OF SMILE
-                </small>
+*{
+  box-sizing:border-box;
+}
 
-                <h2>
-                    เรื่อง การขอรับสิทธิ์ Whitelist
-                </h2>
+html{
+  scroll-behavior:smooth;
+}
 
-                <p>
-                    พุทธศักราช ๒๔๗๕
-                </p>
-            </div>
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 30% 0%,rgba(112,74,35,.12),transparent 35%),
+    var(--bg);
+  color:var(--cream);
+  font-family:"Noto Serif Thai",serif;
+  line-height:1.75;
+  overflow-x:hidden;
+}
 
-            <div class="document-line"></div>
+body.editing [data-editable]{
+  outline:1px dashed rgba(240,214,154,.7);
+  outline-offset:4px;
+}
 
-
-            <!-- ขั้นตอน 1 -->
-            <div class="whitelist-step">
-                <b>๑</b>
-
-                <div>
-                    <h3>เข้าแบบฟอร์ม Whitelist</h3>
-
-                    <p>
-                        กดเข้าแบบฟอร์ม Whitelist
-                        เพื่อเริ่มสมัครเข้าเมือง Land of Smile
-                    </p>
-
-                    <a
-                        href="https://forms.gle/C6Gc4CsH8MaW95xV8"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:10px;
-                            padding:8px 16px;
-                            background:#59341e;
-                            color:#ebd5aa;
-                            text-decoration:none;
-                            border-radius:6px;
-                            font-weight:700;
-                        "
-                    >
-                        📜 เปิดแบบฟอร์ม Whitelist
-                    </a>
-                </div>
-            </div>
+body.editing [data-editable]:hover{
+  background:rgba(212,174,102,.06);
+}
 
 
-            <!-- ขั้นตอน 2 -->
-            <div class="whitelist-step">
-                <b>๒</b>
+/* LOADER */
 
-                <div>
-                    <h3>กรอกข้อมูลให้ครบถ้วน</h3>
+#loader{
+  position:fixed;
+  inset:0;
+  z-index:99999;
 
-                    <p>
-                        กรอกข้อมูลในแบบฟอร์มให้ครบถ้วน
-                        และตรวจสอบข้อมูลให้ถูกต้องก่อนส่ง
-                    </p>
-                </div>
-            </div>
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 
+  text-align:center;
 
-            <!-- ขั้นตอน 3 -->
-            <div class="whitelist-step">
-                <b>๓</b>
+  background:
+    radial-gradient(circle,#1d130c,#050403 70%);
 
-                <div>
-                    <h3>แจ้งส่งฟอร์ม</h3>
+  transition:
+    opacity 1s,
+    visibility 1s;
+}
 
-                    <p>
-                        หลังจากส่งแบบฟอร์มแล้ว
-                        ให้ส่งชื่อ-นามสกุลตัวละคร (IC)
-                        ในห้องส่งฟอร์มของ Discord
-                    </p>
+#loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
 
-                    <a
-                        href="https://discord.com/channels/1282667466874687530/1540787804681019553"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:10px;
-                            padding:8px 16px;
-                            background:#59341e;
-                            color:#ebd5aa;
-                            text-decoration:none;
-                            border-radius:6px;
-                            font-weight:700;
-                        "
-                    >
-                        💬 ไปห้องส่งฟอร์ม
-                    </a>
-                </div>
-            </div>
+.loader-logo{
+  width:min(270px,68vw);
 
+  filter:
+    drop-shadow(
+      0 0 40px rgba(212,174,102,.3)
+    );
 
-            <!-- ขั้นตอน 4 -->
-            <div class="whitelist-step">
-                <b>๔</b>
+  animation:pulse 2s infinite;
+}
 
-                <div>
-                    <h3>รอการตรวจสอบ</h3>
+#loader h1{
+  font-family:Cinzel,serif;
+  letter-spacing:5px;
+  color:var(--gold-light);
+  margin:8px 0 0;
+}
 
-                    <p>
-                        ทีมงานจะตรวจสอบข้อมูล
-                        เมื่อผ่านการตรวจสอบเบื้องต้น
-                        จะได้รับ ✅ และยศ @ผ่านเบื้องต้น
-                    </p>
-                </div>
-            </div>
+#loader p{
+  color:var(--gold);
+  margin:0;
+}
 
+.loader-line{
+  height:1px;
+  width:230px;
 
-            <!-- ขั้นตอน 5 -->
-            <div class="whitelist-step">
-                <b>๕</b>
+  margin:18px;
 
-                <div>
-                    <h3>ตรวจสอบเวลาสอบ Whitelist</h3>
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+}
 
-                    <p>
-                        ตรวจสอบประกาศวันและเวลา
-                        สำหรับเข้าสอบ Whitelist ได้ที่ห้อง Discord
-                    </p>
+.loader-symbol{
+  position:absolute;
+  font-size:430px;
+  color:var(--gold);
+  opacity:.025;
 
-                    <a
-                        href="https://discord.com/channels/1282667466874687530/1540791052758425630"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:10px;
-                            padding:8px 16px;
-                            background:#59341e;
-                            color:#ebd5aa;
-                            text-decoration:none;
-                            border-radius:6px;
-                            font-weight:700;
-                        "
-                    >
-                        🕐 ตรวจสอบเวลาสอบ
-                    </a>
-                </div>
-            </div>
+  animation:
+    rotate 25s linear infinite;
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.04);
+  }
+}
+
+@keyframes rotate{
+  to{
+    transform:rotate(360deg);
+  }
+}
 
 
-            <!-- ขั้นตอน 6 -->
-            <div class="whitelist-step">
-                <b>๖</b>
+/* HEADER */
 
-                <div>
-                    <h3>เข้าสอบ Whitelist</h3>
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
 
-                    <p>
-                        เมื่อถึงเวลาที่กำหนด
-                        ให้เข้าห้องสำหรับการสอบ Whitelist
-                    </p>
+  height:80px;
 
-                    <p>
-                        คำถามจะเกี่ยวข้องกับกฎ Roleplay,
-                        การสร้างตัวละคร,
-                        การหมดสติ,
-                        การปะทะ
-                        และการปล้น
-                    </p>
+  padding:0 5vw;
 
-                    <a
-                        href="https://discord.com/channels/1282667466874687530/1545678920983248907"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:10px;
-                            padding:8px 16px;
-                            background:#59341e;
-                            color:#ebd5aa;
-                            text-decoration:none;
-                            border-radius:6px;
-                            font-weight:700;
-                        "
-                    >
-                        🎙️ ไปห้องสอบ Whitelist
-                    </a>
-                </div>
-            </div>
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
+  z-index:1000;
 
-            <!-- ขั้นตอน 7 -->
-            <div class="whitelist-step">
-                <b>๗</b>
+  background:
+    linear-gradient(
+      rgba(6,4,3,.96),
+      rgba(6,4,3,.75)
+    );
 
-                <div>
-                    <h3>เข้าสู่ประเทศ Land of Smile</h3>
+  backdrop-filter:blur(12px);
 
-                    <p>
-                        เมื่อสอบผ่านและได้รับยศ @ประชาชน
-                        สามารถเข้าเซิร์ฟเวอร์ได้
-                    </p>
+  border-bottom:
+    1px solid transparent;
+}
 
-                    <p>
-                        กด F8 แล้วใส่คำสั่งด้านล่าง
-                    </p>
+header.scrolled{
+  background:
+    rgba(8,5,4,.96);
 
-                    <div
-                        style="
-                            margin-top:12px;
-                            display:flex;
-                            gap:10px;
-                            align-items:center;
-                            flex-wrap:wrap;
-                        "
-                    >
+  border-color:
+    var(--line);
+}
 
-                        <code
-                            id="serverIP"
-                            style="
-                                padding:10px 14px;
-                                background:rgba(55,35,20,.15);
-                                border:1px solid rgba(64,39,18,.45);
-                                border-radius:6px;
-                                color:#3b2414;
-                                font-size:15px;
-                                font-weight:700;
-                                user-select:all;
-                            "
-                        >
-                            connect 168.222.21.15:30120
-                        </code>
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 
-                        <button
-                            id="copyServerIP"
-                            type="button"
-                            onclick="copyServerIP()"
-                            style="
-                                border:none;
-                                padding:10px 16px;
-                                border-radius:6px;
-                                background:#59341e;
-                                color:#ebd5aa;
-                                font-family:inherit;
-                                font-weight:700;
-                                cursor:pointer;
-                            "
-                        >
-                            📋 Copy
-                        </button>
+  color:var(--gold);
+  text-decoration:none;
 
-                    </div>
+  font-family:Cinzel,serif;
+  font-weight:700;
+  letter-spacing:2px;
+}
 
-                    <p
-                        id="copyMessage"
-                        style="
-                            display:none;
-                            margin-top:8px;
-                            color:#325b2e;
-                            font-weight:700;
-                        "
-                    >
-                        ✓ คัดลอกแล้ว
-                    </p>
+.brand img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+}
 
-                </div>
-            </div>
+nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+nav a,
+nav button{
+  color:#dfceb2;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  background:none;
+  border:0;
+
+  font-family:inherit;
+
+  cursor:pointer;
+}
+
+nav a:hover,
+nav button:hover{
+  color:var(--gold-light);
+}
+
+.discord-nav{
+  padding:8px 15px !important;
+
+  border:
+    1px solid var(--line) !important;
+
+  border-radius:50px;
+}
+
+.menu{
+  display:none;
+
+  border:
+    1px solid var(--line);
+
+  background:transparent;
+  color:white;
+
+  font-size:23px;
+
+  border-radius:7px;
+}
 
 
-            <div class="document-actions">
+/* HERO */
 
-                <a
-                    href="https://forms.gle/C6Gc4CsH8MaW95xV8"
-                    target="_blank"
-                    class="btn doc-btn"
-                >
-                    สมัคร Whitelist
-                </a>
+.hero{
+  min-height:100vh;
 
-                <a
-                    href="https://discord.gg/8nySZ5vfRv"
-                    target="_blank"
-                    class="btn doc-outline"
-                >
-                    เข้า Discord
-                </a>
+  position:relative;
 
-            </div>
+  display:grid;
+  place-items:center;
+
+  overflow:hidden;
+
+  padding:
+    125px 20px 70px;
+
+  background:
+    url("hero-bg.png")
+    center / cover
+    no-repeat;
+}
+
+.hero-dark{
+  position:absolute;
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      rgba(100,60,20,.06),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      rgba(5,3,2,.42),
+      rgba(5,3,2,.55) 55%,
+      var(--bg)
+    );
+}
+
+.hero-content{
+  position:relative;
+  z-index:10;
+
+  max-width:960px;
+
+  text-align:center;
+}
+
+.hero-logo{
+  width:min(335px,75vw);
+
+  filter:
+    drop-shadow(
+      0 20px 35px rgba(0,0,0,.8)
+    );
+}
+
+.eyebrow{
+  color:var(--gold);
+
+  letter-spacing:4px;
+
+  font-family:Cinzel,serif;
+
+  font-size:12px;
+}
+
+.hero h1{
+  font-family:Cinzel,serif;
+
+  font-size:
+    clamp(45px,7vw,92px);
+
+  letter-spacing:6px;
+
+  margin:5px 0;
+
+  color:var(--gold-light);
+
+  text-shadow:
+    0 10px 35px rgba(0,0,0,.85);
+}
+
+.hero h2{
+  font-size:
+    clamp(17px,2vw,24px);
+
+  font-weight:500;
+
+  color:#ead7b4;
+
+  margin:
+    0 0 15px;
+}
+
+.hero-desc{
+  max-width:800px;
+  margin:auto;
+
+  color:#d0bea2;
+}
+
+.actions,
+.document-actions{
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:28px;
+}
 
 
-            <div class="signature">
+/* BUTTON */
 
-                ประกาศ ณ ดินแดน Land of Smile
+.btn{
+  display:inline-flex;
 
-                <br>
+  align-items:center;
+  justify-content:center;
 
-                <strong>
-                    พุทธศักราช ๒๔๗๕
-                </strong>
+  min-height:48px;
 
-            </div>
+  padding:
+    0 23px;
 
-        </div>
+  border-radius:7px;
+
+  text-decoration:none;
+
+  font-weight:700;
+
+  transition:.25s;
+
+  border:0;
+
+  cursor:pointer;
+
+  font-family:inherit;
+}
+
+.btn-gold,
+.doc-btn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #e7c77f,
+      #96703a
+    );
+
+  color:#1f140b;
+}
+
+.btn-outline,
+.doc-outline{
+
+  border:
+    1px solid rgba(212,174,102,.5);
+
+  background:
+    rgba(15,9,6,.5);
+
+  color:var(--cream);
+}
+
+.btn:hover{
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+
+    0 0 15px rgba(212,174,102,.35),
+
+    0 14px 32px rgba(0,0,0,.45);
+}
+
+
+/* FOG */
+
+.fog-layer{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:5;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+.fog{
+
+  position:absolute;
+
+  width:180%;
+
+  height:320px;
+
+  left:-40%;
+
+  filter:
+    blur(28px);
+
+  mix-blend-mode:
+    screen;
+
+  background:
+
+    radial-gradient(
+      ellipse at center,
+
+      rgba(235,230,220,.95) 0%,
+
+      rgba(220,215,205,.62) 25%,
+
+      rgba(200,195,185,.32) 45%,
+
+      rgba(180,175,165,.12) 60%,
+
+      transparent 74%
+    );
+}
+
+.fog1{
+  bottom:-30px;
+  opacity:.30;
+
+  animation:
+    fogMoveA 24s linear infinite;
+}
+
+.fog2{
+  bottom:18%;
+
+  opacity:.20;
+
+  animation:
+    fogMoveB 34s linear infinite;
+}
+
+.fog3{
+  top:23%;
+
+  opacity:.12;
+
+  animation:
+    fogMoveA 44s linear infinite reverse;
+}
+
+.fog4{
+  top:45%;
+
+  opacity:.10;
+
+  animation:
+    fogMoveB 50s linear infinite reverse;
+}
+
+@keyframes fogMoveA{
+
+  0%,
+  100%{
+
+    transform:
+      translateX(-18%)
+      scale(1);
+
+  }
+
+  50%{
+
+    transform:
+      translateX(16%)
+      scale(1.08);
+
+  }
+
+}
+
+@keyframes fogMoveB{
+
+  0%,
+  100%{
+
+    transform:
+      translateX(18%)
+      scale(1.04);
+
+  }
+
+  50%{
+
+    transform:
+      translateX(-16%)
+      scale(.98);
+
+  }
+
+}
+
+
+/* DIVIDER */
+
+.thai-divider{
+
+  width:
+    min(900px,82%);
+
+  margin:auto;
+
+  height:55px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+}
+
+.thai-divider:before,
+.thai-divider:after{
+
+  content:"";
+
+  flex:1;
+
+  height:1px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(212,174,102,.65),
+      transparent
+    );
+}
+
+.thai-divider span{
+
+  color:var(--gold);
+
+  font-size:23px;
+}
+
+
+/* GENERAL SECTION */
+
+.section{
+
+  padding:
+    100px 7vw;
+}
+
+.section-title{
+
+  max-width:850px;
+
+  margin:
+    0 auto 50px;
+
+  text-align:center;
+}
+
+.section-title small{
+
+  color:var(--gold);
+
+  letter-spacing:3px;
+
+  font-family:Cinzel,serif;
+}
+
+.section-title h2{
+
+  font-size:
+    clamp(34px,4vw,52px);
+
+  color:#e5c276;
+
+  margin:6px 0;
+}
+
+.section-title p{
+
+  color:var(--muted);
+}
+
+
+/* FEATURE */
+
+.feature-grid{
+
+  max-width:1200px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:18px;
+}
+
+.feature{
+
+  padding:
+    28px 24px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:14px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(43,29,20,.9),
+      rgba(22,15,11,.95)
+    );
+}
+
+.feature .icon{
+
+  font-size:26px;
+
+  color:var(--gold);
+}
+
+.feature h3{
+
+  color:#e2bd70;
+}
+
+.feature p{
+
+  color:#c4b399;
+
+  font-size:14px;
+}
+
+
+/* RULES */
+
+.rules-section{
+
+  background:
+
+    linear-gradient(
+      #120c09,
+      #090605
+    );
+}
+
+.rule-search{
+
+  max-width:900px;
+
+  margin:
+    0 auto 15px;
+
+  display:flex;
+
+  gap:10px;
+
+  background:
+    rgba(36,25,18,.9);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:10px;
+
+  padding:
+    10px 12px;
+}
+
+.rule-search input{
+
+  flex:1;
+
+  border:0;
+
+  outline:0;
+
+  background:
+    transparent;
+
+  color:
+    var(--cream);
+
+  font-family:
+    inherit;
+
+  font-size:15px;
+}
+
+.rule-search button{
+
+  border:
+    1px solid var(--line);
+
+  background:
+    transparent;
+
+  color:
+    var(--gold);
+
+  padding:
+    7px 12px;
+
+  border-radius:6px;
+
+  cursor:pointer;
+}
+
+.search-status{
+
+  max-width:900px;
+
+  margin:
+    0 auto 18px;
+
+  text-align:center;
+
+  color:#95846d;
+
+  font-size:13px;
+}
+
+.rules{
+
+  max-width:1050px;
+
+  margin:auto;
+}
+
+.rule{
+
+  margin-bottom:14px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:11px;
+
+  background:
+    rgba(32,22,16,.88);
+
+  overflow:hidden;
+}
+
+.rule.hidden{
+  display:none;
+}
+
+.rule summary{
+
+  cursor:pointer;
+
+  list-style:none;
+
+  padding:
+    20px 22px;
+
+  color:#e8cb90;
+
+  font-size:18px;
+
+  font-weight:700;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+}
+
+.rule summary::-webkit-details-marker{
+  display:none;
+}
+
+.num{
+
+  width:42px;
+
+  height:42px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(212,174,102,.4);
+
+  color:
+    var(--gold);
+
+  font-family:Cinzel,serif;
+
+  font-size:12px;
+
+  flex-shrink:0;
+}
+
+.rule[open] summary{
+
+  background:
+    rgba(212,174,102,.05);
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+.rule-content{
+
+  padding:
+    5px 26px 28px;
+}
+
+.rule-content h3{
+
+  color:
+    var(--gold);
+
+  margin:
+    22px 0 4px;
+
+  font-size:17px;
+}
+
+.rule-content p{
+
+  color:#ccbba3;
+
+  margin:0;
+}
+
+
+/* CITY */
+
+.city-grid{
+
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:24px;
+}
+
+.city{
+
+  position:relative;
+
+  min-height:340px;
+
+  padding:
+    36px 30px;
+
+  color:
+    var(--ink);
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #e2ca9c,
+      #bd975c
+    );
+
+  border:
+    7px double rgba(80,52,26,.65);
+
+  border-radius:4px;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.3);
+}
+
+.city h3{
+
+  font-size:27px;
+
+  margin:
+    5px 0;
+}
+
+.city a{
+
+  color:#4a2914;
+
+  font-weight:700;
+}
+
+.official{
+
+  font-size:12px;
+
+  letter-spacing:2px;
+}
+
+.stamp{
+
+  position:absolute;
+
+  right:18px;
+
+  bottom:18px;
+
+  border:
+    3px double rgba(100,20,10,.55);
+
+  padding:
+    5px 12px;
+
+  transform:
+    rotate(-6deg);
+
+  color:#7b271d;
+
+  font-weight:700;
+}
+
+
+/* WHITELIST */
+
+.whitelist{
+
+  background:
+
+    linear-gradient(
+      #0c0806,
+      #15100b
+    );
+}
+
+.document{
+
+  max-width:920px;
+
+  margin:auto;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #d8bf90,
+      #b9915b
+    );
+
+  color:
+    var(--ink);
+
+  padding:18px;
+
+  border:
+    1px solid #6d4829;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5);
+}
+
+.document-inner{
+
+  border:
+    3px double rgba(71,45,24,.65);
+
+  padding:
+    45px 55px;
+
+  background:
+    rgba(255,245,220,.12);
+}
+
+.document-head{
+
+  text-align:center;
+}
+
+.document-head img{
+
+  width:100px;
+}
+
+.document-head small{
+
+  display:block;
+
+  letter-spacing:2px;
+}
+
+.document-head h2{
+
+  font-size:
+    clamp(26px,4vw,40px);
+
+  margin:
+    8px 0;
+}
+
+.document-line{
+
+  height:1px;
+
+  background:
+    rgba(70,40,20,.4);
+
+  margin:
+    25px 0;
+}
+
+.whitelist-step{
+
+  display:grid;
+
+  grid-template-columns:
+    58px 1fr;
+
+  gap:15px;
+
+  padding:
+    18px 0;
+
+  border-bottom:
+    1px solid rgba(80,50,30,.25);
+}
+
+.whitelist-step>b{
+
+  width:48px;
+
+  height:48px;
+
+  border:
+    1px solid rgba(75,45,25,.5);
+
+  border-radius:50%;
+
+  display:grid;
+
+  place-items:center;
+
+  font-size:20px;
+}
+
+.whitelist-step h3{
+
+  margin:0;
+
+  color:#4a2d1b;
+}
+
+.whitelist-step p{
+
+  margin:
+    5px 0;
+}
+
+.wl-link{
+
+  display:inline-flex;
+
+  margin-top:8px;
+
+  padding:
+    8px 14px;
+
+  border-radius:7px;
+
+  background:#59341e;
+
+  color:#f1d8a7 !important;
+
+  text-decoration:none;
+
+  font-weight:700;
+}
+
+.server-box{
+
+  display:flex;
+
+  gap:10px;
+
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  margin-top:12px;
+}
+
+.server-code{
+
+  padding:
+    10px 14px;
+
+  background:
+    rgba(55,35,20,.15);
+
+  border:
+    1px solid rgba(64,39,18,.45);
+
+  border-radius:6px;
+
+  color:#3b2414;
+
+  font-weight:700;
+
+  user-select:all;
+}
+
+.copy-btn{
+
+  border:none;
+
+  padding:
+    10px 16px;
+
+  border-radius:6px;
+
+  background:#59341e;
+
+  color:#ebd5aa;
+
+  font-family:inherit;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.copy-msg{
+
+  display:none;
+
+  margin-top:8px;
+
+  color:#325b2e;
+
+  font-weight:700;
+}
+
+.signature{
+
+  text-align:center;
+
+  margin-top:35px;
+}
+
+
+/* FOOTER */
+
+footer{
+
+  text-align:center;
+
+  padding:
+    65px 20px;
+
+  color:#a58f70;
+
+  border-top:
+    1px solid var(--line);
+}
+
+footer img{
+
+  width:95px;
+}
+
+footer h3{
+
+  font-family:Cinzel,serif;
+
+  color:
+    var(--gold);
+
+  letter-spacing:3px;
+}
+
+
+/* TOP */
+
+#toTop{
+
+  position:fixed;
+
+  right:22px;
+
+  bottom:22px;
+
+  width:45px;
+
+  height:45px;
+
+  border-radius:50%;
+
+  border:
+    1px solid var(--line);
+
+  background:#1d140f;
+
+  color:
+    var(--gold);
+
+  cursor:pointer;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.25s;
+
+  z-index:900;
+}
+
+#toTop.show{
+
+  opacity:1;
+
+  pointer-events:auto;
+}
+
+
+/* ADMIN */
+
+.admin-fab{
+
+  position:fixed;
+
+  left:20px;
+
+  bottom:20px;
+
+  z-index:1500;
+
+  border:
+    1px solid var(--line);
+
+  background:
+    rgba(18,12,9,.94);
+
+  color:
+    var(--gold-light);
+
+  border-radius:50px;
+
+  padding:
+    10px 16px;
+
+  font-family:inherit;
+
+  cursor:pointer;
+}
+
+.modal{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:5000;
+
+  background:
+    rgba(0,0,0,.78);
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:20px;
+}
+
+.modal.show{
+
+  display:flex;
+}
+
+.admin-card{
+
+  width:
+    min(480px,100%);
+
+  background:#17100c;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:16px;
+
+  padding:26px;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.7);
+}
+
+.admin-card h2{
+
+  color:
+    var(--gold-light);
+
+  margin-top:0;
+}
+
+.admin-card input{
+
+  width:100%;
+
+  padding:
+    12px 14px;
+
+  margin:
+    7px 0;
+
+  background:#0d0907;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:8px;
+
+  color:white;
+
+  font-family:inherit;
+}
+
+.admin-row{
+
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-top:12px;
+}
+
+.admin-panel{
+
+  position:fixed;
+
+  top:92px;
+
+  right:18px;
+
+  z-index:1400;
+
+  width:
+    min(360px,calc(100vw - 36px));
+
+  display:none;
+
+  background:
+    rgba(15,10,7,.97);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:14px;
+
+  padding:18px;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.5);
+}
+
+.admin-panel.show{
+
+  display:block;
+}
+
+.admin-panel h3{
+
+  margin:
+    0 0 10px;
+
+  color:
+    var(--gold-light);
+}
+
+.admin-panel p{
+
+  font-size:13px;
+
+  color:
+    var(--muted);
+}
+
+.admin-status{
+
+  padding:
+    8px 10px;
+
+  border-radius:8px;
+
+  background:
+    rgba(212,174,102,.08);
+
+  font-size:13px;
+
+  margin-bottom:10px;
+}
+
+.admin-btn{
+
+  width:100%;
+
+  margin:
+    5px 0;
+
+  padding:10px;
+
+  border-radius:8px;
+
+  border:
+    1px solid var(--line);
+
+  background:#211711;
+
+  color:
+    var(--cream);
+
+  font-family:inherit;
+
+  cursor:pointer;
+}
+
+.admin-btn.primary{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #e7c77f,
+      #96703a
+    );
+
+  color:#1f140b;
+
+  font-weight:700;
+}
+
+
+/* REVEAL */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+    translateY(22px);
+
+  transition:.7s;
+}
+
+.reveal.visible{
+
+  opacity:1;
+
+  transform:none;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .feature-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .city-grid{
+
+    grid-template-columns:
+      1fr;
+  }
+
+  nav{
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    right:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    padding:
+      18px 7vw;
+
+    background:#0c0806;
+
+    border-bottom:
+      1px solid var(--line);
+  }
+
+  nav.open{
+
+    display:flex;
+  }
+
+  .menu{
+
+    display:block;
+  }
+
+  .document-inner{
+
+    padding:
+      30px 25px;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .feature-grid{
+
+    grid-template-columns:
+      1fr;
+  }
+
+  .section{
+
+    padding:
+      75px 5vw;
+  }
+
+  .whitelist-step{
+
+    grid-template-columns:
+      44px 1fr;
+  }
+
+  .whitelist-step>b{
+
+    width:38px;
+
+    height:38px;
+  }
+
+  .hero h1{
+
+    letter-spacing:3px;
+  }
+
+  .document{
+
+    padding:9px;
+  }
+
+  .document-inner{
+
+    padding:
+      25px 18px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- LOADER -->
+
+<div id="loader">
+
+  <div class="loader-symbol">
+    ✦
+  </div>
+
+  <img
+    src="logo.png"
+    alt="Land of Smile"
+    class="loader-logo"
+  >
+
+  <h1>
+    LAND OF SMILE
+  </h1>
+
+  <p>
+    พุทธศักราช ๒๔๗๕
+  </p>
+
+  <div class="loader-line"></div>
+
+  <div class="loader-small">
+    กำลังเปิดประตูสู่ดินแดน...
+  </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header id="header">
+
+  <a
+    class="brand"
+    href="#home"
+  >
+
+    <img
+      src="logo.png"
+      alt="Land of Smile"
+    >
+
+    <span>
+      LAND OF SMILE
+    </span>
+
+  </a>
+
+
+  <button
+    class="menu"
+    id="menu"
+  >
+    ☰
+  </button>
+
+
+  <nav id="nav">
+
+    <a href="#home">
+      หน้าแรก
+    </a>
+
+    <a href="#story">
+      เรื่องราว
+    </a>
+
+    <a href="#rules">
+      กฎประเทศ
+    </a>
+
+    <a href="#city">
+      กฎเมือง
+    </a>
+
+    <a href="#whitelist">
+      Whitelist
+    </a>
+
+    <a
+      class="discord-nav"
+      href="https://discord.gg/8nySZ5vfRv"
+      target="_blank"
+    >
+      Discord
+    </a>
+
+    <button
+      id="adminNavBtn"
+      type="button"
+    >
+      Admin
+    </button>
+
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section
+  class="hero"
+  id="home"
+>
+
+  <div class="hero-dark"></div>
+
+
+  <div class="fog-layer">
+
+    <div class="fog fog1"></div>
+
+    <div class="fog fog2"></div>
+
+    <div class="fog fog3"></div>
+
+    <div class="fog fog4"></div>
+
+  </div>
+
+
+  <div class="hero-content">
+
+    <img
+      src="logo.png"
+      class="hero-logo"
+      alt="Land of Smile"
+    >
+
+    <div class="eyebrow">
+      REDM ROLEPLAY • พ.ศ. 2475
     </div>
+
+    <h1 data-editable>
+      LAND OF SMILE
+    </h1>
+
+    <h2 data-editable>
+      ดินแดนแห่งศรัทธา มนตรา และอำนาจที่ซ่อนอยู่ใต้รอยยิ้ม
+    </h2>
+
+    <p
+      class="hero-desc"
+      data-editable
+    >
+      พ.ศ. 2475 ชาวสยามอพยพสู่ดินแดนตะวันตก
+      เพื่อเริ่มต้นชีวิตใหม่ในโลกที่เต็มไปด้วยโอกาส
+      ความเชื่อ และสิ่งเร้นลับ
+      จำลองการใช้ชีวิตเสมือนจริง
+      ผสานอาคม ความเชื่อพื้นบ้าน
+      และปรากฏการณ์เหนือธรรมชาติ
+    </p>
+
+
+    <div class="actions">
+
+      <a
+        class="btn btn-gold"
+        href="#whitelist"
+      >
+        เข้าสู่เมือง
+      </a>
+
+      <a
+        class="btn btn-outline"
+        href="#rules"
+      >
+        อ่านกฎประเทศ
+      </a>
+
+      <a
+        class="btn btn-outline"
+        href="https://discord.gg/8nySZ5vfRv"
+        target="_blank"
+      >
+        เข้า Discord
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
+<div class="thai-divider">
+  <span>❖</span>
+</div>
+
+
+<!-- STORY -->
+
+<section
+  class="section"
+  id="story"
+>
+
+  <div class="section-title reveal">
+
+    <small>
+      ตำนานแห่งแผ่นดิน
+    </small>
+
+    <h2 data-editable>
+      เรื่องราวของ Land of Smile
+    </h2>
+
+    <p data-editable>
+      เมื่อชาวสยามเดินทางข้ามสู่ดินแดนตะวันตก
+      ชีวิตใหม่ไม่ได้มีเพียงการค้าขาย
+      การเอาตัวรอด
+      และการสร้างครอบครัว
+      แต่ยังมีความเชื่อที่ติดตามผู้คนมาจากบ้านเกิด
+      ทั้งยันต์ ของขลัง วิชาอาคม
+      และสิ่งที่มนุษย์ไม่อาจอธิบายได้
+    </p>
+
+  </div>
+
+
+  <div class="feature-grid">
+
+    <article class="feature reveal">
+
+      <div class="icon">
+        ๒๔๗๕
+      </div>
+
+      <h3 data-editable>
+        สยาม พ.ศ. 2475
+      </h3>
+
+      <p data-editable>
+        บรรยากาศไทยยุคเก่า
+        ผสมโลกตะวันตก
+        ถ่ายทอดผ่านการใช้ชีวิต
+        และ Roleplay
+      </p>
+
+    </article>
+
+
+    <article class="feature reveal">
+
+      <div class="icon">
+        ☾
+      </div>
+
+      <h3 data-editable>
+        สิ่งเหนือธรรมชาติ
+      </h3>
+
+      <p data-editable>
+        เรื่องราวลึกลับ
+        ความเชื่อ
+        การหลอกหลอน
+        และเหตุการณ์ที่อาจเปลี่ยนชีวิตของตัวละคร
+      </p>
+
+    </article>
+
+
+    <article class="feature reveal">
+
+      <div class="icon">
+        ✦
+      </div>
+
+      <h3 data-editable>
+        อาคมและเครื่องราง
+      </h3>
+
+      <p data-editable>
+        พ่อหมอ
+        แม่หมอ
+        พระ
+        ผู้มีวิชา
+        ผ้ายันต์
+        เครื่องราง
+        และอาวุธอาคม
+      </p>
+
+    </article>
+
+
+    <article class="feature reveal">
+
+      <div class="icon">
+        ⚖
+      </div>
+
+      <h3 data-editable>
+        Roleplay เสมือนจริง
+      </h3>
+
+      <p data-editable>
+        ทุกการตัดสินใจ
+        ส่งผลต่อชื่อเสียง
+        ความสัมพันธ์
+        อนาคต
+        และชีวิตของตัวละคร
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section
+  class="section rules-section"
+  id="rules"
+>
+
+  <div class="section-title reveal">
+
+    <small>
+      กฎแห่งประเทศ
+    </small>
+
+    <h2 data-editable>
+      กฎ Land of Smile
+    </h2>
+
+    <p>
+      สามารถค้นหากฎที่ต้องการได้ทันที
+    </p>
+
+  </div>
+
+
+  <div class="rule-search">
+
+    <input
+      id="search"
+      placeholder="ค้นหากฎ เช่น Meta, ปล้น, หมดสติ, อาคม..."
+    >
+
+    <button id="clear">
+      ล้าง
+    </button>
+
+  </div>
+
+
+  <div
+    class="search-status"
+    id="searchStatus"
+  ></div>
+
+
+  <div class="rules">
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          01
+        </span>
+
+        กฎ Roleplay
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          Death Match
+        </h3>
+
+        <p>
+          ไม่อนุญาตให้ทำร้าย
+          ยิง
+          หรือใช้อาวุธกับผู้เล่นอื่น
+          โดยไม่มี Story รองรับ
+          ก่อนเริ่มปะทะ
+          ต้องสื่อสารหรือแสดงเจตนาให้อีกฝ่ายรับรู้ก่อน
+        </p>
+
+
+        <h3>
+          Spawn Kill
+        </h3>
+
+        <p>
+          ห้ามดักทำร้ายบริเวณจุดเกิด
+          และห้ามฟื้นผู้เล่น
+          เพื่อทำร้ายให้หมดสติซ้ำ
+        </p>
+
+
+        <h3>
+          In Character / Out of Character
+        </h3>
+
+        <p>
+          ผู้เล่นต้องแยกเรื่องราว
+          IC และ OOC
+          ออกจากกันอย่างชัดเจน
+        </p>
+
+
+        <h3>
+          Breaking Roleplay
+        </h3>
+
+        <p>
+          ห้ามรบกวน Roleplay ของผู้อื่น
+          และห้ามออกจากเซิร์ฟเวอร์
+          ขณะดำเนิน Story
+        </p>
+
+
+        <h3>
+          Value of Life
+        </h3>
+
+        <p>
+          ให้ถือว่าตัวละครมีชีวิตจริง
+          ต้องคำนึงถึงความเสี่ยง
+          และแสดงความหวาดกลัว
+          เมื่ออยู่ในสถานการณ์เสียเปรียบ
+        </p>
+
+
+        <h3>
+          Power Gaming
+        </h3>
+
+        <p>
+          ห้ามกระทำสิ่งที่เกินธรรมชาติของมนุษย์
+          เช่น
+          พูดขณะหมดสติ
+          หรือกระโดดจากที่สูงโดยไม่บาดเจ็บ
+        </p>
+
+
+        <h3>
+          Meta Gaming
+        </h3>
+
+        <p>
+          ห้ามนำข้อมูลจาก Discord
+          Live
+          หรือข้อมูลจากภายนอกเกม
+          มาใช้เป็นความรู้ของตัวละคร
+        </p>
+
+
+        <h3>
+          AFK
+        </h3>
+
+        <p>
+          หากจำเป็นต้อง AFK
+          ควรหลบไปในพื้นที่เหมาะสม
+          และยอมรับความเสี่ยงที่อาจเกิดขึ้น
+        </p>
+
+
+        <h3>
+          Offensive Roleplay
+        </h3>
+
+        <p>
+          Story
+          ที่มีเนื้อหารุนแรงหรือละเอียดอ่อน
+          ต้องได้รับความยินยอมจากผู้ร่วม Story ก่อน
+        </p>
+
+
+        <h3>
+          Manners
+        </h3>
+
+        <p>
+          ผู้เล่นต้องรักษามารยาท
+          ทั้ง IC และ OOC
+        </p>
+
+
+        <h3>
+          โปรแกรมหรือบั๊ก
+        </h3>
+
+        <p>
+          ห้ามใช้โปรแกรมภายนอก
+          บั๊ก
+          หรือช่องโหว่
+          เพื่อสร้างผลประโยชน์
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          02
+        </span>
+
+        กฎการสร้างตัวละคร
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          ชื่อ-นามสกุล
+        </h3>
+
+        <p>
+          ต้องเหมาะสมกับยุค พ.ศ. 2475
+          และตรงตามเชื้อชาติของตัวละคร
+          ห้ามใช้ชื่อบุคคลจริง
+          หรือตัวละครที่มีอยู่แล้วโดยตรง
+        </p>
+
+
+        <h3>
+          บทบาทเด็ก
+        </h3>
+
+        <p>
+          อายุ 10–15 ปี
+          ต้องมีเสียงและบุคลิกตามวัย
+          และห้ามใช้อาวุธปืน
+        </p>
+
+
+        <h3>
+          เชื้อชาติไทย
+        </h3>
+
+        <p>
+          ใช้ผมสีดำเท่านั้น
+          ผู้สูงอายุสามารถใช้ผมสีขาวได้
+        </p>
+
+
+        <h3>
+          เชื้อชาติต่างชาติ
+        </h3>
+
+        <p>
+          ต้องมีสำเนียงและบุคลิก
+          ให้เหมาะสมกับเชื้อชาติ
+        </p>
+
+
+        <h3>
+          การแต่งกาย
+        </h3>
+
+        <p>
+          ตอนสร้างตัวละคร
+          อนุญาตให้เลือก
+          เสื้อ
+          กางเกง
+          รองเท้า
+          และเข็มขัดปืน
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          03
+        </span>
+
+        กฎการหมดสติ
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          Life Point
+        </h3>
+
+        <p>
+          ตัวละครมี 10 Life Point
+          ทุกครั้งที่หมดสติจะเสีย 1 แต้ม
+          เมื่อเหลือ 0
+          ตัวละครจะอ่อนแอ
+          ไม่สามารถวิ่งได้
+          และจะไอเป็นระยะ
+        </p>
+
+
+        <h3>
+          การหมดสติ
+        </h3>
+
+        <p>
+          ไม่ได้ยินเสียง
+          และไม่สามารถพูดได้
+          แต่ยังสามารถใช้
+          /me และ /do
+          เพื่อแสดงอาการได้
+        </p>
+
+
+        <h3>
+          ความทรงจำ
+        </h3>
+
+        <p>
+          จำเหตุการณ์ก่อนหมดสติได้
+          แต่ไม่สามารถจดจำเหตุการณ์
+          ระหว่างที่หมดสติได้
+        </p>
+
+
+        <h3>
+          การฟื้นสติ
+        </h3>
+
+        <p>
+          สามารถรอแพทย์
+          ฟื้นในพื้นที่
+          หรือกลับเมืองใกล้เคียง
+          เมื่อพื้นที่มีอันตราย
+        </p>
+
+
+        <h3>
+          หมดสติระหว่าง Story
+        </h3>
+
+        <p>
+          ห้ามกดฟื้นหาก Story ยังดำเนินอยู่
+          เว้นแต่ผู้ร่วม Story
+          ออกพ้นสายตา
+          และผ่านไปอย่างน้อย 5 นาที
+        </p>
+
+
+        <h3>
+          หลังฟื้นสติ
+        </h3>
+
+        <p>
+          ต้องแสดงอาการบาดเจ็บ
+          และห้ามกลับไปปะทะ
+          เป็นเวลา 1 ชั่วโมง OOC
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          04
+        </span>
+
+        กฎการปะทะ
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          การทำร้าย NPC
+        </h3>
+
+        <p>
+          ห้ามทำร้าย NPC
+          เว้นแต่มี Story รองรับ
+        </p>
+
+
+        <h3>
+          การเริ่มปะทะ
+        </h3>
+
+        <p>
+          ต้องพูด
+          ใช้ /me /do
+          หรือยิงขู่
+          เพื่อให้อีกฝ่ายรับรู้ก่อน
+        </p>
+
+
+        <h3>
+          Head Shot Kill
+        </h3>
+
+        <p>
+          ห้ามเปิดการปะทะ
+          ด้วยการยิงศีรษะ
+          จนอีกฝ่ายหมดสติทันที
+        </p>
+
+
+        <h3>
+          การถูกมัด
+        </h3>
+
+        <p>
+          ผู้ถูกมัดห้ามดิ้นหลุดเอง
+          เว้นแต่ผู้มัดออกพ้นสายตา
+          และผ่านไปอย่างน้อย 5 นาที
+        </p>
+
+
+        <h3>
+          ผู้หมดสติ
+        </h3>
+
+        <p>
+          ห้ามด่าทอ
+          เหยียดหยาม
+          หรือทำร้ายร่างกายซ้ำเกิน Story
+        </p>
+
+
+        <h3>
+          เชือกระหว่างการยิง
+        </h3>
+
+        <p>
+          เมื่อการยิงเริ่มขึ้นแล้ว
+          ห้ามใช้เชือกมัดอีกฝ่าย
+        </p>
+
+
+        <h3>
+          จำนวนกลุ่ม
+        </h3>
+
+        <p>
+          1 กลุ่มไม่เกิน 10 คน
+          และ 1 Story
+          ไม่เกิน 3 กลุ่ม
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          05
+        </span>
+
+        กฎการปลอมตัว
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          การปกปิดตัวตน
+        </h3>
+
+        <p>
+          สามารถเปลี่ยนเสื้อผ้า
+          ทรงผม
+          หนวด
+          ม้า
+          อาวุธ
+          และสิ่งที่มองเห็นได้
+          เพื่อปกปิดตัวตน
+        </p>
+
+
+        <h3>
+          การดัดเสียง
+        </h3>
+
+        <p>
+          สามารถดัดเสียง
+          หรือใช้โปรแกรมเปลี่ยนเสียงได้
+        </p>
+
+
+        <h3>
+          หน้ากากและผ้าปิดปาก
+        </h3>
+
+        <p>
+          ถือว่าปกปิดเสียงแล้ว
+          ผู้เล่นอื่นไม่สามารถระบุตัวตน
+          จากเสียงเพียงอย่างเดียว
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          06
+        </span>
+
+        กฎการปล้น
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          ช่วงเวลา
+        </h3>
+
+        <p>
+          อนุญาตให้ปล้นผู้เล่น
+          เวลา 18.00–00.00 น.
+        </p>
+
+
+        <h3>
+          คนมีสติ
+        </h3>
+
+        <p>
+          ต้องทำให้เหยื่อถูกมัดก่อนค้นตัว
+          ปล้นเงินสดได้ไม่เกินครึ่งหนึ่ง
+          และไม่เกิน 1,000
+          Item สูงสุด 5 ชิ้น
+        </p>
+
+
+        <h3>
+          คนหมดสติ
+        </h3>
+
+        <p>
+          ปล้น Item ได้สูงสุด 3 ชิ้น
+          และต้องมี Story ร่วมกัน
+        </p>
+
+
+        <h3>
+          กรณีขัดขืน
+        </h3>
+
+        <p>
+          หากขัดขืนทั้งที่เสียเปรียบ
+          สามารถทำให้หมดสติ
+          และปล้น Item ได้สูงสุด 10 ชิ้น
+        </p>
+
+
+        <h3>
+          Item ห้ามปล้น
+        </h3>
+
+        <p>
+          ทอง
+          อาวุธ
+          เสื้อผ้า
+          กระติกน้ำทองคำ
+          ของที่ซื้อด้วยทองเท่านั้น
+          และของ Donate เท่านั้น
+        </p>
+
+
+        <h3>
+          จำนวนโจร
+        </h3>
+
+        <p>
+          สูงสุดไม่เกิน 5 คน
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          07
+        </span>
+
+        กฎสิ่งเหนือธรรมชาติ
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          ช่วงเวลา
+        </h3>
+
+        <p>
+          หลังพระอาทิตย์ตก
+          เป็นช่วงเวลาที่สิ่งลี้ลับ
+          และสิ่งเหนือธรรมชาติ
+          ออกปรากฏตัว
+        </p>
+
+
+        <h3>
+          ความเท่าเทียม
+        </h3>
+
+        <p>
+          ทุกบทบาทเริ่มต้นภายใน
+          Land of Smile
+          การเป็นสิ่งเหนือธรรมชาติ
+          หรือผู้มีวิชา
+          ต้องเกิดจาก Story ภายในประเทศ
+        </p>
+
+
+        <h3>
+          การเผชิญหน้า
+        </h3>
+
+        <p>
+          มนุษย์ทั่วไป
+          ควรแสดงความหวาดกลัว
+          และพยายามหนีเอาชีวิตรอด
+        </p>
+
+
+        <h3>
+          สิ่งศักดิ์สิทธิ์
+        </h3>
+
+        <p>
+          ผ้ายันต์
+          เครื่องราง
+          ศาลเจ้า
+          และ Item จากผู้มีวิชา
+          สามารถใช้ป้องกันสิ่งลี้ลับ
+          ตาม Story
+        </p>
+
+
+        <h3>
+          อาวุธอาคม
+        </h3>
+
+        <p>
+          อาวุธหรือกระสุนลักษณะไฟ
+          เช่น กระสุนน้ำมนต์
+          ใช้สำหรับการต่อกรกับสิ่งเหนือธรรมชาติ
+          ตาม Story
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          08
+        </span>
+
+        กฎการถือครองธุรกิจ
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          วัตถุประสงค์
+        </h3>
+
+        <p>
+          ส่งเสริมระบบ Player to Player
+          ให้ประชาชนและเจ้าของธุรกิจ
+          มีการซื้อขายแลกเปลี่ยนกัน
+        </p>
+
+
+        <h3>
+          ระยะเวลาถือครอง
+        </h3>
+
+        <p>
+          ธุรกิจจากการประมูล
+          โดยปกติถือครอง 1 เดือน
+        </p>
+
+
+        <h3>
+          ผู้ถือครองธุรกิจ
+        </h3>
+
+        <p>
+          ผู้เล่นหรือกลุ่มผู้เล่นที่เกี่ยวข้องกัน
+          สามารถถือครองได้เพียง 1 ธุรกิจ
+          ในช่วงเวลาเดียวกัน
+        </p>
+
+
+        <h3>
+          หน้าที่เจ้าของธุรกิจ
+        </h3>
+
+        <p>
+          ต้องมีสินค้าจำหน่าย
+          และรับซื้อวัตถุดิบอย่างต่อเนื่อง
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <details class="rule reveal">
+
+      <summary>
+
+        <span class="num">
+          !
+        </span>
+
+        บทลงโทษ
+
+      </summary>
+
+
+      <div
+        class="rule-content"
+        data-editable
+      >
+
+        <h3>
+          การตักเตือน
+        </h3>
+
+        <p>
+          ผู้ที่กระทำผิดกฎ
+          จะถูกเรียกพบ
+          เพื่อทำความเข้าใจและตักเตือน
+        </p>
+
+
+        <h3>
+          ครบ 3 ครั้ง
+        </h3>
+
+        <p>
+          หากได้รับการตักเตือนครบ 3 ครั้ง
+          จะถูก Ban ถาวร
+        </p>
+
+
+        <h3>
+          กรณีร้ายแรง
+        </h3>
+
+        <p>
+          หากมีพฤติกรรมร้ายแรง
+          ที่ส่งผลต่อผู้เล่นหรือเซิร์ฟเวอร์
+          ทีมงานสามารถ Ban ถาวรได้ทันที
+        </p>
+
+      </div>
+
+    </details>
+
+
+  </div>
+
+</section>
+
+
+<div class="thai-divider">
+  <span>❖</span>
+</div>
+
+
+<!-- CITY -->
+
+<section
+  class="section"
+  id="city"
+>
+
+  <div class="section-title reveal">
+
+    <small>
+      กฎหมายประจำเมือง
+    </small>
+
+    <h2>
+      กฎเมือง
+    </h2>
+
+    <p>
+      แต่ละเมืองมีข้อกำหนด
+      และอำนาจการปกครองเป็นของตนเอง
+    </p>
+
+  </div>
+
+
+  <div class="city-grid">
+
+
+    <article class="city reveal">
+
+      <p class="official">
+        ประกาศแห่งเมือง
+      </p>
+
+      <h3 data-editable>
+        เมืองวนารัตน์
+      </h3>
+
+      <p data-editable>
+        กฎหมายแห่งเมือง
+        พุทธศักราช ๒๕๗๕
+      </p>
+
+      <a
+        href="https://omegab13.github.io/Wanarat/"
+        target="_blank"
+      >
+        เปิดอ่านกฎหมายเมือง ↗
+      </a>
+
+      <div class="stamp">
+        วนารัตน์
+      </div>
+
+    </article>
+
+
+    <article class="city reveal">
+
+      <p class="official">
+        ประกาศแห่งเมือง
+      </p>
+
+      <h3 data-editable>
+        เมืองกัณหาวารี
+      </h3>
+
+      <p data-editable>
+        กฎหมายและข้อบังคับ
+        ประจำเขตเมือง
+      </p>
+
+      <a
+        href="https://nontnypp-dev.github.io/-/"
+        target="_blank"
+      >
+        เปิดอ่านกฎหมายเมือง ↗
+      </a>
+
+      <div class="stamp">
+        กัณหาวารี
+      </div>
+
+    </article>
+
+
+    <article class="city reveal">
+
+      <p class="official">
+        ประกาศแห่งเมือง
+      </p>
+
+      <h3 data-editable>
+        เมืองโรจนบุรี
+      </h3>
+
+      <ol data-editable>
+
+        <li>
+          ห้ามพกพาอาวุธเข้ามาในเมือง
+          ยกเว้นผู้ได้รับอนุญาต
+        </li>
+
+        <li>
+          เจ้าหน้าที่รัฐในเครื่องแบบ
+          ห้ามเข้าเมือง
+          ยกเว้นหมอ
+          ตำรวจนอกเครื่องแบบสามารถเข้าได้
+        </li>
+
+        <li>
+          ผู้กระทำความผิดสามารถหลบหนีเข้ามาได้
+          แต่ต้องเจรจาจ่ายค่าคุ้มครอง
+        </li>
+
+        <li>
+          ห้ามยิงปืน
+          หรือใช้อาวุธทำร้ายผู้คนในเมือง
+        </li>
+
+        <li>
+          หากตกลงกันไม่ได้
+          ให้ถือคำตัดสินของเจ้าเมือง
+          หรือผู้ช่วยเจ้าเมืองเป็นที่สุด
+        </li>
+
+      </ol>
+
+      <div class="stamp">
+        โรจนบุรี
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<div class="thai-divider">
+  <span>✦</span>
+</div>
+
+
+<!-- WHITELIST -->
+
+<section
+  class="section whitelist"
+  id="whitelist"
+>
+
+  <div class="document reveal">
+
+    <div class="document-inner">
+
+
+      <div class="document-head">
+
+        <img
+          src="logo.png"
+          alt="Land of Smile"
+        >
+
+        <small>
+          ประกาศ LAND OF SMILE
+        </small>
+
+        <h2>
+          เรื่อง การขอรับสิทธิ์ Whitelist
+        </h2>
+
+        <p>
+          พุทธศักราช ๒๔๗๕
+        </p>
+
+      </div>
+
+
+      <div class="document-line"></div>
+
+
+      <!-- 1 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๑
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            เข้าแบบฟอร์ม Whitelist
+          </h3>
+
+          <p data-editable>
+            กดเข้าแบบฟอร์ม Whitelist
+            เพื่อเริ่มสมัครเข้าเมือง Land of Smile
+          </p>
+
+          <a
+            class="wl-link"
+            href="https://forms.gle/C6Gc4CsH8MaW95xV8"
+            target="_blank"
+          >
+            📜 เปิดแบบฟอร์ม Whitelist
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 2 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๒
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            กรอกข้อมูลให้ครบถ้วน
+          </h3>
+
+          <p data-editable>
+            กรอกข้อมูลในแบบฟอร์มให้ครบถ้วน
+            และตรวจสอบข้อมูลให้ถูกต้องก่อนส่ง
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- 3 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๓
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            แจ้งส่งฟอร์ม
+          </h3>
+
+          <p data-editable>
+            หลังจากส่งแบบฟอร์มแล้ว
+            ให้ส่งชื่อ-นามสกุลตัวละคร (IC)
+            ในห้องส่งฟอร์มของ Discord
+          </p>
+
+          <a
+            class="wl-link"
+            href="https://discord.com/channels/1282667466874687530/1540787804681019553"
+            target="_blank"
+          >
+            💬 ไปห้องส่งฟอร์ม
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 4 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๔
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            รอการตรวจสอบ
+          </h3>
+
+          <p data-editable>
+            ทีมงานจะตรวจสอบข้อมูล
+            เมื่อผ่านการตรวจสอบเบื้องต้น
+            จะได้รับ ✅
+            และยศ @ผ่านเบื้องต้น
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- 5 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๕
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            ตรวจสอบเวลาสอบ Whitelist
+          </h3>
+
+          <p data-editable>
+            ตรวจสอบประกาศวันและเวลา
+            สำหรับเข้าสอบ Whitelist
+            ได้ที่ห้อง Discord
+          </p>
+
+          <a
+            class="wl-link"
+            href="https://discord.com/channels/1282667466874687530/1540791052758425630"
+            target="_blank"
+          >
+            🕐 ตรวจสอบเวลาสอบ
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 6 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๖
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            เข้าสอบ Whitelist
+          </h3>
+
+          <p data-editable>
+            เมื่อถึงเวลาที่กำหนด
+            ให้เข้าห้องสำหรับการสอบ Whitelist
+
+            คำถามจะเกี่ยวข้องกับกฎ Roleplay,
+            การสร้างตัวละคร,
+            การหมดสติ,
+            การปะทะ
+            และการปล้น
+          </p>
+
+          <a
+            class="wl-link"
+            href="https://discord.com/channels/1282667466874687530/1545678920983248907"
+            target="_blank"
+          >
+            🎙️ ไปห้องสอบ Whitelist
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 7 -->
+
+      <div class="whitelist-step">
+
+        <b>
+          ๗
+        </b>
+
+        <div>
+
+          <h3 data-editable>
+            เข้าสู่ประเทศ Land of Smile
+          </h3>
+
+          <p data-editable>
+            เมื่อสอบผ่าน
+            และได้รับยศ @ประชาชน
+            สามารถเข้าเซิร์ฟเวอร์ได้
+
+            กด F8
+            แล้วใส่คำสั่งด้านล่าง
+          </p>
+
+
+          <div class="server-box">
+
+            <code
+              class="server-code"
+              id="serverIP"
+            >
+              connect 168.222.21.15:30120
+            </code>
+
+
+            <button
+              class="copy-btn"
+              id="copyServerIP"
+              type="button"
+            >
+              📋 Copy
+            </button>
+
+          </div>
+
+
+          <div
+            class="copy-msg"
+            id="copyMessage"
+          >
+            ✓ คัดลอกแล้ว
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+
+      <div class="document-actions">
+
+        <a
+          href="https://forms.gle/C6Gc4CsH8MaW95xV8"
+          target="_blank"
+          class="btn doc-btn"
+        >
+          สมัคร Whitelist
+        </a>
+
+        <a
+          href="https://discord.gg/8nySZ5vfRv"
+          target="_blank"
+          class="btn doc-outline"
+        >
+          เข้า Discord
+        </a>
+
+      </div>
+
+
+      <div class="signature">
+
+        ประกาศ ณ ดินแดน Land of Smile
+
+        <br>
+
+        <strong>
+          พุทธศักราช ๒๔๗๕
+        </strong>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <img
+    src="logo.png"
+    alt="Land of Smile"
+  >
+
+  <h3>
+    LAND OF SMILE
+  </h3>
+
+  <p>
+    REDM ROLEPLAY • พ.ศ. 2475
+  </p>
+
+</footer>
+
+
+<button id="toTop">
+  ↑
+</button>
+
+
+<!-- ADMIN BUTTON -->
+
+<button
+  class="admin-fab"
+  id="adminFab"
+>
+  ⚙ Admin
+</button>
+
+
+<!-- LOGIN -->
+
+<div
+  class="modal"
+  id="loginModal"
+>
+
+  <div class="admin-card">
+
+    <h2>
+      Admin Login
+    </h2>
+
+    <p style="color:var(--muted)">
+      เข้าสู่ระบบ
+      เพื่อเปิด Dashboard
+      และแก้ไขข้อความบนหน้าเว็บ
+    </p>
+
+    <input
+      id="adminUser"
+      autocomplete="username"
+      placeholder="Username"
+    >
+
+    <input
+      id="adminPass"
+      type="password"
+      autocomplete="current-password"
+      placeholder="Password"
+    >
+
+    <div
+      id="loginError"
+      style="
+        color:#e68b7b;
+        font-size:13px;
+        min-height:22px;
+      "
+    ></div>
+
+
+    <div class="admin-row">
+
+      <button
+        class="btn btn-gold"
+        id="loginBtn"
+      >
+        เข้าสู่ระบบ
+      </button>
+
+      <button
+        class="btn btn-outline"
+        id="closeLogin"
+      >
+        ยกเลิก
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<aside
+  class="admin-panel"
+  id="adminPanel"
+>
+
+  <h3>
+    Admin Dashboard
+  </h3>
+
+  <div
+    class="admin-status"
+    id="adminStatus"
+  >
+    เข้าสู่ระบบแล้ว: tiger
+  </div>
+
+  <p>
+    กด “เปิดโหมดแก้ไข”
+    แล้วคลิกข้อความที่มีกรอบเส้นประ
+    เพื่อแก้ได้โดยตรง
+    จากนั้นกดบันทึก
+  </p>
+
+
+  <button
+    class="admin-btn primary"
+    id="toggleEdit"
+  >
+    ✏ เปิดโหมดแก้ไข
+  </button>
+
+
+  <button
+    class="admin-btn"
+    id="saveEdits"
+  >
+    💾 บันทึกการแก้ไข
+  </button>
+
+
+  <button
+    class="admin-btn"
+    id="resetEdits"
+  >
+    ↩ คืนค่าเนื้อหาเดิม
+  </button>
+
+
+  <button
+    class="admin-btn"
+    id="closePanel"
+  >
+    ซ่อน Dashboard
+  </button>
+
+
+  <button
+    class="admin-btn"
+    id="logoutBtn"
+  >
+    ออกจากระบบ
+  </button>
+
+</aside>
+
+
 <script>
-function copyServerIP() {
 
-    const serverCommand =
-        "connect 168.222.21.15:30120";
+const $ =
+  selector =>
+  document.querySelector(selector);
 
-    navigator.clipboard
-        .writeText(serverCommand)
-        .then(() => {
+const $$ =
+  selector =>
+  document.querySelectorAll(selector);
 
-            const button =
-                document.getElementById("copyServerIP");
 
-            const message =
-                document.getElementById("copyMessage");
+/* LOADER */
 
-            button.textContent =
-                "✓ คัดลอกแล้ว";
+window.addEventListener(
+  "load",
+  () => {
 
-            message.style.display =
-                "block";
+    setTimeout(
+      () => {
 
-            setTimeout(() => {
+        $("#loader")
+          .classList
+          .add("hide");
 
-                button.textContent =
-                    "📋 Copy";
+      },
+      1000
+    );
 
-                message.style.display =
-                    "none";
+  }
+);
 
-            }, 2500);
 
-        })
-        .catch(() => {
+/* MOBILE MENU */
 
-            const textarea =
-                document.createElement("textarea");
+$("#menu")
+.addEventListener(
+  "click",
+  () => {
 
-            textarea.value =
-                serverCommand;
+    $("#nav")
+    .classList
+    .toggle("open");
 
-            document.body
-                .appendChild(textarea);
+  }
+);
 
-            textarea.select();
 
-            document.execCommand("copy");
+$$('#nav a')
+.forEach(
+  a => {
 
-            textarea.remove();
+    a.addEventListener(
+      "click",
+      () => {
 
-            document
-                .getElementById("copyServerIP")
-                .textContent =
-                "✓ คัดลอกแล้ว";
+        $("#nav")
+        .classList
+        .remove("open");
 
-        });
+      }
+    );
+
+  }
+);
+
+
+/* SCROLL */
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    $("#header")
+    .classList
+    .toggle(
+      "scrolled",
+      window.scrollY > 40
+    );
+
+
+    $("#toTop")
+    .classList
+    .toggle(
+      "show",
+      window.scrollY > 600
+    );
+
+  }
+);
+
+
+$("#toTop")
+.addEventListener(
+  "click",
+  () => {
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+/* REVEAL */
+
+const observer =
+new IntersectionObserver(
+
+  entries => {
+
+    entries.forEach(
+      entry => {
+
+        if(
+          entry.isIntersecting
+        ){
+
+          entry.target
+          .classList
+          .add("visible");
+
+          observer
+          .unobserve(
+            entry.target
+          );
+
+        }
+
+      }
+    );
+
+  },
+
+  {
+    threshold:.08
+  }
+
+);
+
+
+$$(".reveal")
+.forEach(
+  el =>
+  observer.observe(el)
+);
+
+
+/* SEARCH RULES */
+
+const ruleCards =
+  $$(".rule");
+
+const search =
+  $("#search");
+
+const clear =
+  $("#clear");
+
+const searchStatus =
+  $("#searchStatus");
+
+
+function searchRules(){
+
+  const keyword =
+    search
+    .value
+    .trim()
+    .toLowerCase();
+
+  let count = 0;
+
+
+  ruleCards
+  .forEach(
+    card => {
+
+      const text =
+        card
+        .innerText
+        .toLowerCase();
+
+
+      const match =
+        !keyword ||
+        text.includes(keyword);
+
+
+      card
+      .classList
+      .toggle(
+        "hidden",
+        !match
+      );
+
+
+      if(
+        keyword &&
+        match
+      ){
+
+        card.open = true;
+
+        count++;
+
+      }
+      else if(
+        !keyword
+      ){
+
+        card.open = false;
+
+      }
+
+    }
+  );
+
+
+  if(
+    !keyword
+  ){
+
+    searchStatus
+    .textContent = "";
+
+  }
+  else if(
+    count
+  ){
+
+    searchStatus
+    .textContent =
+      `พบ ${count} หมวดกฎที่เกี่ยวข้องกับ "${search.value}"`;
+
+  }
+  else{
+
+    searchStatus
+    .textContent =
+      `ไม่พบกฎที่เกี่ยวข้องกับ "${search.value}"`;
+
+  }
 
 }
+
+
+search
+.addEventListener(
+  "input",
+  searchRules
+);
+
+
+clear
+.addEventListener(
+  "click",
+  () => {
+
+    search.value = "";
+
+    searchRules();
+
+    search.focus();
+
+  }
+);
+
+
+/* COPY SERVER */
+
+$("#copyServerIP")
+.addEventListener(
+  "click",
+  async () => {
+
+    const command =
+      "connect 168.222.21.15:30120";
+
+
+    try{
+
+      await navigator.clipboard
+      .writeText(command);
+
+    }
+    catch(error){
+
+      const textarea =
+        document
+        .createElement(
+          "textarea"
+        );
+
+      textarea.value =
+        command;
+
+      document.body
+      .appendChild(
+        textarea
+      );
+
+      textarea.select();
+
+      document
+      .execCommand(
+        "copy"
+      );
+
+      textarea.remove();
+
+    }
+
+
+    $("#copyServerIP")
+    .textContent =
+      "✓ คัดลอกแล้ว";
+
+
+    $("#copyMessage")
+    .style
+    .display =
+      "block";
+
+
+    setTimeout(
+      () => {
+
+        $("#copyServerIP")
+        .textContent =
+          "📋 Copy";
+
+
+        $("#copyMessage")
+        .style
+        .display =
+          "none";
+
+      },
+      2200
+    );
+
+  }
+);
+
+
+/* ADMIN */
+
+const ADMIN_USER =
+  "tiger";
+
+const ADMIN_PASS =
+  "123456789";
+
+
+const loginModal =
+  $("#loginModal");
+
+const adminPanel =
+  $("#adminPanel");
+
+let editing =
+  false;
+
+
+function isAdmin(){
+
+  return(
+    sessionStorage
+    .getItem(
+      "los_admin"
+    )
+    ===
+    "1"
+  );
+
+}
+
+
+function showLogin(){
+
+  loginModal
+  .classList
+  .add("show");
+
+
+  setTimeout(
+    () => {
+
+      $("#adminUser")
+      .focus();
+
+    },
+    50
+  );
+
+}
+
+
+function openPanel(){
+
+  if(
+    !isAdmin()
+  ){
+
+    showLogin();
+
+    return;
+
+  }
+
+
+  adminPanel
+  .classList
+  .add("show");
+
+}
+
+
+function closeLogin(){
+
+  loginModal
+  .classList
+  .remove("show");
+
+
+  $("#loginError")
+  .textContent =
+    "";
+
+}
+
+
+$("#adminFab")
+.addEventListener(
+  "click",
+  openPanel
+);
+
+
+$("#adminNavBtn")
+.addEventListener(
+  "click",
+  openPanel
+);
+
+
+$("#closeLogin")
+.addEventListener(
+  "click",
+  closeLogin
+);
+
+
+loginModal
+.addEventListener(
+  "click",
+  event => {
+
+    if(
+      event.target ===
+      loginModal
+    ){
+
+      closeLogin();
+
+    }
+
+  }
+);
+
+
+/* LOGIN */
+
+function login(){
+
+  const username =
+    $("#adminUser")
+    .value;
+
+  const password =
+    $("#adminPass")
+    .value;
+
+
+  if(
+    username === ADMIN_USER &&
+    password === ADMIN_PASS
+  ){
+
+    sessionStorage
+    .setItem(
+      "los_admin",
+      "1"
+    );
+
+
+    closeLogin();
+
+
+    adminPanel
+    .classList
+    .add("show");
+
+
+    $("#adminPass")
+    .value =
+      "";
+
+  }
+  else{
+
+    $("#loginError")
+    .textContent =
+      "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+
+  }
+
+}
+
+
+$("#loginBtn")
+.addEventListener(
+  "click",
+  login
+);
+
+
+$("#adminPass")
+.addEventListener(
+  "keydown",
+  event => {
+
+    if(
+      event.key ===
+      "Enter"
+    ){
+
+      login();
+
+    }
+
+  }
+);
+
+
+/* EDIT MODE */
+
+function setEditing(
+  enabled
+){
+
+  if(
+    !isAdmin()
+  ){
+
+    return;
+
+  }
+
+
+  editing =
+    enabled;
+
+
+  document.body
+  .classList
+  .toggle(
+    "editing",
+    enabled
+  );
+
+
+  $$(
+    "[data-editable]"
+  )
+  .forEach(
+    element => {
+
+      element
+      .contentEditable =
+        enabled
+        ?
+        "true"
+        :
+        "false";
+
+    }
+  );
+
+
+  $("#toggleEdit")
+  .textContent =
+    enabled
+    ?
+    "🔒 ปิดโหมดแก้ไข"
+    :
+    "✏ เปิดโหมดแก้ไข";
+
+}
+
+
+$("#toggleEdit")
+.addEventListener(
+  "click",
+  () => {
+
+    setEditing(
+      !editing
+    );
+
+  }
+);
+
+
+/* SAVE CONTENT */
+
+function snapshot(){
+
+  return(
+    Array.from(
+      $$(
+        "[data-editable]"
+      )
+    )
+    .map(
+      (
+        element,
+        index
+      ) => ({
+
+        i:index,
+
+        html:
+          element.innerHTML
+
+      })
+    )
+  );
+
+}
+
+
+function saveEdits(){
+
+  localStorage
+  .setItem(
+
+    "los_content_v1",
+
+    JSON.stringify(
+      snapshot()
+    )
+
+  );
+
+
+  $("#adminStatus")
+  .textContent =
+    "✓ บันทึกการแก้ไขแล้ว";
+
+
+  setTimeout(
+    () => {
+
+      $("#adminStatus")
+      .textContent =
+        "เข้าสู่ระบบแล้ว: tiger";
+
+    },
+    1800
+  );
+
+}
+
+
+$("#saveEdits")
+.addEventListener(
+  "click",
+  saveEdits
+);
+
+
+/* LOAD SAVED CONTENT */
+
+function loadEdits(){
+
+  try{
+
+    const data =
+      JSON.parse(
+
+        localStorage
+        .getItem(
+          "los_content_v1"
+        )
+        ||
+        "[]"
+
+      );
+
+
+    const elements =
+      $$(
+        "[data-editable]"
+      );
+
+
+    data.forEach(
+      item => {
+
+        if(
+          elements[
+            item.i
+          ]
+        ){
+
+          elements[
+            item.i
+          ]
+          .innerHTML =
+            item.html;
+
+        }
+
+      }
+    );
+
+  }
+  catch(error){
+
+    console.log(
+      error
+    );
+
+  }
+
+}
+
+
+loadEdits();
+
+
+/* RESET */
+
+$("#resetEdits")
+.addEventListener(
+  "click",
+  () => {
+
+    const confirmed =
+      confirm(
+        "ต้องการล้างข้อความที่บันทึกในเบราว์เซอร์นี้ และกลับไปใช้ข้อความจากไฟล์ index.html ใช่ไหม?"
+      );
+
+
+    if(
+      confirmed
+    ){
+
+      localStorage
+      .removeItem(
+        "los_content_v1"
+      );
+
+      location.reload();
+
+    }
+
+  }
+);
+
+
+/* CLOSE PANEL */
+
+$("#closePanel")
+.addEventListener(
+  "click",
+  () => {
+
+    adminPanel
+    .classList
+    .remove("show");
+
+  }
+);
+
+
+/* LOGOUT */
+
+$("#logoutBtn")
+.addEventListener(
+  "click",
+  () => {
+
+    setEditing(false);
+
+
+    sessionStorage
+    .removeItem(
+      "los_admin"
+    );
+
+
+    adminPanel
+    .classList
+    .remove("show");
+
+  }
+);
+
 </script>
+
+</body>
+</html>
