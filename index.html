@@ -1434,6 +1434,363 @@ nav button:hover{
 }
 
 
+
+
+/* CITY UPDATES + POPUP */
+
+.updates-highlight-section{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(212,174,102,.10),transparent 35%),
+    linear-gradient(180deg,#0d0907 0%,#17100d 55%,#0c0806 100%);
+}
+
+.updates-highlight-wrap{
+  max-width:1180px;
+  margin:auto;
+}
+
+.updates-hero-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(212,174,102,.28);
+  border-radius:22px;
+  padding:34px;
+  background:
+    radial-gradient(circle at top right,rgba(212,174,102,.10),transparent 34%),
+    linear-gradient(145deg,rgba(41,28,19,.98),rgba(16,11,8,.99));
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+
+.updates-hero-card::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(212,174,102,.12);
+  border-radius:16px;
+  pointer-events:none;
+}
+
+.update-topline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.update-badge,
+.update-expire-badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  padding:0 14px;
+  border-radius:999px;
+  border:1px solid rgba(212,174,102,.28);
+  font-size:13px;
+  font-weight:700;
+}
+
+.update-badge{
+  background:rgba(212,174,102,.10);
+  color:#f0d69a;
+}
+
+.update-expire-badge{
+  background:rgba(255,255,255,.03);
+  color:#bda98a;
+}
+
+.updates-hero-card h3{
+  margin:0 0 10px;
+  color:#f0d8a2;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.15;
+}
+
+.updates-hero-card p{
+  margin:0;
+  max-width:880px;
+  color:#cdb89a;
+}
+
+.update-points{
+  margin:24px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+
+.update-points li{
+  padding:15px 16px;
+  border-radius:14px;
+  border:1px solid rgba(212,174,102,.14);
+  background:rgba(212,174,102,.05);
+  color:#e6d2ae;
+}
+
+.update-points small{
+  display:block;
+  margin-top:4px;
+  color:#a99477;
+  font-size:12px;
+}
+
+.updates-note{
+  margin-top:22px;
+  color:#9f8c71;
+  font-size:13px;
+}
+
+.updates-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.updates-mini-grid{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+
+.updates-mini-card{
+  padding:18px 18px 16px;
+  border:1px solid rgba(212,174,102,.16);
+  border-radius:16px;
+  background:rgba(10,7,5,.34);
+}
+
+.updates-mini-card b{
+  display:block;
+  color:#f0d49a;
+  margin-bottom:8px;
+}
+
+.updates-mini-card span{
+  color:#af9a7c;
+  font-size:13px;
+  line-height:1.75;
+}
+
+.announcement-overlay{
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px);
+}
+
+.announcement-overlay.show{
+  display:flex;
+}
+
+.announcement-modal{
+  max-height:calc(100dvh - 24px);
+  overflow-y:auto;
+  width:min(760px,100%);
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(212,174,102,.32);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at top right,rgba(212,174,102,.16),transparent 28%),
+    linear-gradient(145deg,rgba(42,28,19,.99),rgba(13,9,7,.995));
+  box-shadow:0 28px 100px rgba(0,0,0,.55),0 0 50px rgba(212,174,102,.10);
+}
+
+/* ลายกรอบประกาศแบบหนังสือราชการย้อนยุค */
+.announcement-modal::after{
+  content:"❖";
+  position:absolute;
+  top:8px;
+  left:18px;
+  font-size:34px;
+  color:#dfbb73;
+  opacity:.85;
+  pointer-events:none;
+}
+.announcement-modal::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(212,174,102,.12);
+  border-radius:18px;
+  pointer-events:none;
+}
+
+.announcement-ribbon{
+  position:absolute;
+  top:18px;
+  right:-44px;
+  transform:rotate(35deg);
+  padding:10px 60px;
+  background:linear-gradient(135deg,#e7c77f,#9a723b);
+  color:#1f140b;
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:1.5px;
+  box-shadow:0 10px 18px rgba(0,0,0,.28);
+}
+
+.announcement-body{
+  position:relative;
+  z-index:1;
+  padding:44px 32px 28px;
+}
+
+.announcement-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#d8b979;
+  font-family:Cinzel,serif;
+  letter-spacing:3px;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.announcement-kicker::before,
+.announcement-kicker::after{
+  content:"";
+  width:40px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.announcement-kicker::after{transform:scaleX(-1)}
+
+.announcement-title{
+  margin:12px 0 8px;
+  color:#f2d89f;
+  font-size:clamp(30px,4.4vw,48px);
+  line-height:1.1;
+}
+
+.announcement-subtitle{
+  margin:0;
+  color:#cfbb99;
+  font-size:16px;
+}
+
+.announcement-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.announcement-pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  padding:0 14px;
+  border-radius:999px;
+  background:rgba(212,174,102,.08);
+  border:1px solid rgba(212,174,102,.16);
+  color:#e5c680;
+  font-size:13px;
+  font-weight:700;
+}
+
+.announcement-desc{
+  margin-top:18px;
+  color:#d6c1a0;
+  line-height:1.85;
+}
+
+.announcement-list{
+  margin:22px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+
+.announcement-list li{
+  padding:14px 15px;
+  border-radius:14px;
+  border:1px solid rgba(212,174,102,.14);
+  background:rgba(212,174,102,.05);
+  color:#f1debb;
+}
+
+.announcement-list small{
+  display:block;
+  color:#a89275;
+  margin-top:5px;
+}
+
+.announcement-footer-note{
+  margin-top:18px;
+  color:#9c896d;
+  font-size:12px;
+}
+
+.announcement-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.announcement-muted-btn{
+  border:1px solid rgba(212,174,102,.28);
+  background:rgba(255,255,255,.03);
+  color:#e9d4b0;
+}
+
+.announcement-close{
+  position:absolute;
+  top:74px;
+  right:16px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid rgba(212,174,102,.24);
+  background:rgba(0,0,0,.18);
+  color:#f2d69b;
+  font-size:22px;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+  .update-points,
+  .updates-mini-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:640px){
+  .updates-hero-card{padding:26px 20px}
+  .announcement-body{padding:28px 20px 24px}
+  .announcement-actions .btn{width:100%}
+  .announcement-close{top:74px;right:12px}
+}
+
+
+
+/* กล่องสุ่มสกิลล่าสัตว์อัตโนมัติ : ภาพประกาศ */
+.announcement-modal{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#7d5d32 #17100c}
+.announcement-close{position:sticky;float:right;top:10px;right:10px;z-index:8;margin:0 -14px -34px 0;background:#1d120b;border-color:#a98950;box-shadow:0 6px 22px #0008}
+.update-poster-link{position:relative;display:block;margin:19px auto 10px;max-width:440px;overflow:hidden;border-radius:14px;border:1px solid #ab8348;background:#0c0806;box-shadow:0 12px 30px #0009;text-decoration:none}
+.announcement-art{width:100%;height:290px;object-fit:cover;object-position:center 22%;display:block;transition:transform .35s}
+.update-poster-link:hover .announcement-art{transform:scale(1.02)}
+.update-poster-link span{display:block;text-align:center;padding:8px;background:#20150c;color:#e9c783;font-size:12px}
+.update-feature-grid{display:grid;grid-template-columns:minmax(220px,330px) 1fr;align-items:center;gap:28px}
+.update-feature-poster{display:block;border-radius:14px;overflow:hidden;border:1px solid #a67c42;box-shadow:0 14px 34px #000a}
+.update-feature-poster img{width:100%;height:410px;object-fit:cover;object-position:center 28%;display:block}
+.update-feature-grid .update-points{grid-template-columns:1fr}
+@media(max-width:760px){.update-feature-grid{grid-template-columns:1fr}.update-feature-poster{max-width:390px;margin:auto}.update-feature-poster img{height:300px}.announcement-art{height:230px}.announcement-modal{max-height:calc(100dvh - 20px)}}
+
 /* STREAMERS */
 
 .streamers-section{
@@ -2076,6 +2433,40 @@ footer h3{
   nav{max-height:calc(100vh - 80px);overflow-y:auto}
 }
 
+
+/* NEW: เมนูอัปเดตเมืองสองประกาศ รองรับมือถือ */
+.city-updates-modal{width:min(740px,100%);max-height:calc(100dvh - 28px);overflow-x:hidden!important;overflow-y:auto!important;padding:0;background:#140d09!important;border:1px solid #987040;border-radius:18px;scrollbar-color:#9d7237 #21140d;}
+.city-updates-modal::before{inset:9px;border-color:#795b38;border-radius:12px}
+.city-updates-modal::after{content:'❧';left:15px;top:2px}
+.city-updates-modal .announcement-close{position:sticky;float:right;top:9px;z-index:4;width:42px;height:42px;margin:8px 8px -50px 0;padding:0;box-shadow:0 4px 16px #000b;background:#1d120b;border-color:#ad8b5b}
+.city-paper-header{text-align:center;padding:34px 25px 18px;background:radial-gradient(ellipse at top,#4a2d18 0%,#1b100b 63%,#140d09 100%);border-bottom:1px solid #594027}
+.city-overline{display:block;color:#e1bd78;font:700 12px Cinzel,serif;letter-spacing:2px}
+.city-paper-header h2{font-size:clamp(25px,4.1vw,40px);color:#f3d79d;margin:7px 0;line-height:1.3}
+.city-paper-rule{color:#b89355;font-size:13px;letter-spacing:1px}
+.city-announcement-tabs{display:flex;gap:8px;padding:13px 22px 2px}
+.city-update-tab{flex:1;min-width:0;padding:12px 8px;color:#d3b997;background:#211610;border:1px solid #60462a;border-radius:9px;font:700 13px "Noto Serif Thai",serif;cursor:pointer}
+.city-update-tab:hover{border-color:#b78c50}.city-update-tab.active{color:#20140c;background:linear-gradient(125deg,#f0d399,#bd8c48);border-color:#e6c078}
+.city-slide-area{padding:10px 22px 0}.city-slide[hidden]{display:none!important}
+.city-slide{animation:cityReveal .25s ease-out}@keyframes cityReveal{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+.city-new-label{font-size:12px;color:#d7ad70;letter-spacing:1px}
+.city-slide h3{font-size:clamp(21px,3vw,30px);line-height:1.3;color:#f4daaa;margin:3px 0 6px}
+.city-slide-lead{font-size:14px;color:#d1bfa5;margin:0 0 12px;line-height:1.85}
+.city-slide-photo{position:relative;display:block;max-width:510px;margin:9px auto 0;border:1px solid #966b40;border-radius:10px;overflow:hidden;background:#090807;box-shadow:0 13px 40px #0008}
+.city-slide-photo img{width:100%;height:240px;object-fit:cover;object-position:center;display:block}.city-slide-photo.portrait img{object-position:center 24%;height:310px}
+.city-slide-photo span{display:block;background:#1f140e;color:#cdb185;font-size:11px;padding:5px 10px;text-align:center}
+.city-slide-details{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 15px;color:#ccb58f;font-size:13px}
+.city-slide-primary{width:100%;text-align:center}.city-announcement-bottom{border-top:1px solid #4d3524;margin-top:16px;padding:12px 22px 20px;background:#1a110d}
+.city-slide-nav{display:flex;justify-content:space-between;align-items:center;gap:8px}.city-slide-nav button{padding:9px;border:1px solid #735534;border-radius:7px;background:#2a1b13;color:#f0d4a0;cursor:pointer;font:600 12px "Noto Serif Thai",serif}
+.city-slide-nav strong{color:#f0d4a0;font:700 13px Cinzel,serif;white-space:nowrap}.city-notice-small{font-size:12px;text-align:center;color:#b89c74;margin:11px 0 10px}
+.city-bottom-buttons{display:flex;gap:10px;justify-content:center}.city-bottom-buttons .btn{flex:1;text-align:center;min-height:42px;font-size:13px;padding:8px}
+.city-active-updates{max-width:1120px;margin:auto}.city-round-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-bottom:18px;color:#dfc79c;font-size:13px}
+.city-update-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.city-update-card{border:1px solid #6f4d2d;border-radius:16px;overflow:hidden;background:linear-gradient(140deg,#2a1b13,#130e0b);box-shadow:0 22px 45px #0005}
+.city-update-cover{display:block;height:270px;overflow:hidden;background:#0d0b0a}.city-update-cover img{width:100%;height:100%;object-fit:cover;transition:transform .3s}.city-update-cover.portrait img{object-position:top}.city-update-cover:hover img{transform:scale(1.025)}
+.city-update-card-content{padding:21px}.city-update-card-content>span{display:block;color:#bd9760;font-size:12px}.city-update-card h3{font-size:clamp(22px,3vw,30px);margin:8px 0;color:#efd29c}.city-update-card p{color:#cab69a;font-size:14px;line-height:1.75;margin:0 0 16px}.city-update-card .btn{font-size:13px;min-height:42px}
+@media(max-width:740px){.city-update-card-grid{grid-template-columns:1fr}.city-update-cover{height:230px}.city-updates-modal{max-height:calc(100dvh - 16px)}.announcement-overlay{padding:8px}.city-paper-header{padding:30px 12px 12px}.city-announcement-tabs{padding:10px 12px 0}.city-slide-area{padding:10px 13px 0}.city-announcement-bottom{padding:11px 13px 15px}.city-slide-photo img{height:190px}.city-slide-photo.portrait img{height:260px}.city-slide-nav button{font-size:11px}.city-bottom-buttons{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.city-slide{animation:none}}
+
 </style>
 </head>
 
@@ -2112,6 +2503,44 @@ footer h3{
 
 </div>
 
+<!-- CITY UPDATES | 2 ประกาศ รอบนี้ 7 วัน • รอบหน้าเริ่มต้น 3 วัน -->
+<div class="announcement-overlay" id="announcementOverlay" aria-hidden="true">
+  <div class="announcement-modal city-updates-modal" role="dialog" aria-labelledby="announcementTitle" aria-modal="true">
+    <button class="announcement-close" id="announcementClose" type="button" aria-label="ปิดประกาศ">×</button>
+    <div class="city-paper-header">
+      <span class="city-overline">LAND OF SMILE · พ.ศ. ๒๔๗๕</span>
+      <h2 id="announcementTitle">ประกาศอัปเดตเมือง</h2>
+      <div class="city-paper-rule">❖ ประกาศใหม่จากเมือง ❖</div>
+    </div>
+    <div class="city-announcement-tabs" role="tablist" aria-label="เลือกประกาศอัปเดตเมือง">
+      <button id="cityTab2" class="city-update-tab active" type="button" data-slide="2" role="tab" aria-selected="true">⚰️ ครั้งที่ 2 · ขุดสุสาน</button>
+      <button id="cityTab1" class="city-update-tab" type="button" data-slide="1" role="tab" aria-selected="false">🐺 ครั้งที่ 1 · สกิลล่าสัตว์</button>
+    </div>
+    <div class="city-slide-area">
+      <article class="city-slide" data-city-slide="2" role="tabpanel" aria-labelledby="cityTab2">
+        <span class="city-new-label">อัปเดตเมือง ครั้งที่ 2</span>
+        <h3>⚰️ เพิ่มงานดำ “ขุดสุสาน”</h3>
+        <p class="city-slide-lead">เปิดงานขุดสุสานที่ <b>แคว้นมรณาลัย</b> พบกับบรรยากาศสุดลึกลับ และอันตรายจากสิ่งลี้ลับ</p>
+        <a class="city-slide-photo landscape" href="city-update-2.jpg" target="_blank" rel="noopener noreferrer" aria-label="เปิดรูปสุสานเต็มขนาด"><img src="city-update-2.jpg" alt="ภาพโลงศพไม้ในทุ่งหญ้ายามค่ำคืน แสงจันทร์และหมอกปกคลุม" loading="eager"><span>🔎 ดูภาพขนาดเต็ม</span></a>
+        <div class="city-slide-details"><span>📍 สถานที่: แคว้นมรณาลัย</span><span>🔗 คู่มือ: อาชีพ → งานผิดกฎหมาย → ขุดสุสาน</span></div>
+        <a class="btn btn-gold city-slide-primary" href="land-of-smile-guide.html#jobs/illegal">อ่านวิธีขุดสุสาน</a>
+      </article>
+      <article class="city-slide" data-city-slide="1" role="tabpanel" aria-labelledby="cityTab1" hidden>
+        <span class="city-new-label">อัปเดตเมือง ครั้งที่ 1</span>
+        <h3>🐺 เพิ่มกล่องสุ่มสกิลล่าสัตว์อัตโนมัติ</h3>
+        <p class="city-slide-lead">เพิ่มกล่องสุ่มตั๋วสกิลล่าสัตว์อัตโนมัติ ใช้ได้เฉพาะสัตว์เลี้ยง <b>หมาป่า</b> และ <b>เสือแพนเตอร์</b></p>
+        <a class="city-slide-photo portrait" href="city-update-1.jpg" target="_blank" rel="noopener noreferrer" aria-label="เปิดโปสเตอร์กล่องสุ่มเต็มขนาด"><img src="city-update-1.jpg" alt="โปสเตอร์อัปเดตกล่องสุ่มสกิลล่าสัตว์อัตโนมัติ พร้อมภาพหมาป่าและเสือแพนเตอร์" loading="lazy"><span>🔎 ดูโปสเตอร์ขนาดเต็ม</span></a>
+        <div class="city-slide-details"><span>🎟️ กดใช้ตั๋วสกิลจากกล่องสุ่ม</span><span>🐾 เลือกสัตว์เลี้ยงที่ต้องการติดตั้งสกิล</span></div>
+        <a class="btn btn-gold city-slide-primary" href="city-updates.html#post-1">อ่านประกาศฉบับเต็ม</a>
+      </article>
+    </div>
+    <div class="city-announcement-bottom">
+      <div class="city-slide-nav"><button id="cityPrevious" type="button">← ประกาศก่อนหน้า</button><strong id="citySlideCount" aria-live="polite">2 / 2</strong><button id="cityNext" type="button">ประกาศถัดไป →</button></div>
+      <div class="city-notice-small">ประกาศรอบนี้จะแสดง 7 วัน เมื่อหมดกำหนดยังอ่านย้อนหลังได้</div>
+      <div class="city-bottom-buttons"><a class="btn btn-outline" href="city-updates.html">ดูประกาศทั้งหมด</a><button type="button" class="btn announcement-muted-btn" id="announcementHideToday">วันนี้ไม่ต้องแสดงอีก</button></div>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 
@@ -2153,6 +2582,10 @@ footer h3{
 
     <a href="#story">
       เรื่องราว
+    </a>
+
+    <a href="#updates">
+      อัปเดตเมือง
     </a>
 
     <a href="land-of-smile-guide.html#jobs" aria-label="คู่มืออาชีพ">
@@ -2449,6 +2882,45 @@ footer h3{
 </section>
 
 <div class="thai-divider" aria-hidden="true"><span>❖</span></div>
+
+
+
+<!-- UPDATES -->
+
+<section
+  class="section updates-highlight-section"
+  id="updates"
+>
+  <div class="section-title reveal">
+    <small>ข่าวสารจากเมือง</small>
+    <h2>อัปเดตเมืองล่าสุด</h2>
+    <p>ติดตามประกาศสำคัญ การปรับปรุงระบบ และความเคลื่อนไหวของ Land of Smile ได้จากหน้าแรก และย้อนดูประกาศเก่าได้ทุกเวลา</p>
+  </div>
+
+  <div class="updates-highlight-wrap reveal">
+    <div id="updatesHeroCard" class="city-active-updates">
+      <div class="city-round-head"><span>ประกาศล่าสุด • 18 ตุลาคม 2569</span><span>แสดงหน้าแรก 7 วัน</span></div>
+      <div class="city-update-card-grid">
+        <article class="city-update-card">
+          <a class="city-update-cover" href="city-updates.html#post-2"><img src="city-update-2.jpg" alt="งานขุดสุสาน แคว้นมรณาลัย" loading="lazy"></a>
+          <div class="city-update-card-content"><span>ครั้งที่ 2 · งานผิดกฎหมาย</span><h3>⚰️ เพิ่มงานดำ ขุดสุสาน</h3><p>เปิดงานขุดสุสานที่แคว้นมรณาลัย พร้อมคู่มือการใช้งาน</p><a class="btn btn-gold" href="city-updates.html#post-2">อ่านรายละเอียด</a></div>
+        </article>
+        <article class="city-update-card">
+          <a class="city-update-cover portrait" href="city-updates.html#post-1"><img src="city-update-1.jpg" alt="กล่องสุ่มสกิลล่าสัตว์อัตโนมัติ สำหรับหมาป่าและเสือแพนเตอร์" loading="lazy"></a>
+          <div class="city-update-card-content"><span>ครั้งที่ 1 · สัตว์เลี้ยง</span><h3>🐺 เพิ่มกล่องสุ่มสกิลล่าสัตว์</h3><p>ใช้ตั๋วสกิลกับหมาป่าหรือเสือแพนเตอร์ เพื่อเปิดใช้งานสกิลล่าสัตว์อัตโนมัติ</p><a class="btn btn-gold" href="city-updates.html#post-1">อ่านรายละเอียด</a></div>
+        </article>
+      </div>
+      <div class="updates-actions" style="justify-content:center"><a class="btn btn-outline" href="city-updates.html">📜 ดูประกาศย้อนหลังทั้งหมด</a></div>
+    </div>
+    <div id="updatesExpiredNotice" class="updates-hero-card" hidden>
+      <div class="update-topline"><span class="update-badge">📜 กระดานประกาศ</span></div>
+      <h3>ติดตามประกาศจาก Land of Smile</h3>
+      <p>ประกาศล่าสุดครบกำหนดแสดงบนหน้าแรกแล้ว สามารถเปิดอ่านประกาศฉบับเต็มและประกาศย้อนหลังได้ตลอดเวลา</p>
+      <div class="updates-actions"><a class="btn btn-gold" href="city-updates.html">เปิดคลังประกาศย้อนหลัง</a></div>
+    </div>
+  </div>
+</section>
+
 
 <!-- RULES -->
 
@@ -5109,6 +5581,80 @@ supportLightbox.addEventListener("click", event => {
 });
 document.addEventListener("keydown", event => {
   if(event.key === "Escape" && supportLightbox.classList.contains("show")) closeSupportLightbox();
+});
+
+
+
+/* ANNOUNCEMENT POPUP | รอบนี้ 7 วัน / รอบหน้าเริ่มต้น 3 วัน */
+const cityUpdateSettings = Object.freeze({
+  defaultDaysForNextRound: 3,
+  currentRound: {
+    id: "land-of-smile-updates-1-and-2",
+    startsAt: "2026-10-18T17:00:00+07:00",
+    displayDays: 7
+  }
+});
+const announcementOverlay = document.getElementById("announcementOverlay");
+const announcementClose = document.getElementById("announcementClose");
+const announcementHideToday = document.getElementById("announcementHideToday");
+const cityTabButtons = Array.from(document.querySelectorAll(".city-update-tab"));
+const citySlides = Array.from(document.querySelectorAll(".city-slide"));
+const cityCount = document.getElementById("citySlideCount");
+let activeCitySlide = "2";
+function bangkokDate(){
+ const f = new Intl.DateTimeFormat("en-CA", {timeZone:"Asia/Bangkok",year:"numeric",month:"2-digit",day:"2-digit"});
+ const ps = f.formatToParts(new Date()); const p = x => ps.find(v=>v.type===x)?.value || "";
+ return `${p("year")}-${p("month")}-${p("day")}`;
+}
+function cityRoundIsLive(){
+ const s=Date.parse(cityUpdateSettings.currentRound.startsAt);
+ const e=s+cityUpdateSettings.currentRound.displayDays*24*60*60*1000;
+ return Date.now()>=s && Date.now()<e;
+}
+function cityHideTodayKey(){return "los_ann_hide_"+cityUpdateSettings.currentRound.id;}
+function cityShouldOpen(){
+ if(!announcementOverlay||!cityRoundIsLive())return false;
+ try{if(localStorage.getItem(cityHideTodayKey())===bangkokDate())return false}catch(e){}
+ return true;
+}
+function selectCitySlide(id){
+ activeCitySlide=id;
+ citySlides.forEach(slide=>{slide.hidden=slide.dataset.citySlide!==id;});
+ cityTabButtons.forEach(button=>{const active=button.dataset.slide===id;button.classList.toggle("active",active);button.setAttribute("aria-selected",active?"true":"false");});
+ if(cityCount)cityCount.textContent=id+" / 2";
+}
+function closeCityPopup(){
+ if(!announcementOverlay)return;
+ announcementOverlay.classList.remove("show");
+ announcementOverlay.setAttribute("aria-hidden","true");
+ document.body.style.overflow="";
+}
+function openCityPopup(){
+ if(!announcementOverlay)return;
+ selectCitySlide("2");
+ announcementOverlay.classList.add("show");
+ announcementOverlay.setAttribute("aria-hidden","false");
+ document.body.style.overflow="hidden";
+}
+cityTabButtons.forEach(button=>button.addEventListener("click",()=>selectCitySlide(button.dataset.slide)));
+document.getElementById("cityPrevious")?.addEventListener("click",()=>selectCitySlide(activeCitySlide==="2"?"1":"2"));
+document.getElementById("cityNext")?.addEventListener("click",()=>selectCitySlide(activeCitySlide==="2"?"1":"2"));
+announcementClose?.addEventListener("click",closeCityPopup);
+announcementOverlay?.addEventListener("click",event=>{if(event.target===announcementOverlay)closeCityPopup()});
+announcementHideToday?.addEventListener("click",()=>{
+ try{localStorage.setItem(cityHideTodayKey(),bangkokDate())}catch(e){}
+ closeCityPopup();
+});
+document.addEventListener("keydown",event=>{
+ if(event.key==="Escape" && announcementOverlay?.classList.contains("show"))closeCityPopup();
+});
+window.addEventListener("load",()=>{
+ const live=cityRoundIsLive();
+ const hero=document.getElementById("updatesHeroCard");
+ const expired=document.getElementById("updatesExpiredNotice");
+ if(hero)hero.hidden=!live;
+ if(expired)expired.hidden=live;
+ if(cityShouldOpen())setTimeout(openCityPopup,1100);
 });
 
 </script>
