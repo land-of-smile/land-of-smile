@@ -2014,6 +2014,68 @@ footer h3{
   }
 
 }
+
+
+/* LAND OF SMILE • CAREERS & SYSTEMS GUIDES */
+.guide-section{
+  background:linear-gradient(180deg,#0b0806 0%,#16100b 48%,#0b0806 100%);
+  border-block:1px solid rgba(212,174,102,.12);
+  position:relative;
+}
+.guide-section:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 0%,rgba(212,174,102,.12),transparent 55%);
+}
+.guide-entry-grid{
+  position:relative;
+  max-width:1080px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+.guide-entry{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:36px 34px;
+  border:1px solid rgba(212,174,102,.32);
+  border-radius:16px;
+  color:var(--cream);
+  text-decoration:none;
+  background:linear-gradient(145deg,rgba(51,33,20,.97),rgba(15,10,7,.98));
+  box-shadow:0 18px 40px rgba(0,0,0,.23);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.guide-entry:hover,.guide-entry:focus-visible{
+  transform:translateY(-5px);
+  border-color:rgba(239,202,128,.82);
+  box-shadow:0 22px 45px rgba(0,0,0,.4),0 0 24px rgba(212,174,102,.1);
+  outline:0;
+}
+.guide-entry-icon{font-size:42px;line-height:1.25;display:block;margin-bottom:16px}
+.guide-entry-overline{color:var(--gold);font-size:12px;letter-spacing:.12em}
+.guide-entry h3{font-size:clamp(26px,2.6vw,34px);line-height:1.5;color:#f0d69a;margin:8px 0 10px}
+.guide-entry p{font-size:14px;color:#bca98c;margin:0 0 25px;line-height:1.9;flex:1}
+.guide-entry-more{display:inline-flex;gap:10px;align-items:center;color:#f0d69a;font-weight:700;border-bottom:1px solid rgba(212,174,102,.5);padding-bottom:5px}
+@media(max-width:650px){
+  .guide-entry-grid{grid-template-columns:1fr;gap:16px}
+  .guide-entry{padding:26px 24px}
+}
+/* Collapse the longer navigation before it overlaps the city logo. */
+@media(min-width:901px) and (max-width:1550px){
+  nav{position:absolute;top:80px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;padding:18px 7vw;background:#0c0806;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .menu{display:block}
+}
+@media(max-width:1550px){
+  nav{max-height:calc(100vh - 80px);overflow-y:auto}
+}
+
 </style>
 </head>
 
@@ -2075,6 +2137,9 @@ footer h3{
   <button
     class="menu"
     id="menu"
+    aria-label="เปิดเมนูนำทาง"
+    aria-expanded="false"
+    aria-controls="nav"
   >
     ☰
   </button>
@@ -2088,6 +2153,14 @@ footer h3{
 
     <a href="#story">
       เรื่องราว
+    </a>
+
+    <a href="land-of-smile-guide.html#jobs" aria-label="คู่มืออาชีพ">
+      อาชีพ
+    </a>
+
+    <a href="land-of-smile-guide.html#systems" aria-label="คู่มือระบบ">
+      ระบบ
     </a>
 
     <a href="#rules">
@@ -2200,6 +2273,13 @@ footer h3{
         href="#rules"
       >
         อ่านกฎประเทศ
+      </a>
+
+      <a
+        class="btn btn-outline"
+        href="#guide"
+      >
+        สำรวจอาชีพและระบบ
       </a>
 
       <a
@@ -2341,6 +2421,34 @@ footer h3{
 
 </section>
 
+
+
+<!-- GUIDE: TWO MENUS, SAME LAND OF SMILE WEBSITE -->
+<section class="section guide-section" id="guide">
+  <div class="section-title reveal">
+    <small>LAND OF SMILE • คู่มือภายในเมือง</small>
+    <h2>อาชีพและระบบ</h2>
+    <p>สำรวจวิธีทำอาชีพต่าง ๆ และศึกษาระบบการใช้ชีวิตในเมือง พ.ศ. 2475 พร้อมภาพประกอบและคลิปแนะนำ</p>
+  </div>
+  <div class="guide-entry-grid">
+    <a class="guide-entry reveal" href="land-of-smile-guide.html#jobs">
+      <span class="guide-entry-icon" aria-hidden="true">⚒️</span>
+      <span class="guide-entry-overline">คู่มืออาชีพ • 6 หมวด</span>
+      <h3>อาชีพ</h3>
+      <p>งานตกปลาและส่งปลา งานขนส่ง งานผิดกฎหมาย งานแคมป์และภารกิจ งานล่าค่าหัว และงานช่วยเหลือม้า</p>
+      <span class="guide-entry-more">เปิดดูอาชีพทั้งหมด <span aria-hidden="true">→</span></span>
+    </a>
+    <a class="guide-entry reveal" href="land-of-smile-guide.html#systems">
+      <span class="guide-entry-icon" aria-hidden="true">⚙️</span>
+      <span class="guide-entry-overline">คู่มือระบบ • 11 หัวข้อ</span>
+      <h3>ระบบ</h3>
+      <p>การดูแลตัวละครและม้า ระบบปืน เสื้อผ้า บ้าน Battle Pass คำสั่ง Roleplay SceneText ปุ่มควบคุม UI และระบบรางวัล</p>
+      <span class="guide-entry-more">เปิดดูระบบทั้งหมด <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+</section>
+
+<div class="thai-divider" aria-hidden="true"><span>❖</span></div>
 
 <!-- RULES -->
 
@@ -4202,9 +4310,8 @@ $("#menu")
   "click",
   () => {
 
-    $("#nav")
-    .classList
-    .toggle("open");
+    const expanded = $("#nav").classList.toggle("open");
+    $("#menu").setAttribute("aria-expanded", String(expanded));
 
   }
 );
@@ -4218,9 +4325,8 @@ $$('#nav a')
       "click",
       () => {
 
-        $("#nav")
-        .classList
-        .remove("open");
+        $("#nav").classList.remove("open");
+        $("#menu").setAttribute("aria-expanded", "false");
 
       }
     );
