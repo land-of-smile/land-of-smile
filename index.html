@@ -2467,6 +2467,86 @@ footer h3{
 @media(max-width:740px){.city-update-card-grid{grid-template-columns:1fr}.city-update-cover{height:230px}.city-updates-modal{max-height:calc(100dvh - 16px)}.announcement-overlay{padding:8px}.city-paper-header{padding:30px 12px 12px}.city-announcement-tabs{padding:10px 12px 0}.city-slide-area{padding:10px 13px 0}.city-announcement-bottom{padding:11px 13px 15px}.city-slide-photo img{height:190px}.city-slide-photo.portrait img{height:260px}.city-slide-nav button{font-size:11px}.city-bottom-buttons{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.city-slide{animation:none}}
 
+/* ============ LAND OF SMILE | บทบาทผู้เล่น ============ */
+.los-roles-section{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding-block:92px 100px;
+  border-block:1px solid rgba(212,174,102,.16);
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(153,105,47,.15),transparent 39%),
+    radial-gradient(ellipse at 15% 60%,rgba(75,43,30,.12),transparent 42%),
+    linear-gradient(180deg,#0c0907 0%,#1a120c 51%,#0b0806 100%);
+}
+.los-roles-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.15;
+  background-image:radial-gradient(circle at 15% 15%,#c59e61 0 1px,transparent 1.6px);
+  background-size:51px 51px;
+}
+.los-roles-container{max-width:1270px;margin:0 auto}
+.los-roles-header{text-align:center;max-width:790px;margin:0 auto 52px}
+.los-roles-crest{font-size:28px;line-height:1;color:#deb875;text-shadow:0 0 28px #c08b4455}
+.los-roles-eyebrow{margin:15px 0 5px;color:#d4ae66;font:700 12px Cinzel,serif;letter-spacing:3.1px}
+.los-roles-header h2{margin:6px 0 12px;color:#f3dca9;font-size:clamp(35px,5.2vw,64px);line-height:1.25;font-weight:700}
+.los-roles-header>p:last-child{margin:0;color:#c1ac8f;font-size:15px;line-height:1.95}
+.los-role-category + .los-role-category{margin-top:72px}
+.los-role-category-heading{display:flex;align-items:center;gap:15px;margin-bottom:11px}
+.los-role-category-heading::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(212,174,102,.58),transparent)}
+.los-role-category-icon{color:#e1b96d;font-size:24px;line-height:1}
+.los-role-category-heading h3{margin:0;color:#edd09a;font-size:clamp(23px,3vw,34px);line-height:1.4}
+.los-role-category-caption{color:#b4a083;margin:0 0 25px;font-size:14px}
+.los-role-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px}
+.los-role-card{
+  min-width:0;
+  overflow:hidden;
+  border-radius:15px;
+  border:1px solid rgba(212,174,102,.3);
+  background:linear-gradient(155deg,#2b1d14,#130d09 79%);
+  box-shadow:0 14px 40px rgba(0,0,0,.34);
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.los-role-card:hover,.los-role-card:focus-within{
+  transform:translateY(-5px);
+  border-color:#cfa866;
+  box-shadow:0 23px 48px rgba(0,0,0,.54),0 0 24px rgba(219,166,81,.1);
+}
+.los-role-open{display:block;width:100%;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:zoom-in;font:inherit}
+.los-role-open:focus-visible{outline:3px solid #f4d08c;outline-offset:-3px}
+.los-role-photo{position:relative;display:block;aspect-ratio:5/4;overflow:hidden;background:#110c09}
+.los-role-photo-ambient{position:absolute;inset:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(18px) brightness(.42) saturate(.8)}
+.los-role-photo-main{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .45s ease}
+.los-role-card:hover .los-role-photo-main{transform:scale(1.035)}
+.los-role-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 67%,rgba(12,8,6,.53))}
+.los-role-info{position:relative;display:block;padding:15px 18px 18px;border-top:1px solid rgba(212,174,102,.18)}
+.los-role-index{display:block;margin-bottom:1px;font:700 10px Cinzel,serif;color:#ab8555;letter-spacing:1.6px}
+.los-role-name{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#f2ddba;font-weight:700;font-size:clamp(16px,1.5vw,20px);line-height:1.5}
+.los-role-magnify{color:#cdaa70;font-size:17px;opacity:.85}
+.los-role-notice{margin:29px 0 0;color:#a79173;font-size:12px;text-align:center}
+.los-role-dialog{position:fixed;inset:0;max-width:min(96vw,1100px);max-height:94dvh;overflow:auto;padding:14px;background:#130d09;border:1px solid rgba(223,180,103,.7);border-radius:14px;box-shadow:0 34px 100px #000b;color:#f0d69a}
+.los-role-dialog::backdrop{background:rgba(0,0,0,.89);backdrop-filter:blur(7px)}
+.los-role-dialog figure{padding:0;margin:0;display:flex;flex-direction:column;align-items:center;gap:9px}
+.los-role-dialog img{max-width:100%;max-height:calc(94dvh - 110px);width:auto;height:auto;object-fit:contain;border-radius:8px}
+.los-role-dialog figcaption{color:#f0d49a;font-size:16px;font-weight:700}
+.los-role-dialog-close{position:sticky;top:0;z-index:3;display:block;margin:0 0 8px auto;padding:5px 13px;border:1px solid #b59052;border-radius:8px;background:#27180e;color:#f5d59b;font:700 17px inherit;cursor:pointer}
+@media (max-width:1080px){.los-role-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:740px){
+  .los-roles-section{padding-block:65px 72px}
+  .los-roles-header{margin-bottom:37px}
+  .los-role-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .los-role-info{padding:11px 11px 13px}
+  .los-role-category + .los-role-category{margin-top:51px}
+  .los-role-name{font-size:15px}
+  .los-role-index{font-size:9px}
+}
+@media (max-width:390px){.los-role-grid{gap:9px}.los-role-photo{aspect-ratio:4/4}}
+@media (prefers-reduced-motion:reduce){.los-role-card,.los-role-photo-main{transition:none}}
+
 </style>
 </head>
 
@@ -2604,6 +2684,10 @@ footer h3{
 
     <a href="#whitelist">
       Whitelist
+    </a>
+
+    <a href="#roles">
+      บทบาท
     </a>
 
     <a href="#support">
@@ -4239,6 +4323,135 @@ footer h3{
   <span>✦</span>
 </div>
 
+<!-- บทบาทผู้เล่น: บทบาทปกติขึ้นก่อน ตามด้วยบทบาทพิเศษ -->
+<section class="section los-roles-section" id="roles" aria-labelledby="los-roles-title">
+  <div class="los-roles-container">
+    <div class="los-roles-header reveal">
+      <div class="los-roles-crest" aria-hidden="true">❖</div>
+      <p class="los-roles-eyebrow">LAND OF SMILE · PLAYER ROLES</p>
+      <h2 id="los-roles-title">บทบาท</h2>
+      <p>ทุกชีวิตมีเรื่องราว ทุกเส้นทางมีบทบาทของตัวเอง<br>ร่วมสร้างเรื่องราวและความทรงจำภายในดินแดน Land of Smile</p>
+    </div>
+    <div class="los-role-category" aria-labelledby="los-roles-normal-heading">
+      <div class="los-role-category-heading reveal"><span class="los-role-category-icon" aria-hidden="true">✦</span><h3 id="los-roles-normal-heading">บทบาทปกติ</h3></div>
+      <p class="los-role-category-caption">บทบาทและผู้คนที่ร่วมขับเคลื่อนชีวิตประจำวันภายในเมือง</p>
+      <div class="los-role-grid">
+        <article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-doctor.webp" data-role-label="หมอ" aria-label="เปิดภาพบทบาท หมอ ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-doctor.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-doctor.webp" alt="ภาพบทบาท หมอ ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">NORMAL · 01</span><span class="los-role-name">หมอ<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-police.webp" data-role-label="ตำรวจ" aria-label="เปิดภาพบทบาท ตำรวจ ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-police.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-police.webp" alt="ภาพบทบาท ตำรวจ ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">NORMAL · 02</span><span class="los-role-name">ตำรวจ<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-citizen.webp" data-role-label="ประชาชน" aria-label="เปิดภาพบทบาท ประชาชน ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-citizen.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-citizen.webp" alt="ภาพบทบาท ประชาชน ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">NORMAL · 03</span><span class="los-role-name">ประชาชน<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-outlaws.webp" data-role-label="กลุ่มนอกกฎหมาย" aria-label="เปิดภาพบทบาท กลุ่มนอกกฎหมาย ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-outlaws.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-outlaws.webp" alt="ภาพบทบาท กลุ่มนอกกฎหมาย ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">NORMAL · 04</span><span class="los-role-name">กลุ่มนอกกฎหมาย<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article>
+      </div>
+    </div>
+    <div class="los-role-category" aria-labelledby="los-roles-special-heading">
+      <div class="los-role-category-heading reveal"><span class="los-role-category-icon" aria-hidden="true">✧</span><h3 id="los-roles-special-heading">บทบาทพิเศษ</h3></div>
+      <p class="los-role-category-caption">ตำนาน กลุ่มตัวละคร และสำนักต่าง ๆ ที่มีเรื่องราวเป็นเอกลักษณ์</p>
+      <div class="los-role-grid">
+        <article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-pusom.webp" data-role-label="ตระกูลปู่โสม" aria-label="เปิดภาพบทบาท ตระกูลปู่โสม ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-pusom.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-pusom.webp" alt="ภาพบทบาท ตระกูลปู่โสม ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 01</span><span class="los-role-name">ตระกูลปู่โสม<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-suea-saming.webp" data-role-label="เสือสมิง" aria-label="เปิดภาพบทบาท เสือสมิง ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-suea-saming.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-suea-saming.webp" alt="ภาพบทบาท เสือสมิง ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 02</span><span class="los-role-name">เสือสมิง<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-vetal.webp" data-role-label="เวตาล" aria-label="เปิดภาพบทบาท เวตาล ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-vetal.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-vetal.webp" alt="ภาพบทบาท เวตาล ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 03</span><span class="los-role-name">เวตาล<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-shaman.webp" data-role-label="หมอผี" aria-label="เปิดภาพบทบาท หมอผี ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-shaman.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-shaman.webp" alt="ภาพบทบาท หมอผี ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 04</span><span class="los-role-name">หมอผี<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-sorcery.webp" data-role-label="คนเล่นของ" aria-label="เปิดภาพบทบาท คนเล่นของ ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-sorcery.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-sorcery.webp" alt="ภาพบทบาท คนเล่นของ ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 05</span><span class="los-role-name">คนเล่นของ<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-barami.webp" data-role-label="สำนักบารมี" aria-label="เปิดภาพบทบาท สำนักบารมี ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-barami.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-barami.webp" alt="ภาพบทบาท สำนักบารมี ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 06</span><span class="los-role-name">สำนักบารมี<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-bulan.webp" data-role-label="สำนักแม่ครูบุหลัน" aria-label="เปิดภาพบทบาท สำนักแม่ครูบุหลัน ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-bulan.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-bulan.webp" alt="ภาพบทบาท สำนักแม่ครูบุหลัน ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 07</span><span class="los-role-name">สำนักแม่ครูบุหลัน<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article><article class="los-role-card reveal">
+          <button class="los-role-open" type="button" data-role-photo="role-sing.webp" data-role-label="สำนักอาจารย์สิงห์" aria-label="เปิดภาพบทบาท สำนักอาจารย์สิงห์ ขนาดเต็ม">
+            <span class="los-role-photo">
+              <img class="los-role-photo-ambient" src="role-sing.webp" alt="" aria-hidden="true" loading="lazy">
+              <img class="los-role-photo-main" src="role-sing.webp" alt="ภาพบทบาท สำนักอาจารย์สิงห์ ใน Land of Smile" loading="lazy">
+            </span>
+            <span class="los-role-info"><span class="los-role-index">SPECIAL · 08</span><span class="los-role-name">สำนักอาจารย์สิงห์<span class="los-role-magnify" aria-hidden="true">↗</span></span></span>
+          </button>
+        </article>
+      </div>
+    </div>
+    <p class="los-role-notice">กดที่ภาพเพื่อดูรายละเอียดภาพบทบาทขนาดเต็ม</p>
+  </div>
+</section>
+<dialog class="los-role-dialog" id="los-role-dialog" aria-label="ภาพบทบาทขนาดเต็ม">
+  <button class="los-role-dialog-close" id="los-role-dialog-close" type="button" aria-label="ปิดภาพ">✕ ปิดภาพ</button>
+  <figure><img id="los-role-dialog-image" src="" alt=""><figcaption id="los-role-dialog-caption"></figcaption></figure>
+</dialog>
+
+<div class="thai-divider"><span>✦</span></div>
+
 <section class="section support-section" id="support">
   <div class="support-wrap">
     <div class="support-kicker">LAND OF SMILE SUPPORT</div>
@@ -4303,10 +4516,11 @@ footer h3{
 
     <div class="support-thanks reveal">
       <div>
-        <h3>ขอบคุณผู้สนับสนุนทุกท่าน</h3>
+        <h3>ขอบคุณทุกการสนับสนุน</h3>
         <p>
-          เราไม่ได้มองทุกการสนับสนุนเป็นเพียงการเติมเงิน แต่คือการร่วมสร้างเมืองแห่งนี้ไปด้วยกัน
-          ขอบคุณที่ช่วยให้ Land of Smile มีเรื่องราว กิจกรรม และประสบการณ์ใหม่ ๆ สำหรับทุกคน
+          ผู้เล่นทุกคนมีส่วนร่วมในการสร้างเมืองแห่งนี้ไปด้วยกัน
+          ขอบคุณที่ช่วยให้ Land of Smile มีเรื่องราวและประสบการณ์ใหม่ ๆ
+          ขอให้ทุกท่านมีความสุขกับ Land of Smile
         </p>
       </div>
       <a class="btn btn-gold support-action" href="https://discord.gg/8nySZ5vfRv" target="_blank" rel="noopener">
@@ -5657,5 +5871,24 @@ window.addEventListener("load",()=>{
 
 </script>
 
+<script>
+/* ภาพบทบาทขนาดเต็ม (ปิดได้ด้วยปุ่ม Escape / คลิกด้านนอก) */
+(() => {
+  const dialog = document.getElementById('los-role-dialog');
+  const image = document.getElementById('los-role-dialog-image');
+  const caption = document.getElementById('los-role-dialog-caption');
+  document.querySelectorAll('.los-role-open').forEach(button => {
+    button.addEventListener('click', () => {
+      image.src = button.dataset.rolePhoto;
+      image.alt = 'ภาพบทบาท ' + button.dataset.roleLabel;
+      caption.textContent = button.dataset.roleLabel;
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+  document.getElementById('los-role-dialog-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {if (event.target === dialog) dialog.close();});
+  dialog.addEventListener('close', () => {image.removeAttribute('src');});
+})();
+</script>
 </body>
 </html>
