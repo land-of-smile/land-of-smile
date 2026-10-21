@@ -2547,6 +2547,10 @@ footer h3{
 @media (max-width:390px){.los-role-grid{gap:9px}.los-role-photo{aspect-ratio:4/4}}
 @media (prefers-reduced-motion:reduce){.los-role-card,.los-role-photo-main{transition:none}}
 
+
+/* อัปเดตเมืองชุดใหม่ */
+.city-announcement-tabs{flex-wrap:wrap}.city-update-tab{flex:1 1 135px}.city-update-extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:15px}.city-update-extra-grid a{display:block}.city-update-extra-grid img{width:100%;height:150px;object-fit:contain;background:#100b08;border:1px solid #765533;border-radius:10px}.city-update-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.city-update-card-grid .city-update-cover img{width:100%;height:100%;object-fit:cover}.city-update-tab:focus-visible{outline:2px solid #f0d399;outline-offset:2px}
+@media(max-width:740px){.city-update-extra-grid{grid-template-columns:1fr}.city-update-card-grid{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -2593,6 +2597,12 @@ footer h3{
       <div class="city-paper-rule">❖ ประกาศใหม่จากเมือง ❖</div>
     </div>
     <div class="city-announcement-tabs" role="tablist" aria-label="เลือกประกาศอัปเดตเมือง">
+<button id="cityTab3" class="city-update-tab" type="button" data-slide="3" role="tab" aria-selected="false">🪪 บัตรประชาชน</button>
+<button id="cityTab4" class="city-update-tab" type="button" data-slide="4" role="tab" aria-selected="false">🏕️ ภารกิจแคมป์</button>
+<button id="cityTab5" class="city-update-tab" type="button" data-slide="5" role="tab" aria-selected="false">🎁 กล่องปริศนา</button>
+<button id="cityTab6" class="city-update-tab" type="button" data-slide="6" role="tab" aria-selected="false">🔫 ระบบปืน</button>
+<button id="cityTab7" class="city-update-tab" type="button" data-slide="7" role="tab" aria-selected="false">👻 ผีผ้าห่ม</button>
+
       <button id="cityTab2" class="city-update-tab active" type="button" data-slide="2" role="tab" aria-selected="true">⚰️ ขุดสุสาน</button>
       <button id="cityTab1" class="city-update-tab" type="button" data-slide="1" role="tab" aria-selected="false">🐺 สกิลล่าสัตว์</button>
     </div>
@@ -2611,10 +2621,15 @@ footer h3{
         <div class="city-slide-details"><span>🎟️ กดใช้ตั๋วสกิลจากกล่องสุ่ม</span><span>🐾 เลือกสัตว์เลี้ยงที่ต้องการติดตั้งสกิล</span></div>
         <a class="btn btn-gold city-slide-primary" href="city-updates.html#post-1">อ่านประกาศฉบับเต็ม</a>
       </article>
+<article class="city-slide" data-city-slide="3" role="tabpanel" aria-labelledby="cityTab3" hidden><h3>ระบบแสดงภาพบัตรประชาชน</h3><p class="city-slide-lead">เพิ่มการแสดงรูปบนบัตรประชาชน โดยกดปุ่ม G เพื่อแสดงรูปภาพ และใช้รูปตัวละคร OC ของตนเองเท่านั้น ห้ามใช้ภาพบุคคลอื่น ภาพไม่เหมาะสม หรือภาพ 18+</p><a class="city-slide-photo landscape" href="los-id-card.webp" target="_blank" rel="noopener noreferrer"><img src="los-id-card.webp" alt="ระบบแสดงภาพบัตรประชาชน" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a></article>
+<article class="city-slide" data-city-slide="4" role="tabpanel" aria-labelledby="cityTab4" hidden><h3>ภารกิจแคมป์แบบ Private Session</h3><p class="city-slide-lead">ย้ายภารกิจแคมป์เข้าสู่ระบบ Private Session</p><a class="city-slide-photo landscape" href="los-camp.png" target="_blank" rel="noopener noreferrer"><img src="los-camp.png" alt="ภารกิจแคมป์แบบ Private Session" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a></article>
+<article class="city-slide" data-city-slide="5" role="tabpanel" aria-labelledby="cityTab5" hidden><h3>แจ้งเตือน Event กล่องปริศนา</h3><p class="city-slide-lead">ระบบแจ้งเตือนสถานที่จัด Event กล่องปริศนา ล่วงหน้า 5 นาทีก่อนเริ่มกิจกรรม</p><a class="city-slide-photo landscape" href="los-mystery-box.png" target="_blank" rel="noopener noreferrer"><img src="los-mystery-box.png" alt="แจ้งเตือน Event กล่องปริศนา" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a></article>
+<article class="city-slide" data-city-slide="6" role="tabpanel" aria-labelledby="cityTab6" hidden><h3>ปรับปรุงระบบ Gunsmith และสถานะอาวุธ</h3><p class="city-slide-lead">แก้ไขบั๊กกระสุน ปรับหน้าตาร้านขายปืนและโต๊ะแต่งปืน ใช้เมาส์ชี้เพื่อตรวจสอบสถานะ กด Tab ดู Condition และซ่อมด้วยพิมพ์เขียวหรือผ้าเช็ดปืน</p><a class="city-slide-photo landscape" href="los-gunsmith-shop.webp" target="_blank" rel="noopener noreferrer"><img src="los-gunsmith-shop.webp" alt="ปรับปรุงระบบ Gunsmith และสถานะอาวุธ" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a><div class="city-update-extra-grid"><a class="city-slide-photo landscape" href="los-weapon-stats.webp" target="_blank" rel="noopener noreferrer"><img src="los-weapon-stats.webp" alt="หน้าจอสถานะปืน" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a><a class="city-slide-photo landscape" href="los-gunsmith-repair.webp" target="_blank" rel="noopener noreferrer"><img src="los-gunsmith-repair.webp" alt="หน้าจอซ่อมและทำความสะอาดปืน" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a></div></article>
+<article class="city-slide" data-city-slide="7" role="tabpanel" aria-labelledby="cityTab7" hidden><h3>เพิ่มชุดผีผ้าห่มในหมวดเสื้อโค้ท</h3><p class="city-slide-lead">เพิ่มชุดผีผ้าห่ม สามารถเลือกสวมใส่ได้ในหมวดเสื้อโค้ทผ่าน NPC</p><a class="city-slide-photo landscape" href="los-ghost-outfit.png" target="_blank" rel="noopener noreferrer"><img src="los-ghost-outfit.png" alt="เพิ่มชุดผีผ้าห่มในหมวดเสื้อโค้ท" loading="lazy"><span>🔎 ดูภาพขนาดเต็ม</span></a></article>
     </div>
     <div class="city-announcement-bottom">
-      <div class="city-slide-nav"><button id="cityPrevious" type="button">← ประกาศก่อนหน้า</button><strong id="citySlideCount" aria-live="polite">2 / 2</strong><button id="cityNext" type="button">ประกาศถัดไป →</button></div>
-      <div class="city-notice-small">ประกาศรอบนี้จะแสดง 7 วัน เมื่อหมดกำหนดยังอ่านย้อนหลังได้</div>
+      <div class="city-slide-nav"><button id="cityPrevious" type="button">← ประกาศก่อนหน้า</button><strong id="citySlideCount" aria-live="polite">1 / 7</strong><button id="cityNext" type="button">ประกาศถัดไป →</button></div>
+      <div class="city-notice-small">ประกาศชุดใหม่แสดง 3 วัน • ประกาศเดิมยังคงอยู่</div>
       <div class="city-bottom-buttons"><a class="btn btn-outline" href="city-updates.html">ดูประกาศทั้งหมด</a><button type="button" class="btn announcement-muted-btn" id="announcementHideToday">วันนี้ไม่ต้องแสดงอีก</button></div>
     </div>
   </div>
@@ -2981,7 +2996,7 @@ footer h3{
 
   <div class="updates-highlight-wrap reveal">
     <div id="updatesHeroCard" class="city-active-updates">
-      <div class="city-round-head"><span>ประกาศล่าสุด • 18 ตุลาคม 2569</span><span>แสดงหน้าแรก 7 วัน</span></div>
+      <div class="city-round-head"><span>ประกาศเพิ่มเติม • 21 ตุลาคม 2569</span><span>แสดงหน้าแรก 3 วัน</span></div>
       <div class="city-update-card-grid">
         <article class="city-update-card">
           <a class="city-update-cover" href="city-updates.html#post-2"><img src="city-update-2.jpg" alt="งานขุดสุสาน แคว้นมรณาลัย" loading="lazy"></a>
@@ -2991,7 +3006,12 @@ footer h3{
           <a class="city-update-cover portrait" href="city-updates.html#post-1"><img src="city-update-1.jpg" alt="กล่องสุ่มสกิลล่าสัตว์อัตโนมัติ สำหรับหมาป่าและเสือแพนเตอร์" loading="lazy"></a>
           <div class="city-update-card-content"><span>สัตว์เลี้ยง</span><h3>🐺 เพิ่มกล่องสุ่มสกิลล่าสัตว์</h3><p>ใช้ตั๋วสกิลกับหมาป่าหรือเสือแพนเตอร์ เพื่อเปิดใช้งานสกิลล่าสัตว์อัตโนมัติ</p><a class="btn btn-gold" href="city-updates.html#post-1">อ่านรายละเอียด</a></div>
         </article>
-      </div>
+      <article class="city-update-card"><a class="city-update-cover" href="#updates" data-open-city-update="3"><img src="los-id-card.webp" alt="ระบบแสดงภาพบัตรประชาชน" loading="lazy"></a><div class="city-update-card-content"><span>ประกาศอัปเดตเมือง</span><h3>🪪 บัตรประชาชน</h3><p>เพิ่มการแสดงรูปบนบัตรประชาชน โดยกดปุ่ม G เพื่อแสดงรูปภาพ และใช้รูปตัวละคร OC ของตนเองเท่านั้น ห้ามใช้ภาพบุคคลอื่น ภาพไม่เหมาะสม หรือภาพ 18+</p><a class="btn btn-gold" href="#updates" data-open-city-update="3">ดูรายละเอียดและรูปภาพ</a></div></article>
+<article class="city-update-card"><a class="city-update-cover" href="#updates" data-open-city-update="4"><img src="los-camp.png" alt="ภารกิจแคมป์แบบ Private Session" loading="lazy"></a><div class="city-update-card-content"><span>ประกาศอัปเดตเมือง</span><h3>🏕️ ภารกิจแคมป์</h3><p>ย้ายภารกิจแคมป์เข้าสู่ระบบ Private Session</p><a class="btn btn-gold" href="#updates" data-open-city-update="4">ดูรายละเอียดและรูปภาพ</a></div></article>
+<article class="city-update-card"><a class="city-update-cover" href="#updates" data-open-city-update="5"><img src="los-mystery-box.png" alt="แจ้งเตือน Event กล่องปริศนา" loading="lazy"></a><div class="city-update-card-content"><span>ประกาศอัปเดตเมือง</span><h3>🎁 กล่องปริศนา</h3><p>ระบบแจ้งเตือนสถานที่จัด Event กล่องปริศนา ล่วงหน้า 5 นาทีก่อนเริ่มกิจกรรม</p><a class="btn btn-gold" href="#updates" data-open-city-update="5">ดูรายละเอียดและรูปภาพ</a></div></article>
+<article class="city-update-card"><a class="city-update-cover" href="#updates" data-open-city-update="6"><img src="los-gunsmith-shop.webp" alt="ปรับปรุงระบบ Gunsmith และสถานะอาวุธ" loading="lazy"></a><div class="city-update-card-content"><span>ประกาศอัปเดตเมือง</span><h3>🔫 ระบบปืน</h3><p>แก้ไขบั๊กกระสุน ปรับหน้าตาร้านขายปืนและโต๊ะแต่งปืน ใช้เมาส์ชี้เพื่อตรวจสอบสถานะ กด Tab ดู Condition และซ่อมด้วยพิมพ์เขียวหรือผ้าเช็ดปืน</p><a class="btn btn-gold" href="#updates" data-open-city-update="6">ดูรายละเอียดและรูปภาพ</a></div></article>
+<article class="city-update-card"><a class="city-update-cover" href="#updates" data-open-city-update="7"><img src="los-ghost-outfit.png" alt="เพิ่มชุดผีผ้าห่มในหมวดเสื้อโค้ท" loading="lazy"></a><div class="city-update-card-content"><span>ประกาศอัปเดตเมือง</span><h3>👻 ผีผ้าห่ม</h3><p>เพิ่มชุดผีผ้าห่ม สามารถเลือกสวมใส่ได้ในหมวดเสื้อโค้ทผ่าน NPC</p><a class="btn btn-gold" href="#updates" data-open-city-update="7">ดูรายละเอียดและรูปภาพ</a></div></article>
+</div>
       <div class="updates-actions" style="justify-content:center"><a class="btn btn-outline" href="city-updates.html">📜 ดูประกาศย้อนหลังทั้งหมด</a></div>
     </div>
     <div id="updatesExpiredNotice" class="updates-hero-card" hidden>
@@ -3894,7 +3914,7 @@ footer h3{
       </p>
 
       <h3 data-editable>
-        เมืองกัณหาวารี
+        เมืองสันติบุรี
       </h3>
 
       <p data-editable>
@@ -3903,14 +3923,14 @@ footer h3{
       </p>
 
       <a
-        href="https://nontnypp-dev.github.io/-/"
+        href="https://6ace507cb80b7.site123.me/"
         target="_blank"
       >
         เปิดอ่านกฎหมายเมือง ↗
       </a>
 
       <div class="stamp">
-        กัณหาวารี
+        สันติบุรี
       </div>
 
     </article>
@@ -5803,9 +5823,9 @@ document.addEventListener("keydown", event => {
 const cityUpdateSettings = Object.freeze({
   defaultDaysForNextRound: 3,
   currentRound: {
-    id: "land-of-smile-updates-1-and-2",
-    startsAt: "2026-10-18T17:00:00+07:00",
-    displayDays: 7
+    id: "land-of-smile-updates-oct-21-2026",
+    startsAt: "2026-10-21T20:00:00+07:00",
+    displayDays: 3
   }
 });
 const announcementOverlay = document.getElementById("announcementOverlay");
@@ -5814,7 +5834,8 @@ const announcementHideToday = document.getElementById("announcementHideToday");
 const cityTabButtons = Array.from(document.querySelectorAll(".city-update-tab"));
 const citySlides = Array.from(document.querySelectorAll(".city-slide"));
 const cityCount = document.getElementById("citySlideCount");
-let activeCitySlide = "2";
+let activeCitySlide = "3";
+const citySlideOrder = ["2","1","3","4","5","6","7"];
 function bangkokDate(){
  const f = new Intl.DateTimeFormat("en-CA", {timeZone:"Asia/Bangkok",year:"numeric",month:"2-digit",day:"2-digit"});
  const ps = f.formatToParts(new Date()); const p = x => ps.find(v=>v.type===x)?.value || "";
@@ -5835,7 +5856,7 @@ function selectCitySlide(id){
  activeCitySlide=id;
  citySlides.forEach(slide=>{slide.hidden=slide.dataset.citySlide!==id;});
  cityTabButtons.forEach(button=>{const active=button.dataset.slide===id;button.classList.toggle("active",active);button.setAttribute("aria-selected",active?"true":"false");});
- if(cityCount)cityCount.textContent=id+" / 2";
+ if(cityCount)cityCount.textContent=(citySlideOrder.indexOf(id)+1)+" / "+citySlideOrder.length;
 }
 function closeCityPopup(){
  if(!announcementOverlay)return;
@@ -5845,14 +5866,15 @@ function closeCityPopup(){
 }
 function openCityPopup(){
  if(!announcementOverlay)return;
- selectCitySlide("2");
+ selectCitySlide("3");
  announcementOverlay.classList.add("show");
  announcementOverlay.setAttribute("aria-hidden","false");
  document.body.style.overflow="hidden";
 }
 cityTabButtons.forEach(button=>button.addEventListener("click",()=>selectCitySlide(button.dataset.slide)));
-document.getElementById("cityPrevious")?.addEventListener("click",()=>selectCitySlide(activeCitySlide==="2"?"1":"2"));
-document.getElementById("cityNext")?.addEventListener("click",()=>selectCitySlide(activeCitySlide==="2"?"1":"2"));
+document.querySelectorAll("[data-open-city-update]").forEach(link=>link.addEventListener("click",event=>{event.preventDefault();openCityPopup();selectCitySlide(link.dataset.openCityUpdate);}));
+document.getElementById("cityPrevious")?.addEventListener("click",()=>selectCitySlide(citySlideOrder[(citySlideOrder.indexOf(activeCitySlide)-1+citySlideOrder.length)%citySlideOrder.length]));
+document.getElementById("cityNext")?.addEventListener("click",()=>selectCitySlide(citySlideOrder[(citySlideOrder.indexOf(activeCitySlide)+1)%citySlideOrder.length]));
 announcementClose?.addEventListener("click",closeCityPopup);
 announcementOverlay?.addEventListener("click",event=>{if(event.target===announcementOverlay)closeCityPopup()});
 announcementHideToday?.addEventListener("click",()=>{
